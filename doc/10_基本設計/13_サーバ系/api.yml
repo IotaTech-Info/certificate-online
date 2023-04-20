@@ -5,9 +5,8 @@ info:
 servers:
   - url: 'https://api.example.com/v1'
 paths:
-  /auth/login:
+  /users:
     post:
-      summary: 用户登录
       requestBody:
         required: true
         content:
@@ -15,29 +14,46 @@ paths:
             schema:
               type: object
               properties:
-                employeeID:
+                username:
                   type: string
+                password:
+                  type: string
+                email:
+                  type: string
+                role:
+                  type: string
+                  enum: ['社員', '上司']
       responses:
-        '200':
-          description: 登录成功
+        '201':
+          description: 成功
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  access_token:
-                    type: string
+                  id:
+                    type: integer
         '400':
-          description: 无效的请求参数
-        '401':
-          description: 无效的用户名或密码
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
 
-  /certificates:
+  /users/{id}/certificates:
     get:
-      summary: 查询证书类型
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         '200':
-          description: 证书列表
+          description: 成功
           content:
             application/json:
               schema:
@@ -45,9 +61,7 @@ paths:
                 items:
                   type: object
                   properties:
-                    cert_id:
-                      type: integer
-                    category_id:
+                    id:
                       type: integer
                     name:
                       type: string
@@ -59,33 +73,45 @@ paths:
                       format: date
                     file_path:
                       type: string
-        '401':
-          description: 未授权访问
+        '404':
+          description: 用户未找到
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
 
     post:
-      summary: 上传新证书
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               properties:
-                user_id:
-                  type: integer
                 category_id:
                   type: integer
                 name:
                   type: string
-                upload_date:
+                issue_date:
                   type: string
                   format: date
-                file:
+                expiry_date:
                   type: string
-                  format: binary
+                  format: date
+                file_path:
+                  type: string
       responses:
         '201':
-          description: 证书已成功上传
+          description: 成功
           content:
             application/json:
               schema:
@@ -94,13 +120,26 @@ paths:
                   id:
                     type: integer
         '400':
-          description: 无效的请求参数
-        '401':
-          description: 未授权访问
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '404':
+          description: 用户未找到
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
 
   /certificates/{id}:
-    post:
-      summary: 获取证书详情
+    get:
       parameters:
         - name: id
           in: path
@@ -109,53 +148,34 @@ paths:
             type: integer
       responses:
         '200':
-          description: 证书列表
+          description: 成功
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    cert_id:
-                      type: integer
-                    category_id:
-                      type: integer
-                    upload_date:
-                      type: string
-                      format: date
-                    expiry_date:
-                      type: string
-                      format: date
-                    file_path:
-                      type: string
-  /show_certificates:
-    post:
-      summary: 部下資格の保有
-      parameters:
-        - name: faculty_id
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: 证书列表
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  user_id:
+                    type: integer
+                  category_id:
+                    type: integer
+                  name:
+                    type: string
+                  issue_date:
+                    type: string
+                    format: date
+                  expiry_date:
+                    type: string
+                    format: date
+                  file_path:
+                    type: string
+        '404':
+          description: 证书未找到
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    cert_id:
-                      type: integer
-                    user_id:
-                      type: string
-                      format: json
-                    upload_date:
-                      type: string
-                      format: date
-                    expiry_date:
-                      type: string
-                      format: date
+                type: object
+                properties:
+                  message:
+                    type: string

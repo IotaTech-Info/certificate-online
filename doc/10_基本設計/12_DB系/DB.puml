@@ -3,7 +3,7 @@
 !define RELATION(title,desc) class title as "desc" << (R,#FFAAAA) >>
 
 ' 实体：用户
-TABLE(user, "用户") {
+TABLE(user, "ユーザー") {
   +id: INT [PK]
   --
   username: VARCHAR(255)
@@ -13,7 +13,7 @@ TABLE(user, "用户") {
 }
 
 ' 实体：证书
-TABLE(certificate, "证书") {
+TABLE(certificate, "資格証") {
   +id: INT [PK]
   --
   user_id: INT [FK]
@@ -21,18 +21,19 @@ TABLE(certificate, "证书") {
   name: VARCHAR(255)
   issue_date: DATE
   expiry_date: DATE
+  status: ENUM('拒绝','承认','待审核')
   file_path: VARCHAR(255)
 }
 
 ' 实体：证书类别
-TABLE(category, "证书类别") {
+TABLE(category, "資格証の種類") {
   +id: INT [PK]
   --
   name: VARCHAR(255)
 }
 
 ' 实体：通知
-TABLE(notification, "通知") {
+TABLE(notification, "通知メール") {
   +id: INT [PK]
   --
   user_id: INT [FK]
@@ -43,15 +44,13 @@ TABLE(notification, "通知") {
 }
 
 ' 关系：用户与证书
-user "1" -- "N" certificate : 证书持有者
+user "1" -- "N" certificate : 役員持ちの資格証
 
 ' 关系：证书与类别
-category "1" -- "N" certificate : 类别
+category "1" -- "N" certificate : 種類分別
 
 ' 关系：通知与用户
-user "1" -- "N" notification : 接收者
+user "1" -- "N" notification : メール通信
 
-' 关系：通知与证书
-certificate "1" -- "N" notification : 相关证书
 
 @enduml
