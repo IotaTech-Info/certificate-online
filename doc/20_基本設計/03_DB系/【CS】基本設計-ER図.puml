@@ -1,0 +1,71 @@
+@startuml
+
+skinparam monochrome true
+
+package "[Team-B]Certification System" <<rectangle>> {
+  package "Employee" <<rectangle>> {
+    ' テーブル
+    entity "employee_info" {
+      + employee_code [PK] : integer
+      ==
+      lastname : character varying
+      firstname : character varying
+      birthday : character varying
+      sex : character varying
+      city : character varying
+      create_datetime : timestamp without time zone
+      update_datetime : timestamp without time zone
+      department: character varying
+      position:	character varying
+      superior_employee_code[FK]:integer	
+
+    }
+    entity "login" {
+      + employee_code[PK] : integer
+      ==
+      mail : character varying
+      password : character varying
+      create_datetime : timestamp without time zone
+      update_datetime : timestamp without time zone
+      permission : character varying
+    }
+    entity "event" {
+      + employee_code[PK] : integer
+      ==
+      operation_datetime : timestamp without time zone
+      operation_type : character varying
+    }
+    ' リレーション
+    employee_info --|| certification_registration
+    employee_info  ||--||  login
+    login --|{ event
+  }
+
+  package "Certification" <<rectangle>>{
+    ' テーブル
+    entity "certification_info" {
+      + certification_id [PK] : integer
+      ==
+      certification_name : character varying	
+      expiration_date : integer
+      issuing_authority : character varying		
+      certification_level : character varying		
+
+    }
+    entity "certification_registration" {
+      + registration_id [PK] : integer
+      ==
+      employee_code[FK] : integer
+      certification_id[FK] : character varying
+      create_datetime : timestamp without time zone
+      update_datetime : timestamp without time zone
+      approval_status : character varying
+      approver_code [FK]: integer
+    }
+
+  }
+
+  ' リレーション
+   certification_info --|| certification_registration
+}
+@enduml
