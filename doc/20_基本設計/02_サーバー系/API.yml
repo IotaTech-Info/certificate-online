@@ -1,0 +1,409 @@
+'/examlist':
+    get:
+      tags:
+        - TEXT
+      summary: テスト情報を獲得
+      description: テストに関する情報を獲得。
+      parameters: []
+      responses:
+        '200':
+          description: テスト情報を獲得成功
+          content:
+            application/json:
+              schema:
+                type: array
+                properties:
+                  test_id:
+                    type: integer
+                  test_category:
+                    type: string
+                  test_name:
+                    type: string
+                  description:
+                    type: string
+                example:
+                  result:
+                    code: EXAMLISTGET200
+                    message: Success
+                  examlist:
+                  -
+                    test_id: 1
+                    test_category: 'Oracle認定Javaプログラマ'
+                    test_name: 'Java SE Bronze'
+                    description: 'Oracle Certified Java Programmer, 
+                      Bronze SE 認定資格は、言語未経験者向けの入門資格で 
+                      Java 言語を使用したオブジェクト指向プログラミングの基本的な知識を
+                      有すること を評価することを目的としています。'
+                  -
+                    test_id: 2
+                    test_category: '情報処理技術者試験'
+                    test_name: '基本情報技術者試験'
+                    description: '基本情報技術者試験の対象者は
+                      高度IT人材となるために必要な基本的知識・技能をもち、
+                      実践的な活用能力を身に付けた者です'
+                  -
+                    test_id: 3
+                    test_category: 'AWS資格証'
+                    test_name: 'AWS Certified Cloud Practitioner'
+                    description: 'AWS Certified Cloud Practitioner は、
+                      AWS プラットフォームの基本的な知識をお持ちの方を対象としています。
+                      組織がクラウドイニシアチブを実装するための重要な知識を持つ人材を
+                      特定して育成するのに役立ちます。
+                      AWS Certified Cloud Practitioner を取得することで、
+                      クラウドへの理解と基礎的な AWS の知識が認定されます。'
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+
+  '/examdetail/{test_id}':
+    get:
+      tags:
+        - TEXT
+      summary: テスト内容を獲得
+      description: テストの内容を獲得。
+      parameters: 
+        - name: test_id
+          in: path
+          description: ユーザID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: テストの内容を獲得成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  test_name:
+                    type: string
+                  question:
+                    type: array
+                    properties:
+                      question_id:
+                        type: integer
+                      question_text:
+                        type: string
+                      code:
+                        type: string
+                      right_select_count:
+                        type: integer
+                      option:
+                        type: array
+                        properties:
+                          option_id:
+                            type: integer
+                          option_text:
+                            type: string
+                          right_or_wrong:
+                            type: boolean
+                example:
+                  result:
+                    code: EXAMDETAILGET200
+                    message: Success
+                  examdetail:
+                    test_name: 'Java SE Bronze'
+                    questionlist:
+                    -
+                      question_id: 1
+                      question_text: '次のようなAクラスとBクラスが定義されている。
+                          Main.javaファイルのコンパイル後に生成されるクラスはどれか。
+                          正しいものを選びなさい。（1つ選択）'
+                      code: 'public class A { }
+                        public class B extends A {}
+                        public class Main {
+                          public static void main(String[] args) {
+                            A a = new A();
+                          }
+                        }'
+                      right_select_count: 1
+                      optionlist:
+                      -
+                        option_id: 1
+                        option_text: 'Aクラス '
+                        right_or_wrong: false
+                      -
+                        option_id: 2
+                        option_text: 'Aクラス、Mainクラス '
+                        right_or_wrong: true
+                      -
+                        option_id: 3
+                        option_text: 'Aクラス、Bクラス、Mainクラス '
+                        right_or_wrong: false
+                      -
+                        option_id: 4
+                        option_text: 'Aクラス、Bクラス '
+                        right_or_wrong: false
+                    -
+                      question_id: 2
+                      question_text: '次のプログラムの2行目に挿入するコードとして、
+                          正しいものを選びなさい。（2つ選択）'
+                      code: 'public interface Sample {
+                              // insert code here
+                            }'
+                      right_select_count: 2
+                      optionlist:
+                      -
+                        option_id: 1
+                        option_text: 'String name;'
+                        right_or_wrong: false
+                      -
+                        option_id: 2
+                        option_text: 'private void setName(String name);'
+                        right_or_wrong: false
+                      -
+                        option_id: 3
+                        option_text: 'void getName();'
+                        right_or_wrong: true
+                      -
+                        option_id: 4
+                        option_text: 'public static void sayHello(String name);'
+                        right_or_wrong: false
+                      -
+                        option_id: 5
+                        option_text: 'public void print();'
+                        right_or_wrong: true
+                    -
+                      question_id: 3
+                      question_text: '次のうち、クラス宣言として有効なものを選びなさい。（3つ選択）'
+                      code: ''
+                      right_select_count: 3
+                      optionlist:
+                      -
+                        option_id: 1
+                        option_text: 'public class A {}'
+                        right_or_wrong: true
+                      -
+                        option_id: 2
+                        option_text: 'class B extends java.lang.Object {}'
+                        right_or_wrong: true
+                      -
+                        option_id: 3
+                        option_text: 'public class C extends java.lang.* {}'
+                        right_or_wrong: false
+                      -
+                        option_id: 4
+                        option_text: 'final class D {}'
+                        right_or_wrong: true
+                      -
+                        option_id: 5
+                        option_text: 'public class E implements Object {}'
+                        right_or_wrong: false
+                    -
+                      question_id: 4
+                      question_text: '次のプログラムをコンパイル、実行したときの結果として、
+                          正しいものを選びなさい。（1つ選択）'
+                      code: 'public class Main {
+                              public static void main(String[] args) {
+                                System.out.println(args[0] + args[1]);
+                              }
+                            }
+                            【実行方法】
+                            java Main test'
+                      right_select_count: 1
+                      optionlist:
+                      -
+                        option_id: 1
+                        option_text: '「test」と表示される'
+                        right_or_wrong: false
+                      -
+                        option_id: 2
+                        option_text: '「Main test」と表示される'
+                        right_or_wrong: false
+                      -
+                        option_id: 3
+                        option_text: '「test null」と表示される'
+                        right_or_wrong: false
+                      -
+                        option_id: 4
+                        option_text: '実行時に例外がスローされる'
+                        right_or_wrong: true
+        '404':
+          description: test_id存在しない。
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: EXAMDETAILGET404
+                    message: TEST Not Found.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+
+  '/answer/{user_id}/{test_id}':
+    get:
+      tags:
+        - TEXT
+      summary: ユーザーの回答と結果を獲得
+      description: ユーザーの回答と結果を獲得
+      parameters: 
+        - name: user_id
+          in: path
+          description: ユーザID
+          required: true
+          schema:
+            type: string
+        - name: test_id
+          in: path
+          description: ユーザID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ユーザーの回答と結果を獲得成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  test_name:
+                    type: string
+                  test_result:
+                    type: integer
+                  answerlist:
+                    type: array
+                    properties:
+                      question_id:
+                        type: integer
+                      user_answer_option:
+                        type: string
+                      user_answer_right_or_wrong:
+                        type: boolean
+                      correct_answer:
+                        type: string
+                example:
+                  result:
+                    code: ANSWERGET200
+                    message: Success
+                  answerdetail:
+                    test_name: 'Java SE Bronze'
+                    test_result: 98
+                    answerlist:
+                    -
+                      question_id: 1
+                      user_answer_option: '2'
+                      user_answer_right_or_wrong: true
+                      correct_answer: '2'
+                    -
+                      question_id: 2
+                      user_answer_option: '3,5'
+                      user_answer_right_or_wrong: true
+                      correct_answer: '3,5'
+                    -
+                      question_id: 3
+                      user_answer_option: '1,2,4'
+                      user_answer_right_or_wrong: true
+                      correct_answer: '1,2,4'
+                    -
+                      question_id: 4
+                      user_answer_option: '2'
+                      user_answer_right_or_wrong: false
+                    correct_answer: '4'
+        '404':
+          description: exam_event_id存在しない。
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: ANSWERPOSTGET404
+                    message: TEST_EVENT Not Found.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+                
+    post:
+      tags:
+        - TEXT
+      summary: ユーザーの回答を登録
+      description: データベースへユーザーの回答を登録
+      parameters: 
+        - name: user_id
+          in: path
+          description: ユーザID
+          required: true
+          schema:
+            type: string
+        - name: test_id
+          in: path
+          description: ユーザID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: ユーザーの回答を登録
+        content:
+          application/json:
+            schema:
+              required:
+                - answer
+              properties:
+                answer:
+                  type: array
+                  properties:
+                    question_id:
+                      type: integer
+                    user_answer_option:
+                      type: string
+            example:
+                answer:
+                -
+                  question_id: 1
+                  user_answer_option: "2"
+                -
+                  question_id: 2
+                  user_answer_option: "3,5"
+                -
+                  question_id: 3
+                  user_answer_option: "1,2,4"
+                -
+                  question_id: 4
+                  user_answer_option: "2"
+      responses:
+        '200':
+          description: ユーザーの回答を登録成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: ANSWERPOST200
+                    message: Success
+        '404':
+          description: USER_IDまたはTEST_EVENT存在しない。
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: ANSWERPOST404
+                    message: USER OR TEST_EVENT Not Found.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result' 
