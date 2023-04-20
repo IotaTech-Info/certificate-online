@@ -1,0 +1,161 @@
+openapi: 3.0.0
+info:
+  title: 在线员工证书登录系统 API
+  version: 1.0.0
+servers:
+  - url: 'https://api.example.com/v1'
+paths:
+  /auth/login:
+    post:
+      summary: 用户登录
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employeeID:
+                  type: string
+      responses:
+        '200':
+          description: 登录成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+        '400':
+          description: 无效的请求参数
+        '401':
+          description: 无效的用户名或密码
+
+  /certificates:
+    get:
+      summary: 查询证书类型
+      responses:
+        '200':
+          description: 证书列表
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    cert_id:
+                      type: integer
+                    category_id:
+                      type: integer
+                    name:
+                      type: string
+                    issue_date:
+                      type: string
+                      format: date
+                    expiry_date:
+                      type: string
+                      format: date
+                    file_path:
+                      type: string
+        '401':
+          description: 未授权访问
+
+    post:
+      summary: 上传新证书
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                category_id:
+                  type: integer
+                name:
+                  type: string
+                upload_date:
+                  type: string
+                  format: date
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: 证书已成功上传
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+        '400':
+          description: 无效的请求参数
+        '401':
+          description: 未授权访问
+
+  /certificates/{id}:
+    post:
+      summary: 获取证书详情
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 证书列表
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    cert_id:
+                      type: integer
+                    category_id:
+                      type: integer
+                    upload_date:
+                      type: string
+                      format: date
+                    expiry_date:
+                      type: string
+                      format: date
+                    file_path:
+                      type: string
+  /show_certificates:
+    post:
+      summary: 部下資格の保有
+      parameters:
+        - name: faculty_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 证书列表
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    cert_id:
+                      type: integer
+                    user_id:
+                      type: string
+                      format: json
+                    upload_date:
+                      type: string
+                      format: date
+                    expiry_date:
+                      type: string
+                      format: date
