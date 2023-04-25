@@ -299,7 +299,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Result'            
 
-  '/userinfo/{user_id}':
+  '/employee_info/{registration_id_id}':
     get:
       tags:
         - USER
