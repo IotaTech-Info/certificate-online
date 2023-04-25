@@ -349,47 +349,47 @@ paths:
               schema:
                 $ref: '#/components/schemas/Result'
 
-    delete:
-      tags:
-        - USER
-      summary: ユーザー情報削除
-      description: データベースからユーザー情報を削除。
-      parameters: 
-        - name: user_id
-          in: path
-          description: ユーザID
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: ユーザー情報を削除成功
-          content:
-            application/json:
-              schema:
-                type: string
-                format: json
-                example:
-                  result:
-                    code: USERINFODELETE200
-                    message: Success
-        '404':
-          description: USER_IDが存在しない。
-          content:
-            application/json:
-              schema:
-                type: string
-                format: json
-                example:
-                  result:
-                    code: USERINFODELETE404
-                    message: USER Not Found.
-        '500':
-          description: 予期せぬエラー
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Result'
+    # delete:
+    #   tags:
+    #     - USER
+    #   summary: ユーザー情報削除
+    #   description: データベースからユーザー情報を削除。
+    #   parameters: 
+    #     - name: user_id
+    #       in: path
+    #       description: ユーザID
+    #       required: true
+    #       schema:
+    #         type: string
+    #   responses:
+    #     '200':
+    #       description: ユーザー情報を削除成功
+    #       content:
+    #         application/json:
+    #           schema:
+    #             type: string
+    #             format: json
+    #             example:
+    #               result:
+    #                 code: USERINFODELETE200
+    #                 message: Success
+    #     '404':
+    #       description: USER_IDが存在しない。
+    #       content:
+    #         application/json:
+    #           schema:
+    #             type: string
+    #             format: json
+    #             example:
+    #               result:
+    #                 code: USERINFODELETE404
+    #                 message: USER Not Found.
+    #     '500':
+    #       description: 予期せぬエラー
+    #       content:
+    #         application/json:
+    #           schema:
+    #             $ref: '#/components/schemas/Result'
 
 
 
