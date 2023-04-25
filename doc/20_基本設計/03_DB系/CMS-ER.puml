@@ -12,6 +12,17 @@ package "CMS" <<rectangle>> {
       create_datetime : timestamp without time zone
       update_datetime : timestamp without time zone
     }
+    entity "certificate_plan_event"{
+      + certificate_plan_id [PK] : integer
+      ==
+      employee_id [FK] : integer
+      name : character varying
+      certificate_name_plan : character varying
+      test_time : timestamp without time zone
+      result_time : timestamp without time zone
+      create_datetime : timestamp without time zone
+      update_datetime : timestamp without time zone
+    }
     entity "certificate_result" {
       + certificate_id [PK] : integer
       ==
@@ -38,31 +49,29 @@ package "CMS" <<rectangle>> {
       logout_datetime : timestamp without time zone
     }
 
+
     ' リレーション
+    userinfo --|{ certificate_plan_event
     userinfo ||--|| login
     userinfo --|{ certificate_result
     login --|{ login_event
+
   }
 
-  package "plan" <<rectangle>>{
+  package "certificate_info" <<rectangle>>{
     ' テーブル
-    entity "certificate_plan_event"{
-      + certificate_plan_id [PK] : integer
+    entity "certificate_info" {
+      + certificate_id [PK] : integer
       ==
-      employee_id [FK] : integer
-      name : character varying
-      certificate_name_plan : character varying
-      test_time : timestamp without time zone
-      result_time : timestamp without time zone
-      create_datetime : timestamp without time zone
-      update_datetime : timestamp without time zone
+      certificate_name : character varying
     }
+
 
   }
 
 
   ' リレーション
-  userinfo --|{ certificate_plan_event
+userinfo --|{ certificate_info
 
 }
 @enduml
