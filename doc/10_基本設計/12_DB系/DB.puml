@@ -30,6 +30,7 @@ TABLE(category, "資格証の種類") {
   +id: INT [PK]
   --
   name: VARCHAR(255)
+  tag: VARCHAR(255)
 }
 
 ' 实体：通知

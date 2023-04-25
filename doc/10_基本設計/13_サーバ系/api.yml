@@ -5,7 +5,7 @@ info:
 servers:
   - url: 'https://api.example.com/v1'
 paths:
-  /users:
+  /login:
     post:
       requestBody:
         required: true
@@ -20,7 +20,7 @@ paths:
                   type: string
                 email:
                   type: string
-                role:
+                type:
                   type: string
                   enum: ['社員', '上司']
       responses:
@@ -42,39 +42,8 @@ paths:
                 properties:
                   message:
                     type: string
-
-  /users/{id}/certificates:
-    get:
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: 成功
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    name:
-                      type: string
-                    issue_date:
-                      type: string
-                      format: date
-                    expiry_date:
-                      type: string
-                      format: date
-                    file_path:
-                      type: string
-        '404':
-          description: 用户未找到
+        '500':
+          description: 未知错误
           content:
             application/json:
               schema:
@@ -82,100 +51,4 @@ paths:
                 properties:
                   message:
                     type: string
-
-    post:
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                category_id:
-                  type: integer
-                name:
-                  type: string
-                issue_date:
-                  type: string
-                  format: date
-                expiry_date:
-                  type: string
-                  format: date
-                file_path:
-                  type: string
-      responses:
-        '201':
-          description: 成功
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-        '400':
-          description: 请求参数错误
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-        '404':
-          description: 用户未找到
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-
-  /certificates/{id}:
-    get:
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: 成功
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  user_id:
-                    type: integer
-                  category_id:
-                    type: integer
-                  name:
-                    type: string
-                  issue_date:
-                    type: string
-                    format: date
-                  expiry_date:
-                    type: string
-                    format: date
-                  file_path:
-                    type: string
-        '404':
-          description: 证书未找到
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
+              
