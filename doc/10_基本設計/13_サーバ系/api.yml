@@ -259,6 +259,102 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Result'
+  '/upload':
+    post:
+      tags:
+        - UPLOAD
+      summary: 資格証種類、取得日、有効期限を選択し、証書をアップロード
+      description: 資格証種類、取得日、有効期限を選択し、証書をアップロード
+      requestBody:
+        description: 資格証種類、取得日、有効期限を選択し、証書をアップロード
+        content:
+          application/json:
+            schema:
+              required:
+                - upType
+                - upDateOfAcquisition
+                - upUpload
+              properties:
+                upType:
+                  type: string
+                upDateOfAcquisition:
+                  type: string
+                upExpirationDate:
+                  type: string
+                upUpload:
+                  type: string
+                  description: 画像                
+            example:
+              upType: '基本情報技術者試験'
+              upDateOfAcquisition: '20230411'
+              upExpirationDate: '20240525'
+              upUpload: '証明書ファイル'
+      responses:
+        '200':
+          description: アップロード情報の取得に成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Result"
+                example:
+                  result:
+                    code: LOGINPOST200
+                    message: Success
+                  
+        '400':
+          description: リクエストエラー
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: LOGINPOST400
+                    message: request error.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+  '/getdata':
+    post:
+      tags:
+        - GETDATE
+      summary: 資格証種類、取得日、有効期限のリストを取得
+      description: 資格証種類、取得日、有効期限のリストを取得
+      parameters: []
+      responses:
+        '200':
+          description: リスト情報の取得に成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Result"
+                example:
+                  result:
+                    code: LOGINPOST200
+                    message: Success
+                  
+        '400':
+          description: リクエストエラー
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: LOGINPOST400
+                    message: request error.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
 
 components:
   schemas:
