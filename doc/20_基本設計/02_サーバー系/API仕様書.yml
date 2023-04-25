@@ -43,7 +43,7 @@ paths:
                     code: LOGINPOST200
                     message: Success
                   userinfo:
-                    registration_id: 1
+                    employee_code: 1
                     lastname: 'seiyo'
                     firstname: 'koya'
         '400':
@@ -64,190 +64,190 @@ paths:
               schema:
                 $ref: '#/components/schemas/Result'
 
-    put:
-      tags:
-        - USER
-      summary: パスワード更新
-      description: ユーザーのパスワード更新。
-      parameters: []
-      requestBody:
-        description: パスワードを更新
-        content:
-          application/json:
-            schema:
-              required:
-                - user_id
-                - oldpassword
-                - newpassword
-              properties:
-                user_id:
-                  type: integer
-                oldpassword:
-                  type: string
-                newpassword:
-                  type: string
-            example:
-              user_id: 1
-              oldpassword: '123456'
-              newpassword: '987654'
-      responses:
-        '200':
-          description: パスワードを更新成功
-          content:
-            application/json:
-              schema:
-                type: string
-                format: json
-                example:
-                  result:
-                    code: LOGINPUT200
-                    message: Success
-        '400':
-          description: パスワードが間違っている
-          content:
-            application/json:
-              schema:
-                type: string
-                format: json
-                example:
-                  result:
-                    code: LOGINPUT400
-                    message: Password is wrong.
-        '500':
-          description: 予期せぬエラー
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Result'
+  #   put:
+  #     tags:
+  #       - USER
+  #     summary: パスワード更新
+  #     description: ユーザーのパスワード更新。
+  #     parameters: []
+  #     requestBody:
+  #       description: パスワードを更新
+  #       content:
+  #         application/json:
+  #           schema:
+  #             required:
+  #               - user_id
+  #               - oldpassword
+  #               - newpassword
+  #             properties:
+  #               user_id:
+  #                 type: integer
+  #               oldpassword:
+  #                 type: string
+  #               newpassword:
+  #                 type: string
+  #           example:
+  #             user_id: 1
+  #             oldpassword: '123456'
+  #             newpassword: '987654'
+  #     responses:
+  #       '200':
+  #         description: パスワードを更新成功
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: LOGINPUT200
+  #                   message: Success
+  #       '400':
+  #         description: パスワードが間違っている
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: LOGINPUT400
+  #                   message: Password is wrong.
+  #       '500':
+  #         description: 予期せぬエラー
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/Result'
 
 
-  '/userinfo':
-    post:
-      tags:
-        - USER
-      summary: ユーザー情報登録
-      description: ユーザー情報を入力し、データベースへユーザー情報を登録。
-      parameters: []
-      requestBody:
-        description: ユーザー情報を登録
-        content:
-          application/json:
-            schema:
-              required:
-                - mail
-                - password
-                - lastname
-                - firstname
-                - birthday
-                - sex
-                - city
-              properties:
-                mail:
-                  type: string
-                password:
-                  type: string
-                lastname:
-                  type: string
-                firstname:
-                  type: string
-                birthday:
-                  type: string
-                sex:
-                  type: string
-                company:
-                  type: string
-                city:
-                  type: string
-            example:
-              mail: 'wangxinyue@e-business.co.jp'
-              password: '123456'
-              lastname: 'xinyue'
-              firstname: 'wang'
-              birthday: '2022-05-12'
-              sex: '1'
-              company: 'e-·business'
-              city: '東京都港区'
-      responses:
-        '200':
-          description: 新しいユーザ情報を登録成功
-          content:
-            application/json:
-              schema:
-                type: string
-                format: json
-                example:
-                  result:
-                    code: USERINFOPOST200
-                    message: Success
-        '500':
-          description: 予期せぬエラー
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Result'
+  # '/userinfo':
+  #   post:
+  #     tags:
+  #       - USER
+  #     summary: ユーザー情報登録
+  #     description: ユーザー情報を入力し、データベースへユーザー情報を登録。
+  #     parameters: []
+  #     requestBody:
+  #       description: ユーザー情報を登録
+  #       content:
+  #         application/json:
+  #           schema:
+  #             required:
+  #               - mail
+  #               - password
+  #               - lastname
+  #               - firstname
+  #               - birthday
+  #               - sex
+  #               - city
+  #             properties:
+  #               mail:
+  #                 type: string
+  #               password:
+  #                 type: string
+  #               lastname:
+  #                 type: string
+  #               firstname:
+  #                 type: string
+  #               birthday:
+  #                 type: string
+  #               sex:
+  #                 type: string
+  #               company:
+  #                 type: string
+  #               city:
+  #                 type: string
+  #           example:
+  #             mail: 'wangxinyue@e-business.co.jp'
+  #             password: '123456'
+  #             lastname: 'xinyue'
+  #             firstname: 'wang'
+  #             birthday: '2022-05-12'
+  #             sex: '1'
+  #             company: 'e-·business'
+  #             city: '東京都港区'
+  #     responses:
+  #       '200':
+  #         description: 新しいユーザ情報を登録成功
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: USERINFOPOST200
+  #                   message: Success
+  #       '500':
+  #         description: 予期せぬエラー
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/Result'
 
-    put:
-      tags:
-        - USER
-      summary: ユーザー情報更新
-      description: ユーザー情報を入力し、データベースへユーザー情報を更新。
-      parameters: []
-      requestBody:
-        description: ユーザー情報を更新
-        content:
-          application/json:
-            schema:
-              required:
-                - user_id
-              properties:
-                user_id:
-                  type: integer
-                lastname:
-                  type: string
-                firstname:
-                  type: string
-                sex:
-                  type: string
-                company:
-                  type: string
-                city:
-                  type: string
-            example:
-              user_id: 1
-              lastname: 'xinyue'
-              firstname: 'wang'
-              sex: '1'
-              company: 'e-·business'
-              city: '東京都港区'
-      responses:
-        '200':
-          description: ユーザー情報を更新成功
-          content:
-            application/json:
-              schema:
-                type: string
-                format: json
-                example:
-                  result:
-                    code: USERINFOPUT200
-                    message: Success
-        '404':
-          description: USER_IDが存在しない。
-          content:
-            application/json:
-              schema:
-                type: string
-                format: json
-                example:
-                  result:
-                    code: USERINFOPUT404
-                    message: USER Not Found.
-        '500':
-          description: 予期せぬエラー
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Result'
+  #   put:
+  #     tags:
+  #       - USER
+  #     summary: ユーザー情報更新
+  #     description: ユーザー情報を入力し、データベースへユーザー情報を更新。
+  #     parameters: []
+  #     requestBody:
+  #       description: ユーザー情報を更新
+  #       content:
+  #         application/json:
+  #           schema:
+  #             required:
+  #               - user_id
+  #             properties:
+  #               user_id:
+  #                 type: integer
+  #               lastname:
+  #                 type: string
+  #               firstname:
+  #                 type: string
+  #               sex:
+  #                 type: string
+  #               company:
+  #                 type: string
+  #               city:
+  #                 type: string
+  #           example:
+  #             user_id: 1
+  #             lastname: 'xinyue'
+  #             firstname: 'wang'
+  #             sex: '1'
+  #             company: 'e-·business'
+  #             city: '東京都港区'
+  #     responses:
+  #       '200':
+  #         description: ユーザー情報を更新成功
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: USERINFOPUT200
+  #                   message: Success
+  #       '404':
+  #         description: USER_IDが存在しない。
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: USERINFOPUT404
+  #                   message: USER Not Found.
+  #       '500':
+  #         description: 予期せぬエラー
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/Result'
 
   '/certification_info':
     post:
@@ -299,7 +299,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Result'            
 
-  '/userinfo/{user_id}':
+  '/employee_info/{registration_id_id}':
     get:
       tags:
         - USER
@@ -349,47 +349,47 @@ paths:
               schema:
                 $ref: '#/components/schemas/Result'
 
-    delete:
-      tags:
-        - USER
-      summary: ユーザー情報削除
-      description: データベースからユーザー情報を削除。
-      parameters: 
-        - name: user_id
-          in: path
-          description: ユーザID
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: ユーザー情報を削除成功
-          content:
-            application/json:
-              schema:
-                type: string
-                format: json
-                example:
-                  result:
-                    code: USERINFODELETE200
-                    message: Success
-        '404':
-          description: USER_IDが存在しない。
-          content:
-            application/json:
-              schema:
-                type: string
-                format: json
-                example:
-                  result:
-                    code: USERINFODELETE404
-                    message: USER Not Found.
-        '500':
-          description: 予期せぬエラー
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Result'
+    # delete:
+    #   tags:
+    #     - USER
+    #   summary: ユーザー情報削除
+    #   description: データベースからユーザー情報を削除。
+    #   parameters: 
+    #     - name: user_id
+    #       in: path
+    #       description: ユーザID
+    #       required: true
+    #       schema:
+    #         type: string
+    #   responses:
+    #     '200':
+    #       description: ユーザー情報を削除成功
+    #       content:
+    #         application/json:
+    #           schema:
+    #             type: string
+    #             format: json
+    #             example:
+    #               result:
+    #                 code: USERINFODELETE200
+    #                 message: Success
+    #     '404':
+    #       description: USER_IDが存在しない。
+    #       content:
+    #         application/json:
+    #           schema:
+    #             type: string
+    #             format: json
+    #             example:
+    #               result:
+    #                 code: USERINFODELETE404
+    #                 message: USER Not Found.
+    #     '500':
+    #       description: 予期せぬエラー
+    #       content:
+    #         application/json:
+    #           schema:
+    #             $ref: '#/components/schemas/Result'
 
 
 
