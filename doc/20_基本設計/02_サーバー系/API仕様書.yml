@@ -349,6 +349,61 @@ paths:
               schema:
                 $ref: '#/components/schemas/Result'
 
+  '/certification_registration':
+    post:
+      tags:
+        - ADMINISTRATOR
+      summary: タスクの内容を承認
+      description: タスクの内容を承認
+      parameters: []
+      requestBody:
+        description: タスク詳細
+        content:
+          application/json:
+            schema:
+              required:
+                - lastname
+                - firstname
+                - employee_code
+                - certification_name
+                - expiration_date
+              properties:
+                lastname:
+                  type: string
+                firstname:
+                  type: string
+                employee_code:
+                  type: string
+                certification_name:
+                  type: string
+                cexpiration_date:
+                  type: string  
+            example:
+              lastname: 'koya'
+              firstname: 'seiyo'
+              employee_code: '1001'
+              certification_name: '情報処理技術者試験'
+              expiration_data: '2022-05-12'
+              
+      responses:
+        '200':
+          description: タスクの内容を承認成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: USERINFOPOST200
+                    message: Success
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'             
+
     # delete:
     #   tags:
     #     - USER
@@ -456,188 +511,7 @@ paths:
                 $ref: '#/components/schemas/Result'
 
 
-  '/examdetail/{test_id}':
-    get:
-      tags:
-        - TEXT
-      summary: テスト内容を獲得
-      description: テストの内容を獲得。
-      parameters: 
-        - name: test_id
-          in: path
-          description: ユーザID
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: テストの内容を獲得成功
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  test_name:
-                    type: string
-                  question:
-                    type: array
-                    properties:
-                      question_id:
-                        type: integer
-                      question_text:
-                        type: string
-                      code:
-                        type: string
-                      right_select_count:
-                        type: integer
-                      option:
-                        type: array
-                        properties:
-                          option_id:
-                            type: integer
-                          option_text:
-                            type: string
-                          right_or_wrong:
-                            type: boolean
-                example:
-                  result:
-                    code: EXAMDETAILGET200
-                    message: Success
-                  examdetail:
-                    test_name: 'Java SE Bronze'
-                    questionlist:
-                    -
-                      question_id: 1
-                      question_text: '次のようなAクラスとBクラスが定義されている。
-                          Main.javaファイルのコンパイル後に生成されるクラスはどれか。
-                          正しいものを選びなさい。（1つ選択）'
-                      code: 'public class A { }
-                        public class B extends A {}
-                        public class Main {
-                          public static void main(String[] args) {
-                            A a = new A();
-                          }
-                        }'
-                      right_select_count: 1
-                      optionlist:
-                      -
-                        option_id: 1
-                        option_text: 'Aクラス '
-                        right_or_wrong: false
-                      -
-                        option_id: 2
-                        option_text: 'Aクラス、Mainクラス '
-                        right_or_wrong: true
-                      -
-                        option_id: 3
-                        option_text: 'Aクラス、Bクラス、Mainクラス '
-                        right_or_wrong: false
-                      -
-                        option_id: 4
-                        option_text: 'Aクラス、Bクラス '
-                        right_or_wrong: false
-                    -
-                      question_id: 2
-                      question_text: '次のプログラムの2行目に挿入するコードとして、
-                          正しいものを選びなさい。（2つ選択）'
-                      code: 'public interface Sample {
-                              // insert code here
-                            }'
-                      right_select_count: 2
-                      optionlist:
-                      -
-                        option_id: 1
-                        option_text: 'String name;'
-                        right_or_wrong: false
-                      -
-                        option_id: 2
-                        option_text: 'private void setName(String name);'
-                        right_or_wrong: false
-                      -
-                        option_id: 3
-                        option_text: 'void getName();'
-                        right_or_wrong: true
-                      -
-                        option_id: 4
-                        option_text: 'public static void sayHello(String name);'
-                        right_or_wrong: false
-                      -
-                        option_id: 5
-                        option_text: 'public void print();'
-                        right_or_wrong: true
-                    -
-                      question_id: 3
-                      question_text: '次のうち、クラス宣言として有効なものを選びなさい。（3つ選択）'
-                      code: ''
-                      right_select_count: 3
-                      optionlist:
-                      -
-                        option_id: 1
-                        option_text: 'public class A {}'
-                        right_or_wrong: true
-                      -
-                        option_id: 2
-                        option_text: 'class B extends java.lang.Object {}'
-                        right_or_wrong: true
-                      -
-                        option_id: 3
-                        option_text: 'public class C extends java.lang.* {}'
-                        right_or_wrong: false
-                      -
-                        option_id: 4
-                        option_text: 'final class D {}'
-                        right_or_wrong: true
-                      -
-                        option_id: 5
-                        option_text: 'public class E implements Object {}'
-                        right_or_wrong: false
-                    -
-                      question_id: 4
-                      question_text: '次のプログラムをコンパイル、実行したときの結果として、
-                          正しいものを選びなさい。（1つ選択）'
-                      code: 'public class Main {
-                              public static void main(String[] args) {
-                                System.out.println(args[0] + args[1]);
-                              }
-                            }
-                            【実行方法】
-                            java Main test'
-                      right_select_count: 1
-                      optionlist:
-                      -
-                        option_id: 1
-                        option_text: '「test」と表示される'
-                        right_or_wrong: false
-                      -
-                        option_id: 2
-                        option_text: '「Main test」と表示される'
-                        right_or_wrong: false
-                      -
-                        option_id: 3
-                        option_text: '「test null」と表示される'
-                        right_or_wrong: false
-                      -
-                        option_id: 4
-                        option_text: '実行時に例外がスローされる'
-                        right_or_wrong: true
-        '404':
-          description: test_id存在しない。
-          content:
-            application/json:
-              schema:
-                type: string
-                format: json
-                example:
-                  result:
-                    code: EXAMDETAILGET404
-                    message: TEST Not Found.
-        '500':
-          description: 予期せぬエラー
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Result'
-
+  
 
   '/answer/{user_id}/{test_id}':
     get:
