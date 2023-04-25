@@ -825,4 +825,4 @@ components:
               type: string
           example:
             code: 'XXX999(XX:機能分類コード)'
-            message: unexpected error.
+            message: unexpected error.koya
