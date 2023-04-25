@@ -43,9 +43,9 @@ paths:
                     code: LOGINPOST200
                     message: Success
                   userinfo:
-                    user_id: 1
-                    lastname: 'xinyue'
-                    firstname: 'wang'
+                    registration_id: 1
+                    lastname: 'seiyo'
+                    firstname: 'koya'
         '400':
           description: アカウントが存在しない。もしくはパスワードが間違っている
           content:
@@ -306,9 +306,9 @@ paths:
       summary: ユーザー情報獲得
       description: データベースからユーザー情報を獲得。
       parameters: 
-        - name: user_id
+        - name: registration_id
           in: path
-          description: ユーザID
+          description: 会員ID
           required: true
           schema:
             type: string
@@ -325,12 +325,11 @@ paths:
                     code: USERINFOGET200
                     message: Success
                   userinfo:
-                    mail: 'wangxinyue@e-business.co.jp'
                     lastname: 'xinyue'
                     firstname: 'wang'
-                    birthday: '2022-05-12'
+                    employee_code: '1001'
                     sex: '1'
-                    company: 'e-·business'
+                    birthday: '2022-05-12'
                     city: '東京都港区'
         '404':
           description: USER_IDが存在しない。
@@ -825,4 +824,4 @@ components:
               type: string
           example:
             code: 'XXX999(XX:機能分類コード)'
-            message: unexpected error.koya
+            message: unexpected error.
