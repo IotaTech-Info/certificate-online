@@ -1,9 +1,10 @@
-openapi: 3.0.0
 info:
-  title: 在线员工证书登录系统 API
+  title: EL-PRO API
+  description: EL-PRO API.
   version: 1.0.0
 servers:
-  - url: 'https://api.example.com/v1'
+  - url: 'https://127.0.0.1/el-pro/api/0.0.1'
+    description: Back end server
 paths:
   /login:
     post:
@@ -51,4 +52,237 @@ paths:
                 properties:
                   message:
                     type: string
-              
+  '/一般社员':
+    post:
+      tags:
+        - USER
+      summary: 資格証アップロード
+      description: 取得した資格証をアップロードする。
+      parameters: []
+      requestBody:
+        description: ログインユーザのアカウントとパスワードを設定
+        content:
+          application/json:
+            schema:
+              required:
+                - userid
+                - accesstime
+                - file
+              properties:
+                userid:
+                  type: string
+                accesstime:
+                  type: integer
+                file:
+                  type: object
+            example:
+              userid: 'jiyi@e-business.co.jp'
+              accesstime: 20230425
+              file:
+      responses:
+        '200':
+          description: 資格証のアップロードに成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: UPLOADPOST200
+                    message: Success
+                 
+                 
+        '400':
+          description: ファイル形式が間違っています。
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: UPLOADPOST400
+                    message: The file format is incorrect.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: UPLOADPOST500
+                    message: unknown error.
+  '/leader01':
+    post:
+      tags:
+        - USER
+      summary: メッセージ
+      description: メッセージを取得。
+      parameters: []
+      requestBody:
+        description: ログインユーザのアカウントとパスワードを設定
+        content:
+          application/json:
+            schema:
+              required:
+                - userid
+                - accesstime
+              properties:
+                userid:
+                  type: string
+                accesstime:
+                  type: integer
+            example:
+              userid: 'zhangyurong@e-business.co.jp'
+              accesstime: 20230425
+
+      responses:
+        '200':
+          description: メッセージの取得が成功。
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: MESSAGEPOST200
+                    message: Success
+                  message:
+                    ''
+
+                    
+        '400':
+          description: ユーザーIDが存在しない。
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: MESSAGEPOST400
+                    message: User does not exist. 
+
+        '500':
+          description: error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  message:
+                    type: string
+                example:
+                  code: 'XXX999(XX:機能分類コード)'
+                  message: unexpected error.
+                  openapi: 3.0.0
+
+  '/cert_search':
+    post:
+      tags:
+        - certCategorySearch
+      summary: 資格種類の検索
+      description: 社員に向けの資格種類の検索
+      parameters: []
+      requestBody:
+        description: 何の種類の資格
+        content:
+          application/json:
+            schema:
+              required:
+                - certCategory
+              properties:
+                certCategory:
+                  type: string
+            example:
+              certCategory: '開発系'
+      responses:
+        '200':
+          description: 資格情報の取得に成功
+          content:
+            application/json:
+              schema:
+                type: array
+                properties:
+                  test_id:
+                    type: integer
+                  test_category:
+                    type: string
+                  test_name:
+                    type: string
+                  description:
+                    type: string
+                example:
+                  result:
+                    code: CERCATEGORYGET200
+                    message: Success
+                  examlist:
+                  -
+                    cert_id: 1
+                    cert_category: '開発系'
+                    cert_name: 'Java SE Bronze'
+                    description: 'Oracle Certified Java Programmer, 
+                      Bronze SE 認定資格は、言語未経験者向けの入門資格で 
+                      Java 言語を使用したオブジェクト指向プログラミングの基本的な知識を
+                      有すること を評価することを目的としています。'
+                  -
+                    cert_id: 2
+                    cert_category: '開発系'
+                    cert_name: 'AWS Certified Cloud Practitioner'
+                    description: 'AWS Certified Cloud Practitioner は、
+                      AWS プラットフォームの基本的な知識をお持ちの方を対象としています。
+                      組織がクラウドイニシアチブを実装するための重要な知識を持つ人材を
+                      特定して育成するのに役立ちます。
+                      AWS Certified Cloud Practitioner を取得することで、
+                      クラウドへの理解と基礎的な AWS の知識が認定されます。'
+
+        '400':
+          description: 該当する資格種類がない
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: CERTPOST400
+                    message: Certificates do not exist. 
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+components:
+  schemas:
+    Result:
+      type: object
+      required:
+        - code
+        - massage
+      properties:
+        result:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+          example:
+            code: 'XXX999(XX:機能分類コード)'
+            message: unexpected error.
+
+
+
+
+
+
+
+
