@@ -1,57 +1,75 @@
 @startuml
-!define TABLE(title,desc) class title as "desc" << (T,#FFAAAA) >>
-!define RELATION(title,desc) class title as "desc" << (R,#FFAAAA) >>
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define primary_key(x) <b>x</b>
+!define unique(x) <color:red>x</color>
+!define not_null(x) <u>x</u>
+!define foreign_key(x) <i>x</i>
 
-' 实体：用户
-TABLE(user, "ユーザー") {
-  +id: INT [PK]
-  --
-  username: VARCHAR(255)
-  password: VARCHAR(255)
-  email: VARCHAR(255)
-  role: ENUM('员工', '领导', '管理员')
+Table(users, "用户表") {
+    primary_key(id) : int <<generated>>
+    not_null(username) : varchar
+    not_null(password) : varchar
+    not_null(email) : varchar
+    not_null(type) : enum('社員', '上司')
 }
 
-' 实体：证书
-TABLE(certificate, "資格証") {
-  +id: INT [PK]
-  --
-  user_id: INT [FK]
-  category_id: INT [FK]
-  name: VARCHAR(255)
-  issue_date: DATE
-  expiry_date: DATE
-  status: ENUM('拒绝','承认','待审核')
-  file_path: VARCHAR(255)
+Table(certificates, "证书表") {
+    primary_key(id) : int <<generated>>
+    not_null(userid) : varchar
+    foreign_key(userid) -r-> users.id
+    not_null(accesstime) : int
+    not_null(file) : object
 }
 
-' 实体：证书类别
-TABLE(category, "資格証の種類") {
-  +id: INT [PK]
-  --
-  name: VARCHAR(255)
-  tag: VARCHAR(255)
+Table(messages, "消息表") {
+    primary_key(id) : int <<generated>>
+    not_null(userid) : varchar
+    foreign_key(userid) -r-> users.id
+    not_null(accesstime) : int
 }
 
-' 实体：通知
-TABLE(notification, "通知メール") {
-  +id: INT [PK]
-  --
-  user_id: INT [FK]
-  certificate_id: INT [FK]
-  content: TEXT
-  sent_date: DATETIME
-  status: ENUM('未读', '已读')
+Table(cert_categories, "证书类别表") {
+    primary_key(id) : int <<generated>>
+    not_null(certCategory) : varchar
 }
 
-' 关系：用户与证书
-user "1" -- "N" certificate : 役員持ちの資格証
+Table(cert_info, "证书信息表") {
+    primary_key(id) : int <<generated>>
+    not_null(cert_category_id) : int
+    foreign_key(cert_category_id) -r-> cert_categories.id
+    not_null(cert_name) : varchar
+    not_null(description) : text
+}
 
-' 关系：证书与类别
-category "1" -- "N" certificate : 種類分別
+Table(cert_holder_search, "证书持有者搜索表") {
+    primary_key(id) : int <<generated>>
+    not_null(cert_id) : int
+    foreign_key(cert_id) -r-> cert_info.id
+    not_null(user_id) : int
+    foreign_key(user_id) -r-> users.id
+}
 
-' 关系：通知与用户
-user "1" -- "N" notification : メール通信
+Table(subordinate_cert_view, "部下的证书查看表") {
+    primary_key(id) : int <<generated>>
+    not_null(cert_id) : int
+    foreign_key(cert_id) -r-> cert_info.id
+    not_null(user_id) : int
+    foreign_key(user_id) -r-> users.id
+    not_null(manager_id) : int
+    foreign_key(manager_id) -r-> users.id
+}
 
+Table(cert_review, "证书审核表") {
+    primary_key(id) : int <<generated>>
+    not_null(cert_id) : int
+    foreign_key(cert_id) -r-> certificates.id
+    not_null(manager_id) : int
+    foreign_key(manager_id) -r-> users.id
+    not_null(status) : enum('待审核', '批准', '拒绝')
+}
+
+users --|> messages : 用户_消息
+users --|> certificates : 用户_资格证书
+cert_categories --|> certificates : 资格种类_资格证书
 
 @enduml
