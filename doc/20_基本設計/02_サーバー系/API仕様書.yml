@@ -278,8 +278,8 @@ paths:
             example:
               certification_name: '情報処理技術者試験'
               expiration_data: '2022-05-12'
-              issue_authority: 'wang'
-              certification_level: 'IT・コンピュータ'
+              issue_authority: 'IPA'
+              certification_level: '2'
       responses:
         '200':
           description: 新しい資格情報を登録成功
@@ -398,35 +398,37 @@ paths:
     get:
       tags:
         - TEXT
-      summary: テスト情報を獲得
-      description: テストに関する情報を獲得。
+      summary: 資格情報を獲得
+      description: 資格に関する情報を獲得。
       parameters: []
       responses:
         '200':
-          description: テスト情報を獲得成功
+          description: 資格情報を獲得成功
           content:
             application/json:
               schema:
                 type: array
                 properties:
-                  test_id:
+                  certification_id:
                     type: integer
-                  test_category:
+                  certification_name:
                     type: string
-                  test_name:
+                  expiration_date:
                     type: string
-                  description:
+                  issuing_authority:
                     type: string
+                  certification_level:
+                    type: string  
                 example:
                   result:
                     code: EXAMLISTGET200
                     message: Success
                   examlist:
                   -
-                    test_id: 1
-                    test_category: 'Oracle認定Javaプログラマ'
-                    test_name: 'Java SE Bronze'
-                    description: 'Oracle Certified Java Programmer, 
+                    certification_id: 1
+                    certification_name: 'Oracle認定Javaプログラマ'
+                    expiration_date: 'Java SE Bronze'
+                    issuing_authority: 'Oracle Certified Java Programmer, 
                       Bronze SE 認定資格は、言語未経験者向けの入門資格で 
                       Java 言語を使用したオブジェクト指向プログラミングの基本的な知識を
                       有すること を評価することを目的としています。'
