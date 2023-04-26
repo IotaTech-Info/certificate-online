@@ -5,71 +5,61 @@
 !define not_null(x) <u>x</u>
 !define foreign_key(x) <i>x</i>
 
-Table(users, "用户表") {
-    primary_key(id) : int <<generated>>
-    not_null(username) : varchar
+Table(users, "ユーザーテーブル") {
+    primary_key(userId) : int <<generated>>
+    not_null(usersname) : varchar
     not_null(password) : varchar
+    not_null(ebworkid) : varchar
     not_null(email) : varchar
-    not_null(type) : enum('社員', '上司')
+    not_null(usersType) : enum('社員', '上司')
+    not_null(registerDate) : timestamp
+    not_null(lastDate) : timestamp
+    sessionToken : int
 }
 
-Table(certificates, "证书表") {
+Table(categories, "資格一覧テーブル") {
+    primary_key(cateId) : int <<generated>>
+    not_null(certName) : varchar
+    description : varchar
+}
+
+
+Table(tags, "資格TAGテーブル") {
+    primary_key(tagID) : int <<generated>>
+    not_null(tagName) : varchar
+}
+Table(tagRelate, "資格とTAG関係テーブル") {
+  -Foreign_key(cateID INT)
+  -Foreign_key(tagID INT)
+  --
+  Primary_key(cateID, tagID)
+}
+Table(certs, "取得済み資格テーブル") {
+    primary_key(certId) : int <<generated>>
+    not_null(userId) : int
+    foreign_key(userId) -r-> users.userId
+    not_null(cateID) : int
+    foreign_key(cateID) -r-> categories.cateId
+    not_null(getDate) : timestamp
+    not_null(file) : varchar(filepath)
+    not_null(status) : enum('承認','拒否','承認待ち')
+}
+
+Table(messages, "メッセージテーブル") {
     primary_key(id) : int <<generated>>
-    not_null(userid) : varchar
-    foreign_key(userid) -r-> users.id
-    not_null(accesstime) : int
-    not_null(file) : object
+    not_null(userId) : varchar
+    foreign_key(userId) -r-> users.userId
+    not_null(msgContent) : varchar 
+    not_null(msgDate) : timestamp
+    not_null(status) : enum('既読','未読')
 }
 
-Table(messages, "消息表") {
-    primary_key(id) : int <<generated>>
-    not_null(userid) : varchar
-    foreign_key(userid) -r-> users.id
-    not_null(accesstime) : int
-}
+tags --{ tagRelate : テーブル連接
+categories --{ tagRelate : テーブル連接
 
-Table(cert_categories, "证书类别表") {
-    primary_key(id) : int <<generated>>
-    not_null(certCategory) : varchar
-}
 
-Table(cert_info, "证书信息表") {
-    primary_key(id) : int <<generated>>
-    not_null(cert_category_id) : int
-    foreign_key(cert_category_id) -r-> cert_categories.id
-    not_null(cert_name) : varchar
-    not_null(description) : text
-}
-
-Table(cert_holder_search, "证书持有者搜索表") {
-    primary_key(id) : int <<generated>>
-    not_null(cert_id) : int
-    foreign_key(cert_id) -r-> cert_info.id
-    not_null(user_id) : int
-    foreign_key(user_id) -r-> users.id
-}
-
-Table(subordinate_cert_view, "部下的证书查看表") {
-    primary_key(id) : int <<generated>>
-    not_null(cert_id) : int
-    foreign_key(cert_id) -r-> cert_info.id
-    not_null(user_id) : int
-    foreign_key(user_id) -r-> users.id
-    not_null(manager_id) : int
-    foreign_key(manager_id) -r-> users.id
-}
-
-Table(cert_review, "证书审核表") {
-    primary_key(id) : int <<generated>>
-    not_null(cert_id) : int
-    foreign_key(cert_id) -r-> certificates.id
-    not_null(manager_id) : int
-    foreign_key(manager_id) -r-> users.id
-    not_null(status) : enum('待审核', '批准', '拒绝')
-}
-
-users --|> messages : 用户_消息
-users --|> certificates : 用户_资格证书
-cert_categories --|> certificates : 资格种类_资格证书
+users --|> messages : ユーザー_メッセージ
+users --|> certs : ユーザー_資格証明
+categories --|> certs : 資格種類_具体な資格
 
 @enduml

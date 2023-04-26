@@ -1,13 +1,18 @@
+openapi: '3.0.2'
 info:
-  title: EL-PRO API
-  description: EL-PRO API.
+  title: TCCOL API
+  description: TCCOL API.
   version: 1.0.0
 servers:
   - url: 'https://127.0.0.1/el-pro/api/0.0.1'
     description: Back end server
 paths:
-  /login:
+  /login-api:
     post:
+      tags: 
+        - USER
+      summary: ログイン
+      description: ログイン、EBWORKに連携した場合PASSWORDは不要。
       requestBody:
         required: true
         content:
@@ -17,13 +22,12 @@ paths:
               properties:
                 username:
                   type: string
-                password:
-                  type: string
                 email:
                   type: string
-                type:
+                password:
                   type: string
-                  enum: ['社員', '上司']
+                ebworkid:
+                  type: string
       responses:
         '201':
           description: 成功
@@ -52,36 +56,37 @@ paths:
                 properties:
                   message:
                     type: string
-  '/一般社员':
+  
+  '/staff-api':
     post:
       tags:
         - USER
-      summary: 資格証アップロード
-      description: 取得した資格証をアップロードする。
+      summary: ユーザー情報を取得
+      description: ユーザー登録情報を取得
       parameters: []
       requestBody:
-        description: ログインユーザのアカウントとパスワードを設定
+        description: ユーザー名前と認証コードが必要
         content:
           application/json:
             schema:
               required:
                 - userid
                 - accesstime
-                - file
+                - token
               properties:
                 userid:
                   type: string
                 accesstime:
                   type: integer
-                file:
-                  type: object
+                token:
+                  type: string
             example:
               userid: 'jiyi@e-business.co.jp'
               accesstime: 20230425
-              file:
+              token: "asidasdj"
       responses:
         '200':
-          description: 資格証のアップロードに成功
+          description: Success
           content:
             application/json:
               schema:
@@ -89,12 +94,11 @@ paths:
                 format: json
                 example:
                   result:
-                    code: UPLOADPOST200
-                    message: Success
-                 
-                 
+                    result : "success"
+                    name: "jiyi"
+                    avatar: "[URL]"
         '400':
-          description: ファイル形式が間違っています。
+          description: "ユーザー名間違い"
           content:
             application/json:
               schema:
@@ -102,8 +106,8 @@ paths:
                 format: json
                 example:
                   result:
-                    code: UPLOADPOST400
-                    message: The file format is incorrect.
+                    result: "err_username"
+                    message: "username is incorrect"
         '500':
           description: 予期せぬエラー
           content:
@@ -113,9 +117,9 @@ paths:
                 format: json
                 example:
                   result:
-                    code: UPLOADPOST500
-                    message: unknown error.
-  '/leader01':
+                    result: "err_unknown"
+                    message: "unkonwn failure"
+  '/message':
     post:
       tags:
         - USER
@@ -123,13 +127,11 @@ paths:
       description: メッセージを取得。
       parameters: []
       requestBody:
-        description: ログインユーザのアカウントとパスワードを設定
         content:
           application/json:
             schema:
               required:
                 - userid
-                - accesstime
               properties:
                 userid:
                   type: string
@@ -151,8 +153,10 @@ paths:
                   result:
                     code: MESSAGEPOST200
                     message: Success
-                  message:
-                    ''
+                  messages:
+                    1 : "message1"
+                    2 : "message2"
+                    3 : "message3"
 
                     
         '400':
