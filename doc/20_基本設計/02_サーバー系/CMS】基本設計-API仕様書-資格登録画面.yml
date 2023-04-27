@@ -1,0 +1,77 @@
+﻿openapi: 3.0.0
+info:
+  title: EL-PRO API
+  description: EL-PRO API.
+  version: 1.0.0
+servers:
+  - url: 'https://127.0.0.1/el-pro/api/0.0.1'
+    description: Back end server
+paths:
+  '/userinfo':
+    post:
+      tags:
+        - USER
+      summary: 資格取得後登録画面
+      description: 資格取得後を登録。
+      parameters: []
+      requestBody:
+        description: 資格取得後を登録。
+        content:
+          application/json:
+            schema:
+              required:
+                - getted_certificate_name
+                - exam_result
+                - upload_certificate
+              properties:
+                getted_certificate_name:
+                  type: string
+                exam_result:
+                  type: string
+                upload_certificate:
+                  type: string
+
+               
+            example:
+              getted_certificate_name: 'python 3'
+              exam_result: '合格'
+              upload_certificate: 'python 3'
+
+
+      responses:
+        '200':
+          description: 情報を登録成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: USERINFOPOST200
+                    message: Success
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+components:
+  schemas:
+    Result:
+      type: object
+      required:
+        - code
+        - massage
+      properties:
+        result:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+          example:
+            code: 'XXX999(XX:機能分類コード)'
+            message: unexpected error.

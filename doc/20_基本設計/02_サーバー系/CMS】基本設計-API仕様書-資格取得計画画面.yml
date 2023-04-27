@@ -1,0 +1,83 @@
+﻿openapi: 3.0.0
+info:
+  title: EL-PRO API
+  description: EL-PRO API.
+  version: 1.0.0
+servers:
+  - url: 'https://127.0.0.1/el-pro/api/0.0.1'
+    description: Back end server
+paths:
+  '/userinfo':
+    post:
+      tags:
+        - USER
+      summary: 資格取得計画画面
+      description: 資格取得計画を登録。
+      parameters: []
+      requestBody:
+        description: 資格取得計画を登録。
+        content:
+          application/json:
+            schema:
+              required:
+                - worker_id
+                - worker_name
+                - planning_certifcate_name
+                - exam_time
+                - result_time
+              properties:
+                worker_id:
+                  type: string
+                worker_name:
+                  type: string
+                planning_certifcate_name:
+                  type: string
+                exam_time:
+                  type: string
+                result_time:
+                  type: string
+               
+            example:
+              worker_id: '234114'
+              worker_name: 'Tanaka'
+              planning_certifcate_name: 'python 3'
+              exam_time: '2022-05-12'
+              result_time: '2022-07-12'
+
+      responses:
+        '200':
+          description: 情報を登録成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: USERINFOPOST200
+                    message: Success
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+components:
+  schemas:
+    Result:
+      type: object
+      required:
+        - code
+        - massage
+      properties:
+        result:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+          example:
+            code: 'XXX999(XX:機能分類コード)'
+            message: unexpected error.
