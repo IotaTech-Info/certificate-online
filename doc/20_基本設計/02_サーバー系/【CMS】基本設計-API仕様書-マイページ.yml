@@ -1,0 +1,84 @@
+openapi: 3.0.0
+info:
+  title: EL-PRO API
+  description: EL-PRO API.
+  version: 1.0.0
+servers:
+  - url: 'https://127.0.0.1/el-pro/api/0.0.1'
+    description: Back end server
+paths:
+
+  '/certifies_info/{user_id}':
+    get:
+      tags:
+        - Certifies
+      summary: 社員の資格情報情報獲得
+      parameters: 
+        - name: user_id
+          in: path
+          description: administrator_ID
+          required: true
+          schema:
+            type: string
+
+        - name: time_scale
+          in: path
+          description: selected time
+          required: true
+          schema:
+            type: string
+
+      responses:
+        '200':
+          description: 社員の資格情報を獲得成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: USERINFOGET200
+                    message: Success
+                  certifies:
+                    certificate_name: 'Java] シルバー'
+                    keeper_num: '2'
+                    scheduled_num: '4'
+        '404':
+          description: USER_ID存在しない。
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: USERINFOGET404
+                    message: USER Not Found.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+
+
+components:
+  schemas:
+    Result:
+      type: object
+      required:
+        - code
+        - massage
+      properties:
+        result:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+          example:
+            code: 'XXX999(XX:機能分類コード)'
+            message: unexpected error.
