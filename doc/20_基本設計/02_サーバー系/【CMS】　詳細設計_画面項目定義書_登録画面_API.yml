@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  title: EL-PRO API
+  description: EL-PRO API.
+  version: 1.0.0
+servers:
+  - url: 'https://127.0.0.1/el-pro/api/0.0.1'
+    description: Back end server
+paths:
+  '/login':
+    post:
+      tags:
+        - USER
+      summary: ログイン情報入力
+      description: ログイン情報を入力し、ユーザー情報を取得。
+      parameters: []
+      requestBody:
+        description: ログインユーザのアカウントとパスワードを設定
+        content:
+          application/json:
+            schema:
+              required:
+                - mail
+                - password
+              properties:
+                mail:
+                  type: string
+                password:
+                  type: string
+            example:
+              mail: 'wangxinyue@e-business.co.jp'
+              password: '123456'
+      responses:
+        '200':
+          description: ログインユーザー情報の取得に成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: LOGINPOST200
+                    message: Success
+                  userinfo:
+                    user_id: 1
+                    lastname: 'xinyue'
+                    firstname: 'wang'
+        '400':
+          description: アカウントが存在しない。もしくパスワードが間違っている
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: LOGINPOST400
+                    message: User does not exist. Or the password is wrong.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
