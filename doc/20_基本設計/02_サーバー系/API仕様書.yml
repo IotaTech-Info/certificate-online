@@ -1,0 +1,794 @@
+openapi: 3.0.0
+info:
+  title: EL-PRO API
+  description: EL-PRO API.
+  version: 1.0.0
+servers:
+  - url: 'https://127.0.0.1/el-pro/api/0.0.1'
+    description: Back end server
+paths:
+  '/login':
+    post:
+      tags:
+        - USER
+      summary: ログイン情報入力
+      description: ログイン情報を入力し、ユーザー情報を取得。
+      parameters: []
+      requestBody:
+        description: ログインユーザのアカウントとパスワードを設定
+        content:
+          application/json:
+            schema:
+              required:
+                - mail
+                - password
+              properties:
+                mail:
+                  type: string
+                password:
+                  type: string
+            example:
+              mail: 'wangxinyue@e-business.co.jp'
+              password: '123456'
+      responses:
+        '200':
+          description: ログインユーザー情報の取得に成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: LOGINPOST200
+                    message: Success
+                  userinfo:
+                    employee_code: 1
+                    lastname: 'seiyo'
+                    firstname: 'koya'
+        '400':
+          description: アカウントが存在しない。もしくはパスワードが間違っている
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: LOGINPOST400
+                    message: User does not exist. Or the password is wrong.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+  #   put:
+  #     tags:
+  #       - USER
+  #     summary: パスワード更新
+  #     description: ユーザーのパスワード更新。
+  #     parameters: []
+  #     requestBody:
+  #       description: パスワードを更新
+  #       content:
+  #         application/json:
+  #           schema:
+  #             required:
+  #               - user_id
+  #               - oldpassword
+  #               - newpassword
+  #             properties:
+  #               user_id:
+  #                 type: integer
+  #               oldpassword:
+  #                 type: string
+  #               newpassword:
+  #                 type: string
+  #           example:
+  #             user_id: 1
+  #             oldpassword: '123456'
+  #             newpassword: '987654'
+  #     responses:
+  #       '200':
+  #         description: パスワードを更新成功
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: LOGINPUT200
+  #                   message: Success
+  #       '400':
+  #         description: パスワードが間違っている
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: LOGINPUT400
+  #                   message: Password is wrong.
+  #       '500':
+  #         description: 予期せぬエラー
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/Result'
+
+
+  # '/userinfo':
+  #   post:
+  #     tags:
+  #       - USER
+  #     summary: ユーザー情報登録
+  #     description: ユーザー情報を入力し、データベースへユーザー情報を登録。
+  #     parameters: []
+  #     requestBody:
+  #       description: ユーザー情報を登録
+  #       content:
+  #         application/json:
+  #           schema:
+  #             required:
+  #               - mail
+  #               - password
+  #               - lastname
+  #               - firstname
+  #               - birthday
+  #               - sex
+  #               - city
+  #             properties:
+  #               mail:
+  #                 type: string
+  #               password:
+  #                 type: string
+  #               lastname:
+  #                 type: string
+  #               firstname:
+  #                 type: string
+  #               birthday:
+  #                 type: string
+  #               sex:
+  #                 type: string
+  #               company:
+  #                 type: string
+  #               city:
+  #                 type: string
+  #           example:
+  #             mail: 'wangxinyue@e-business.co.jp'
+  #             password: '123456'
+  #             lastname: 'xinyue'
+  #             firstname: 'wang'
+  #             birthday: '2022-05-12'
+  #             sex: '1'
+  #             company: 'e-·business'
+  #             city: '東京都港区'
+  #     responses:
+  #       '200':
+  #         description: 新しいユーザ情報を登録成功
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: USERINFOPOST200
+  #                   message: Success
+  #       '500':
+  #         description: 予期せぬエラー
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/Result'
+
+  #   put:
+  #     tags:
+  #       - USER
+  #     summary: ユーザー情報更新
+  #     description: ユーザー情報を入力し、データベースへユーザー情報を更新。
+  #     parameters: []
+  #     requestBody:
+  #       description: ユーザー情報を更新
+  #       content:
+  #         application/json:
+  #           schema:
+  #             required:
+  #               - user_id
+  #             properties:
+  #               user_id:
+  #                 type: integer
+  #               lastname:
+  #                 type: string
+  #               firstname:
+  #                 type: string
+  #               sex:
+  #                 type: string
+  #               company:
+  #                 type: string
+  #               city:
+  #                 type: string
+  #           example:
+  #             user_id: 1
+  #             lastname: 'xinyue'
+  #             firstname: 'wang'
+  #             sex: '1'
+  #             company: 'e-·business'
+  #             city: '東京都港区'
+  #     responses:
+  #       '200':
+  #         description: ユーザー情報を更新成功
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: USERINFOPUT200
+  #                   message: Success
+  #       '404':
+  #         description: USER_IDが存在しない。
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: USERINFOPUT404
+  #                   message: USER Not Found.
+  #       '500':
+  #         description: 予期せぬエラー
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/Result'
+
+  '/certification_registration':
+    post:
+      tags:
+        - USER
+      summary: 資格情報登録
+      description: 資格情報を入力し、データベースへ資格情報を登録。
+      parameters: []
+      requestBody:
+        description: 資格情報を登録
+        content:
+          application/json:
+            schema:
+              required:
+                - certification_name
+                - expiration_data
+                - issue_authority
+                - Certification_level
+              properties:
+                certification_name:
+                  type: string
+                expiration_data:
+                  type: string
+                issue_authority:
+                  type: string
+                certification_level:
+                  type: string
+            example:
+              certification_name: '情報処理技術者試験'
+              expiration_data: '2022-05-12'
+              issue_authority: 'IPA'
+              certification_level: '2'
+      responses:
+        '200':
+          description: 新しい資格情報を登録成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: USERINFOPOST200
+                    message: Success
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'            
+
+  '/employee_info/{registration_id}':
+    get:
+      tags:
+        - USER
+      summary: ユーザー情報獲得
+      description: データベースからユーザー情報を獲得。
+      parameters: 
+        - name: registration_id
+          in: path
+          description: 会員ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ユーザー情報を獲得成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: USERINFOGET200
+                    message: Success
+                  userinfo:
+                    lastname: 'xinyue'
+                    firstname: 'wang'
+                    employee_code: '1001'
+                    sex: '1'
+                    birthday: '2022-05-12'
+                    city: '東京都港区'
+        '404':
+          description: REGISTRATION_IDが存在しない。
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: USERINFOGET404
+                    message: USER Not Found.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+  '/certification_info/{certification_id}':
+    get:
+      tags:
+        - USER
+      summary: 資格情報の獲得
+      description: データベースから資格情報を獲得。
+      parameters: 
+        - name: certification_id
+          in: path
+          description: 資格ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 資格情報を獲得成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: CERTIFICATIONINFOGET200
+                    message: Success
+                  userinfo:
+                    certification_name: 'Oracle認定Javaプログラマ'
+                    issuing_authority: 'Oracle'
+                    expiration_data: '2022-05-12'
+                    Persons: '10'
+                    detail: 'Oracle認定資格は、言語未経験者向けの入門資格で 
+                       Java 言語を使用したオブジェクト指向プログラミングの基本的な知識を
+                       有すること を評価することを目的としています。'
+        '404':
+          description: CERTIFICATION_IDが存在しない。
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: CERTIFICATIONINFOGET404
+                    message: CERTIFICATION Not Found.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+  '/certification_registration{registration_id}':
+    get:
+      tags:
+        - USER
+      summary: 資格一覧の獲得
+      description: データベースから資格一覧を獲得。
+      parameters: 
+        - name: registration_id
+          in: path
+          description: 登録ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 資格一覧の獲得成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: CERTIFICATIONINFOGET200
+                    message: Success
+                  certificationinfo:
+                  -
+                    registration_id: ''
+                    certification_name: 'Oracle認定Javaプログラマ'
+                    approval_status: '承認'
+                  - 
+                    registration_id: ''
+                    certification_name: 'Javaプログラミング能力認定試験'
+                    approval_status: '承認'
+                  -
+                    registration_id: ''
+                    certification_name: 'Android技術者認定試験'
+                    approval_status: '承認'
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'              
+  :
+    post:
+      tags:
+        - ADMINISTRATOR
+      summary: タスクの内容を承認
+      description: タスクの内容を承認
+      parameters: []
+      requestBody:
+        description: タスク詳細
+        content:
+          application/json:
+            schema:
+              required:
+                - lastname
+                - firstname
+                - employee_code
+                - certification_name
+                - expiration_date
+              properties:
+                lastname:
+                  type: string
+                firstname:
+                  type: string
+                employee_code:
+                  type: string
+                certification_name:
+                  type: string
+                cexpiration_date:
+                  type: string  
+            example:
+              lastname: 'koya'
+              firstname: 'seiyo'
+              employee_code: '1001'
+              certification_name: '情報処理技術者試験'
+              expiration_data: '2022-05-12'
+              
+      responses:
+        '200':
+          description: タスクの内容を承認成功
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: USERINFOPOST200
+                    message: Success
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'             
+
+    # delete:
+    #   tags:
+    #     - USER
+    #   summary: ユーザー情報削除
+    #   description: データベースからユーザー情報を削除。
+    #   parameters: 
+    #     - name: user_id
+    #       in: path
+    #       description: ユーザID
+    #       required: true
+    #       schema:
+    #         type: string
+    #   responses:
+    #     '200':
+    #       description: ユーザー情報を削除成功
+    #       content:
+    #         application/json:
+    #           schema:
+    #             type: string
+    #             format: json
+    #             example:
+    #               result:
+    #                 code: USERINFODELETE200
+    #                 message: Success
+    #     '404':
+    #       description: USER_IDが存在しない。
+    #       content:
+    #         application/json:
+    #           schema:
+    #             type: string
+    #             format: json
+    #             example:
+    #               result:
+    #                 code: USERINFODELETE404
+    #                 message: USER Not Found.
+    #     '500':
+    #       description: 予期せぬエラー
+    #       content:
+    #         application/json:
+    #           schema:
+    #             $ref: '#/components/schemas/Result'
+
+
+
+  # '/examlist':
+  #   get:
+  #     tags:
+  #       - TEXT
+  #     summary: 資格情報を獲得
+  #     description: 資格に関する情報を獲得。
+  #     parameters: []
+  #     responses:
+  #       '200':
+  #         description: 資格情報を獲得成功
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: array
+  #               properties:
+  #                 certification_id:
+  #                   type: integer
+  #                 certification_name:
+  #                   type: string
+  #                 expiration_date:
+  #                   type: string
+  #                 issuing_authority:
+  #                   type: string
+  #                 certification_level:
+  #                   type: string  
+  #               example:
+  #                 result:
+  #                   code: EXAMLISTGET200
+  #                   message: Success
+  #                 examlist:
+  #                 -
+  #                   certification_id: 1
+  #                   certification_name: 'Oracle認定Javaプログラマ'
+  #                   expiration_date: 'Java SE Bronze'
+  #                   issuing_authority: 'Oracle Certified Java Programmer, 
+  #                     Bronze SE 認定資格は、言語未経験者向けの入門資格で 
+  #                     Java 言語を使用したオブジェクト指向プログラミングの基本的な知識を
+  #                     有すること を評価することを目的としています。'
+  #                 -
+  #                   test_id: 2
+  #                   test_category: '情報処理技術者試験'
+  #                   test_name: '基本情報技術者試験'
+  #                   description: '基本情報技術者試験の対象者は
+  #                     高度IT人材となるために必要な基本的知識・技能をもち、
+  #                     実践的な活用能力を身に付けた者です'
+  #                 -
+  #                   test_id: 3
+  #                   test_category: 'AWS資格証'
+  #                   test_name: 'AWS Certified Cloud Practitioner'
+  #                   description: 'AWS Certified Cloud Practitioner は、
+  #                     AWS プラットフォームの基本的な知識をお持ちの方を対象としています。
+  #                     組織がクラウドイニシアチブを実装するための重要な知識を持つ人材を
+  #                     特定して育成するのに役立ちます。
+  #                     AWS Certified Cloud Practitioner を取得することで、
+  #                     クラウドへの理解と基礎的な AWS の知識が認定されます。'
+  #       '500':
+  #         description: 予期せぬエラー
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/Result'
+
+
+  
+
+  # '/answer/{user_id}/{test_id}':
+  #   get:
+  #     tags:
+  #       - TEXT
+  #     summary: ユーザーの回答と結果を獲得
+  #     description: ユーザーの回答と結果を獲得
+  #     parameters: 
+  #       - name: user_id
+  #         in: path
+  #         description: ユーザID
+  #         required: true
+  #         schema:
+  #           type: string
+  #       - name: test_id
+  #         in: path
+  #         description: ユーザID
+  #         required: true
+  #         schema:
+  #           type: string
+  #     responses:
+  #       '200':
+  #         description: ユーザーの回答と結果を獲得成功
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: object
+  #               properties:
+  #                 test_name:
+  #                   type: string
+  #                 test_result:
+  #                   type: integer
+  #                 answerlist:
+  #                   type: array
+  #                   properties:
+  #                     question_id:
+  #                       type: integer
+  #                     user_answer_option:
+  #                       type: string
+  #                     user_answer_right_or_wrong:
+  #                       type: boolean
+  #                     correct_answer:
+  #                       type: string
+  #               example:
+  #                 result:
+  #                   code: ANSWERGET200
+  #                   message: Success
+  #                 answerdetail:
+  #                   test_name: 'Java SE Bronze'
+  #                   test_result: 98
+  #                   answerlist:
+  #                   -
+  #                     question_id: 1
+  #                     user_answer_option: '2'
+  #                     user_answer_right_or_wrong: true
+  #                     correct_answer: '2'
+  #                   -
+  #                     question_id: 2
+  #                     user_answer_option: '3,5'
+  #                     user_answer_right_or_wrong: true
+  #                     correct_answer: '3,5'
+  #                   -
+  #                     question_id: 3
+  #                     user_answer_option: '1,2,4'
+  #                     user_answer_right_or_wrong: true
+  #                     correct_answer: '1,2,4'
+  #                   -
+  #                     question_id: 4
+  #                     user_answer_option: '2'
+  #                     user_answer_right_or_wrong: false
+  #                   correct_answer: '4'
+  #       '404':
+  #         description: exam_event_id存在しない。
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: ANSWERPOSTGET404
+  #                   message: TEST_EVENT Not Found.
+  #       '500':
+  #         description: 予期せぬエラー
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/Result'
+
+                
+  #   post:
+  #     tags:
+  #       - TEXT
+  #     summary: ユーザーの回答を登録
+  #     description: データベースへユーザーの回答を登録
+  #     parameters: 
+  #       - name: user_id
+  #         in: path
+  #         description: ユーザID
+  #         required: true
+  #         schema:
+  #           type: string
+  #       - name: test_id
+  #         in: path
+  #         description: ユーザID
+  #         required: true
+  #         schema:
+  #           type: string
+  #     requestBody:
+  #       description: ユーザーの回答を登録
+  #       content:
+  #         application/json:
+  #           schema:
+  #             required:
+  #               - answer
+  #             properties:
+  #               answer:
+  #                 type: array
+  #                 properties:
+  #                   question_id:
+  #                     type: integer
+  #                   user_answer_option:
+  #                     type: string
+  #           example:
+  #               answer:
+  #               -
+  #                 question_id: 1
+  #                 user_answer_option: "2"
+  #               -
+  #                 question_id: 2
+  #                 user_answer_option: "3,5"
+  #               -
+  #                 question_id: 3
+  #                 user_answer_option: "1,2,4"
+  #               -
+  #                 question_id: 4
+  #                 user_answer_option: "2"
+  #     responses:
+  #       '200':
+  #         description: ユーザーの回答を登録成功
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: ANSWERPOST200
+  #                   message: Success
+  #       '404':
+  #         description: USER_IDまたはTEST_EVENT存在しない。
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: string
+  #               format: json
+  #               example:
+  #                 result:
+  #                   code: ANSWERPOST404
+  #                   message: USER OR TEST_EVENT Not Found.
+  #       '500':
+  #         description: 予期せぬエラー
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/Result' 
+
+
+
+components:
+  schemas:
+    Result:
+      type: object
+      required:
+        - code
+        - massage
+      properties:
+        result:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+          example:
+            code: 'XXX999(XX:機能分類コード)'
+            message: unexpected error.
