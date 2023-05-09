@@ -146,7 +146,7 @@ paths:
                     birthday: '2022-05-12'
                     city: '東京都港区'
         '404':
-          description: REGISTRATION_IDが存在しない。
+          description: employee_codeが存在しない。
           content:
             application/json:
               schema:
