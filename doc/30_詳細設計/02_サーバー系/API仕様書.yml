@@ -77,22 +77,22 @@ paths:
             schema:
               required:
                 - certification_name
-                - expiration_data
-                - issue_authority
+                - pass_date
+                - certificate_number
                 - Certification_level
               properties:
                 certification_name:
                   type: string
-                expiration_data:
+                pass_date:
                   type: string
-                issue_authority:
+                certificate_number:
                   type: string
                 certification_level:
                   type: string
             example:
               certification_name: '情報処理技術者試験'
-              expiration_data: '2022-05-12'
-              issue_authority: 'IPA'
+              pass_date: '2022-05-12'
+              certificate_number: '1'
               certification_level: '2'
       responses:
         '200':
@@ -113,16 +113,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/Result'            
 
-  '/employee_info/{registration_id}':
+  '/employee_info/{employee_code}':
     get:
       tags:
         - USER
       summary: ユーザー情報獲得
       description: データベースからユーザー情報を獲得。
       parameters: 
-        - name: registration_id
+        - name: employee_code
           in: path
-          description: 会員ID
+          description: 社員番号
           required: true
           schema:
             type: string
@@ -146,7 +146,7 @@ paths:
                     birthday: '2022-05-12'
                     city: '東京都港区'
         '404':
-          description: REGISTRATION_IDが存在しない。
+          description: employee_codeが存在しない。
           content:
             application/json:
               schema:
@@ -249,7 +249,7 @@ paths:
                   -
                     registration_id: ''
                     certification_name: 'Android技術者認定試験'
-                    approval_status: '承認'
+                    approval_status: '承認待ち'
         '500':
           description: 予期せぬエラー
           content:
