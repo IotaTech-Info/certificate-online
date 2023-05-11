@@ -1,0 +1,78 @@
+# QAI Testbed backend REST API Test script
+# REST Client URL:
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+@hostUrl = http://127.0.0.1:8888
+@baseUrl = {{hostUrl}}/el-pro/api/0.0.1
+
+###
+# API:health-check
+
+GET {{baseUrl}}/health-check
+
+### API: GET /examlist
+GET {{baseUrl}}/examlist
+
+### API: GET /examdetail/{test_id}
+GET {{baseUrl}}/examdetail/1
+
+
+###
+# API: POST /login
+POST {{baseUrl}}/login
+content-type: application/json
+
+{
+    "mail": "datatest@el.com",
+    "password": "987654"
+}
+
+###
+# API: PUT /login
+PUT {{baseUrl}}/login
+content-type: application/json
+
+{
+  "user_id": 1,
+  "oldpassword": "199803041Tokyo",
+  "newpassword": "987654"
+}
+
+
+###
+# API: POST /userinfo
+POST {{baseUrl}}/userinfo
+content-type: application/json
+
+{
+    "mail": "wangxinyue@e-business.co.jp",
+    "password": "123456",
+    "lastname": "xinyue",
+    "firstname": "wang",
+    "birthday": "2022-05-12",
+    "sex": "1",
+    "company": "e-·business",
+    "city": "東京都港区"
+}
+
+###
+# API: POST /userinfo
+PUT {{baseUrl}}/userinfo
+content-type: application/json
+
+{
+  "user_id": 3,
+  "lastname": "xinyue_update",
+  "firstname": "wang_update",
+  "sex": "1",
+  "company": "e-·business_update",
+  "city": "東京都港区_update"
+}
+
+### API: GET /userinfo/{user_id}
+GET {{baseUrl}}/userinfo/1
+
+
+
+### API: GET /answer/{user_id}/{test_id}
+GET {{baseUrl}}/answer/1/1

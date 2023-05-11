@@ -20,7 +20,14 @@ Support os is Windows10 Pro and macOS.
 Execute the following command as root of this repository.
 
 ```sh
+docker-compose build --no-cache
+
+
+```
+```sh
+
 docker-compose up
+
 ```
 
 ### 2.access web browser

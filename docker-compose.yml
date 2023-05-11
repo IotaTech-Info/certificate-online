@@ -1,0 +1,99 @@
+version: '3.5'
+
+
+services:
+
+  reverse-proxy:
+    image: reverse-proxy
+    ports:
+      - 8888:80
+    container_name: reverse-proxy
+    build:
+      context: ./src/nginx/
+      dockerfile: Dockerfile
+    environment:
+      - CONTAINER_FLAG=${CONTAINER_FLAG}
+    volumes:
+      - ./src/nginx/conf.d/:/etc/nginx/conf.d
+    command: /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
+    depends_on: 
+      - web
+      - app
+
+  web:
+    image: vue-server
+    ports:
+      - 8000:8000
+    container_name: vue-server
+    build:
+      context: ./src/frontend/
+      dockerfile: Dockerfile
+    privileged: true # 管理者権限の付与
+    environment:
+      - CONTAINER_FLAG=${CONTAINER_FLAG}
+    volumes:
+      - ./src/frontend/:/app/
+      - node_modules:/app/web_ui/node_modules
+    tty: true # 起動状態を維持
+    stdin_open: true # コンソール立ち上げ
+    command: sh -c "echo serving vue server... && cd /app/web_ui/ && yarn run serve-docker"
+
+  app:
+    build:
+      context: ./src/backend/
+      dockerfile: Dockerfile
+    image: app
+    container_name: backend
+    expose: 
+      - ${BACKEND_FLASK_PORT}
+    environment:
+      - CONTAINER_FLAG=${CONTAINER_FLAG}
+      - FLASK_PORT=${BACKEND_FLASK_PORT}
+      - FLASK_CONFIG=${BACKEND_FLASK_CONFIG}
+    volumes:
+      - ./src/backend/:/work/
+      - ./logs/app:/work/logs
+      - /var/run/docker.sock:/var/run/docker.sock:rw # dockerソケット
+    command: 
+      ['python', '-m', 'entrypoint', 'startserver']
+    depends_on: 
+      - psql
+
+  psql:
+    build:
+      context: ./src/storage/psql_12
+      dockerfile: Dockerfile
+    image: psql
+    container_name: "psql"
+    ports: 
+      - "5432:5432"
+    environment:
+      - CONTAINER_FLAG=${CONTAINER_FLAG}
+      - POSTGRES_USER=${PSQL_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${PSQL_POSTGRES_PASSWORD}
+      - POSTGRES_DB=${PSQL_POSTGRES_DB}
+      - DATABASE_HOST=${PSQL_DATABASE_HOST}
+    volumes:
+      - psql-data:/var/lib/postgresql/data
+
+  pgadmin4:
+    image: dpage/pgadmin4:4
+    container_name: "pgadmin4"
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin4-data:/var/lib/pgadmin
+    environment:
+      - CONTAINER_FLAG=${CONTAINER_FLAG}
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
+    hostname: localhost
+    depends_on:
+      - psql
+
+volumes:
+  node_modules: {}
+  psql-data:
+    driver: local
+  pgadmin4-data:
+    driver: local
