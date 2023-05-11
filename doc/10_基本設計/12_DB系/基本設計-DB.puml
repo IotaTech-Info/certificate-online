@@ -1,0 +1,65 @@
+@startuml
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define primary_key(x) <b>x</b>
+!define unique(x) <color:red>x</color>
+!define not_null(x) <u>x</u>
+!define foreign_key(x) <i>x</i>
+
+Table(users, "ユーザーテーブル") {
+    primary_key(userId) : int <<generated>>
+    not_null(usersname) : varchar
+    not_null(password) : varchar
+    not_null(ebworkid) : varchar
+    not_null(email) : varchar
+    not_null(usersType) : enum('社員', '上司')
+    not_null(registerDate) : timestamp
+    not_null(lastDate) : timestamp
+    sessionToken : int
+}
+
+Table(categories, "資格一覧テーブル") {
+    primary_key(cateId) : int <<generated>>
+    not_null(certName) : varchar
+    description : varchar
+}
+
+
+Table(tags, "資格TAGテーブル") {
+    primary_key(tagID) : int <<generated>>
+    not_null(tagName) : varchar
+}
+Table(tagRelate, "資格とTAG関係テーブル") {
+  -Foreign_key(cateID INT)
+  -Foreign_key(tagID INT)
+  --
+  Primary_key(cateID, tagID)
+}
+Table(certs, "取得済み資格テーブル") {
+    primary_key(certId) : int <<generated>>
+    not_null(userId) : int
+    foreign_key(userId) -r-> users.userId
+    not_null(cateID) : int
+    foreign_key(cateID) -r-> categories.cateId
+    not_null(getDate) : timestamp
+    not_null(file) : varchar(filepath)
+    not_null(status) : enum('承認','拒否','承認待ち')
+}
+
+Table(messages, "メッセージテーブル") {
+    primary_key(id) : int <<generated>>
+    not_null(userId) : varchar
+    foreign_key(userId) -r-> users.userId
+    not_null(msgContent) : varchar 
+    not_null(msgDate) : timestamp
+    not_null(status) : enum('既読','未読')
+}
+
+tags --{ tagRelate : テーブル連接
+categories --{ tagRelate : テーブル連接
+
+
+users --|> messages : ユーザー_メッセージ
+users --|> certs : ユーザー_資格証明
+categories --|> certs : 資格種類_具体な資格
+
+@enduml

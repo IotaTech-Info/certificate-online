@@ -1,0 +1,380 @@
+openapi: '3.0.2'
+info:
+  title: TCCOL API
+  description: TCCOL API.
+  version: 1.0.0
+servers:
+  - url: 'https://127.0.0.1/el-pro/api/0.0.1'
+    description: Back end server
+paths:
+  /login-api:
+    post:
+      tags: 
+        - USER
+      summary: ログイン
+      description: ログイン、EBWORKに連携した場合PASSWORDは不要。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                ebworkid:
+                  type: string
+      responses:
+        '201':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '500':
+          description: 未知错误
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  
+  '/staff-api':
+    post:
+      tags:
+        - USER
+      summary: ユーザー情報を取得
+      description: ユーザー登録情報を取得
+      parameters: []
+      requestBody:
+        description: ユーザー名前と認証コードが必要
+        content:
+          application/json:
+            schema:
+              required:
+                - userid
+                - accesstime
+                - token
+              properties:
+                userid:
+                  type: string
+                accesstime:
+                  type: integer
+                token:
+                  type: string
+            example:
+              userid: 'jiyi@e-business.co.jp'
+              accesstime: 20230425
+              token: "asidasdj"
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    result : "success"
+                    name: "jiyi"
+                    avatar: "[URL]"
+        '400':
+          description: "ユーザー名間違い"
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    result: "err_username"
+                    message: "username is incorrect"
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    result: "err_unknown"
+                    message: "unkonwn failure"
+  '/message':
+    post:
+      tags:
+        - USER
+      summary: メッセージ
+      description: メッセージを取得。
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - userid
+              properties:
+                userid:
+                  type: string
+                accesstime:
+                  type: integer
+            example:
+              userid: 'zhangyurong@e-business.co.jp'
+              accesstime: 20230425
+
+      responses:
+        '200':
+          description: メッセージの取得が成功。
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: MESSAGEPOST200
+                    message: Success
+                  messages:
+                    1 : "message1"
+                    2 : "message2"
+                    3 : "message3"
+
+                    
+        '400':
+          description: ユーザーIDが存在しない。
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: MESSAGEPOST400
+                    message: User does not exist. 
+
+        '500':
+          description: error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  message:
+                    type: string
+                example:
+                  code: 'XXX999(XX:機能分類コード)'
+                  message: unexpected error.
+                  openapi: 3.0.0
+
+  '/cert_search':
+    post:
+      tags:
+        - certCategorySearch
+      summary: 資格種類の検索
+      description: 社員に向けの資格種類の検索
+      parameters: []
+      requestBody:
+        description: 何の種類の資格
+        content:
+          application/json:
+            schema:
+              required:
+                - certCategory
+              properties:
+                certCategory:
+                  type: string
+            example:
+              certCategory: '開発系'
+      responses:
+        '200':
+          description: 資格情報の取得に成功
+          content:
+            application/json:
+              schema:
+                type: array
+                properties:
+                  test_id:
+                    type: integer
+                  test_category:
+                    type: string
+                  test_name:
+                    type: string
+                  description:
+                    type: string
+                example:
+                  result:
+                    code: CERCATEGORYGET200
+                    message: Success
+                  examlist:
+                  -
+                    cert_id: 1
+                    cert_category: '開発系'
+                    cert_name: 'Java SE Bronze'
+                    description: 'Oracle Certified Java Programmer, 
+                      Bronze SE 認定資格は、言語未経験者向けの入門資格で 
+                      Java 言語を使用したオブジェクト指向プログラミングの基本的な知識を
+                      有すること を評価することを目的としています。'
+                  -
+                    cert_id: 2
+                    cert_category: '開発系'
+                    cert_name: 'AWS Certified Cloud Practitioner'
+                    description: 'AWS Certified Cloud Practitioner は、
+                      AWS プラットフォームの基本的な知識をお持ちの方を対象としています。
+                      組織がクラウドイニシアチブを実装するための重要な知識を持つ人材を
+                      特定して育成するのに役立ちます。
+                      AWS Certified Cloud Practitioner を取得することで、
+                      クラウドへの理解と基礎的な AWS の知識が認定されます。'
+
+        '400':
+          description: 該当する資格種類がない
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: CERTPOST400
+                    message: Certificates do not exist. 
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+  '/upload':
+    post:
+      tags:
+        - UPLOAD
+      summary: 資格証種類、取得日、有効期限を選択し、証書をアップロード
+      description: 資格証種類、取得日、有効期限を選択し、証書をアップロード
+      requestBody:
+        description: 資格証種類、取得日、有効期限を選択し、証書をアップロード
+        content:
+          application/json:
+            schema:
+              required:
+                - upType
+                - upDateOfAcquisition
+                - upUpload
+              properties:
+                upType:
+                  type: string
+                upDateOfAcquisition:
+                  type: string
+                upExpirationDate:
+                  type: string
+                upUpload:
+                  type: string
+                  description: 画像                
+            example:
+              upType: '基本情報技術者試験'
+              upDateOfAcquisition: '20230411'
+              upExpirationDate: '20240525'
+              upUpload: '証明書ファイル'
+      responses:
+        '200':
+          description: アップロード情報の取得に成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Result"
+                example:
+                  result:
+                    code: LOGINPOST200
+                    message: Success
+                  
+        '400':
+          description: リクエストエラー
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: LOGINPOST400
+                    message: request error.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+  '/getdata':
+    post:
+      tags:
+        - GETDATE
+      summary: 資格証種類、取得日、有効期限のリストを取得
+      description: 資格証種類、取得日、有効期限のリストを取得
+      parameters: []
+      responses:
+        '200':
+          description: リスト情報の取得に成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Result"
+                example:
+                  result:
+                    code: LOGINPOST200
+                    message: Success
+                  
+        '400':
+          description: リクエストエラー
+          content:
+            application/json:
+              schema:
+                type: string
+                format: json
+                example:
+                  result:
+                    code: LOGINPOST400
+                    message: request error.
+        '500':
+          description: 予期せぬエラー
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+
+components:
+  schemas:
+    Result:
+      type: object
+      required:
+        - code
+        - massage
+      properties:
+        result:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+          example:
+            code: 'XXX999(XX:機能分類コード)'
+            message: unexpected error.

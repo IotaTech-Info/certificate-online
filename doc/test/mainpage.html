@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+            }
+            head,body,html{
+                height: 100%;
+            }
+            div{
+                border: 1px solid red;
+            }
+
+            li{
+                list-style: none;
+            }
+            .page{
+                height: 100%;
+                width: 100%;
+                display:block;
+            }
+            .left,.right{
+                height:100%
+            }
+            .left{
+                width:23%;
+                float:left;
+            }
+            .right{
+                width:76%;
+                float:left;
+            }
+            .upper{
+                background-image: linear-gradient(to right,#47D498, #2DCECB);
+                height:55%;
+                width: 100%;
+                padding-left:3%;
+                padding-top:2%;
+            }
+            .page-title{
+                float:left;
+                font-size: 25px;
+                color: #cceeee;
+            }
+            .icons{
+                float:right;
+                width:20%;
+            }
+            .icons>p{
+                font-size:20px;
+                color: #cceeee;
+            }
+            .btns{
+                width:15%;
+                height:20%;
+            }
+        </style>
+    </head>
+    <body>
+<div class="page">
+    <div class="left">
+        <div class="user-info">
+            <div class="avatar"></div>
+            <div class="username"></div>
+        </div>
+        <div class="navi-items">
+            <ul>
+                <li class="home"></li>
+                <li class="upload"></li>
+                <li class="view"></li>
+                <li class="message"></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="right">
+        <div class="upper">
+            <div class="page-info">
+                <div class="page-title">
+                    <p>資格保有情報</p>
+                </div>
+                <div class="icons">
+                    <p class="page-info-icons">🔔&nbsp;📅&nbsp;👨&nbsp;User
+                    </p>
+                </div>
+            </div>
+            <div class="btns"></div>
+        </div>
+        <div class="lower">
+            <div class="company-info"></div>
+        </div>
+    </div>
+</div>
+    </body>
+</html>
