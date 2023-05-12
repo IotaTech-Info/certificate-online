@@ -24,7 +24,7 @@ api.add_resource(certsearch.CertsearchAPI,
                  '/certsearch')
 api.add_resource(message.MessageAPI,
                  '/message')
-api.add_resource(upload.UploadhAPI,
+api.add_resource(upload.UploadAPI,
                  '/upload')
 api.add_resource(getdata.GetdataAPI,
                  '/getdata')
