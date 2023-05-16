@@ -1,5 +1,6 @@
-CREATE TABLE EMPLOYEE_INFO (
-    employee_code integer PRIMARY KEY,
+------employee_info table------------
+CREATE TABLE public."employee_info" (
+    employee_code integer NOT NULL,
     lastname character varying(50) NOT NULL,
     firstname character varying(50) NOT NULL,
     birthday date NOT NULL,
@@ -12,3 +13,6 @@ CREATE TABLE EMPLOYEE_INFO (
     position character varying(50),
     superior_employee_code integer REFERENCES EMPLOYEE_INFO (employee_code)
 );
+--primary key
+ALTER TABLE ONLY public."employee_info"
+    ADD CONSTRAINT "employee_info_pkey" PRIMARY KEY (employee_code);
