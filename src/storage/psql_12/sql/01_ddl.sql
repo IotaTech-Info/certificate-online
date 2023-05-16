@@ -14,6 +14,10 @@ SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
+
+
+
+
 ------userinfo table------------
 CREATE TABLE public."user"(
     userID integer(20) NOT NULL,

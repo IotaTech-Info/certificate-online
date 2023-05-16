@@ -11,6 +11,7 @@ SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
+
 --user
 INSERT INTO public."user" (userId, username, password, ebworkid, registerDate, email, userType, sessionToken) VALUES (1,'data', 1, 1, now(),'123@123.com', '社員','xxxxx');
 INSERT INTO public."user" (userId, username, password, ebworkid, registerDate, email, userType, sessionToken) VALUES (1,'data', 1, 1, now(),'456@123.com', 'リーダー','xxxxx');
