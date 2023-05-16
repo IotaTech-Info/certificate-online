@@ -16,3 +16,7 @@ CREATE TABLE public."employee_info" (
 --primary key
 ALTER TABLE ONLY public."employee_info"
     ADD CONSTRAINT "employee_info_pkey" PRIMARY KEY (employee_code);
+--foreign key
+ALTER TABLE public."employee_info"
+    ADD CONSTRAINT "employee_info_fkey" FOREIGN KEY (superior_employee_code)
+    REFERENCES public."employee_info" (employee_code);
