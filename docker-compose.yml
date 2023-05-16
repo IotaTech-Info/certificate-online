@@ -3,61 +3,61 @@ version: '3.5'
 
 services:
 
-  reverse-proxy:
-    image: reverse-proxy
-    ports:
-      - 8888:80
-    container_name: reverse-proxy
-    build:
-      context: ./src/nginx/
-      dockerfile: Dockerfile
-    environment:
-      - CONTAINER_FLAG=${CONTAINER_FLAG}
-    volumes:
-      - ./src/nginx/conf.d/:/etc/nginx/conf.d
-    command: /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
-    depends_on: 
-      - web
-      - app
+  # reverse-proxy:
+  #   image: reverse-proxy
+  #   ports:
+  #     - 8888:80
+  #   container_name: reverse-proxy
+  #   build:
+  #     context: ./src/nginx/
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     - CONTAINER_FLAG=${CONTAINER_FLAG}
+  #   volumes:
+  #     - ./src/nginx/conf.d/:/etc/nginx/conf.d
+  #   command: /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
+  #   depends_on: 
+  #     - web
+  #     - app
 
-  web:
-    image: vue-server
-    ports:
-      - 8000:8000
-    container_name: vue-server
-    build:
-      context: ./src/frontend/
-      dockerfile: Dockerfile
-    privileged: true # 管理者権限の付与
-    environment:
-      - CONTAINER_FLAG=${CONTAINER_FLAG}
-    volumes:
-      - ./src/frontend/:/app/
-      - node_modules:/app/web_ui/node_modules
-    tty: true # 起動状態を維持
-    stdin_open: true # コンソール立ち上げ
-    command: sh -c "echo serving vue server... && cd /app/web_ui/ && yarn run serve-docker"
+  # web:
+  #   image: vue-server
+  #   ports:
+  #     - 8000:8000
+  #   container_name: vue-server
+  #   build:
+  #     context: ./src/frontend/
+  #     dockerfile: Dockerfile
+  #   privileged: true # 管理者権限の付与
+  #   environment:
+  #     - CONTAINER_FLAG=${CONTAINER_FLAG}
+  #   volumes:
+  #     - ./src/frontend/:/app/
+  #     - node_modules:/app/web_ui/node_modules
+  #   tty: true # 起動状態を維持
+  #   stdin_open: true # コンソール立ち上げ
+  #   command: sh -c "echo serving vue server... && cd /app/web_ui/ && yarn run serve-docker"
 
-  app:
-    build:
-      context: ./src/backend/
-      dockerfile: Dockerfile
-    image: app
-    container_name: backend
-    expose: 
-      - ${BACKEND_FLASK_PORT}
-    environment:
-      - CONTAINER_FLAG=${CONTAINER_FLAG}
-      - FLASK_PORT=${BACKEND_FLASK_PORT}
-      - FLASK_CONFIG=${BACKEND_FLASK_CONFIG}
-    volumes:
-      - ./src/backend/:/work/
-      - ./logs/app:/work/logs
-      - /var/run/docker.sock:/var/run/docker.sock:rw # dockerソケット
-    command: 
-      ['python', '-m', 'entrypoint', 'startserver']
-    depends_on: 
-      - psql
+  # app:
+  #   build:
+  #     context: ./src/backend/
+  #     dockerfile: Dockerfile
+  #   image: app
+  #   container_name: backend
+  #   expose: 
+  #     - ${BACKEND_FLASK_PORT}
+  #   environment:
+  #     - CONTAINER_FLAG=${CONTAINER_FLAG}
+  #     - FLASK_PORT=${BACKEND_FLASK_PORT}
+  #     - FLASK_CONFIG=${BACKEND_FLASK_CONFIG}
+  #   volumes:
+  #     - ./src/backend/:/work/
+  #     - ./logs/app:/work/logs
+  #     - /var/run/docker.sock:/var/run/docker.sock:rw # dockerソケット
+  #   command: 
+  #     ['python', '-m', 'entrypoint', 'startserver']
+  #   depends_on: 
+  #     - psql
 
   psql:
     build:

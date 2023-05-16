@@ -15,23 +15,20 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 
-
-
-
-------userinfo table------------
-CREATE TABLE public."user"(
-    userID integer(20) NOT NULL,
+------user table------------
+CREATE TABLE public."userinfo"(
+    userID integer NOT NULL,
     username character varying(20) NOT NULL,
     password character varying(20) NOT NULL,
     ebworkID integer NOT NULL,
     email character varying(30),
     userType character varying(20)NOT NULL,
     sessionToken character varying(50),
-    registerDate timestamp without time zone NOT NULL,
+    registerDate timestamp without time zone NOT NULL
 );
-ALTER TABLE public."user" OWNER TO "user";
+ALTER TABLE public."userinfo" OWNER TO "user";
 --primary key
-ALTER TABLE ONLY public."user"
+ALTER TABLE ONLY public."userinfo"
     ADD CONSTRAINT "user_pkey" PRIMARY KEY (userID);
 --foreign key
 --primary key sequnence
@@ -42,8 +39,8 @@ CREATE SEQUENCE public."user_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER SEQUENCE public."use_seq" OWNED BY public."user".userID;
-ALTER TABLE ONLY public."user" ALTER COLUMN userID SET DEFAULT nextval('public."use_seq"'::regclass);
+ALTER SEQUENCE public."user_seq" OWNED BY public."userinfo".userID;
+ALTER TABLE ONLY public."userinfo" ALTER COLUMN userID SET DEFAULT nextval('public."user_seq"'::regclass);
 
 ------categories table------------
 CREATE TABLE public."categories"(
@@ -78,18 +75,18 @@ ALTER TABLE ONLY public."tags"
 ------tagRelate table------------
 CREATE TABLE public."tagRelate"(
     cateID  integer NOT NULL,
-    tagID  integer NOT NULL,
+    tagID  integer NOT NULL
 );
 ALTER TABLE public."tagRelate" OWNER TO "user";
 --primary key
 --foreign key
-ALTER TABLE ONLY public."tagRelate"
-ADD CONSTRAINT "fk_cateID_tags" FOREIGN KEY(cateID)
-REFERENCEs public.categories(cateID);
+-- ALTER TABLE ONLY public."tagRelate"
+-- ADD CONSTRAINT "fk_cateID_tags" FOREIGN KEY(cateID)
+-- REFERENCEs public.categories(cateID);
 
-ALTER TABLE ONLY public."tagRelate"
-ADD CONSTRAINT "fk_tagID_tags" FOREIGN KEY(tagID)
-REFERENCEs public.tags(tagID);
+-- ALTER TABLE ONLY public."tagRelate"
+-- ADD CONSTRAINT "fk_tagID_tags" FOREIGN KEY(tagID)
+-- REFERENCEs public.tags(tagID);
 
 
 
@@ -107,13 +104,13 @@ ALTER TABLE public."certs" OWNER TO "user";
 ALTER TABLE ONLY public."certs"
     ADD CONSTRAINT "certs_pkey" PRIMARY KEY (certID);
 --foreign key
-ALTER TABLE ONLY public."cert"
-ADD CONSTRAINT "fk_userID" FOREIGN KEY(userID)
-REFERENCEs public.user(userID);
+-- ALTER TABLE ONLY public."certs"
+-- ADD CONSTRAINT "fk_userID" FOREIGN KEY(userID)
+-- REFERENCEs public.userinfo(userID);
 
-ALTER TABLE ONLY public."cert"
-ADD CONSTRAINT "fk_cateID" FOREIGN KEY(cateID)
-REFERENCEs public.categories(cateID);
+-- ALTER TABLE ONLY public."certs"
+-- ADD CONSTRAINT "fk_cateID" FOREIGN KEY(cateID)
+-- REFERENCEs public.categories(cateID);
 --primary key sequnence
 CREATE SEQUENCE public."certs_seq"
     AS integer
@@ -133,7 +130,7 @@ CREATE TABLE public."message"(
       userID  integer NOT NULL,
       msgContent character varying(200) NOT NULL,
       msgDate   timestamp without time zone NOT NULL,
-      msgStatus  enum('既読','未読')
+      msgStatus  character varying(50)
 );
 ALTER TABLE public."message" OWNER TO "user";
 --primary key
@@ -142,7 +139,7 @@ ADD PRIMARY KEY(msgID);
 --foreign key
 ALTER TABLE ONLY public."message"
 ADD CONSTRAINT "fk_user_ID" FOREIGN KEY(userID)
-REFERENCEs public.user(userID);
+REFERENCEs public.userinfo(userID);
 --primary key sequnence
 CREATE SEQUENCE public."message_seq"
     AS integer
