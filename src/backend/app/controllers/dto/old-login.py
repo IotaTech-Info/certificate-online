@@ -5,18 +5,16 @@ from . import Result, ResultSchema, BaseSchema
 
 
 class Userinfo:
-    def __init__(self, username: int, email: str, password: str,ebworkid: str) -> None:
-        self.username = username
-        self.email = email
-        self.password = password
-        self.ebworkid = ebworkid
+    def __init__(self, user_id: int, lastname: str, firstname: str) -> None:
+        self.user_id = user_id
+        self.lastname = lastname
+        self.firstname = firstname
 
 class UserinfoSchema(BaseSchema):
     __model__ = Userinfo
-    username = fields.Str(data_key='username')
-    email = fields.Str(data_key='email')
-    password = fields.Str(data_key='password')
-    user_id = fields.Int(data_key='ebworkid')
+    user_id = fields.Int(data_key='user_id')
+    lastname = fields.Str(data_key='lastname')
+    firstname = fields.Str(data_key='firstname')
 
 class Login:
     def __init__(self, mail: str, password: str) -> None:
@@ -25,10 +23,9 @@ class Login:
 
 class LoginSchema(BaseSchema):
     __model__ = Login
-    username = fields.Str(data_key='username')
-    email = fields.Str(data_key='email')
+    mail = fields.Str(data_key='mail')
     password = fields.Str(data_key='password')
-    user_id = fields.Int(data_key='ebworkid')
+    user_id = fields.Int(data_key='user_id')
 
 
 class PostLoginRes:

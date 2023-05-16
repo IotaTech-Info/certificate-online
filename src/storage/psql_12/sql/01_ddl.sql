@@ -14,184 +14,105 @@ SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
-
-
---User系
-
-------userinfo table------------
-CREATE TABLE public."userinfo"(
-    user_id integer NOT NULL,
-    lastname character varying(50) NOT NULL,
-    firstname character varying(50) NOT NULL,
-    birthday character varying(10) NOT NULL,
-    sex character varying(1) NOT NULL,
-    company character varying(200),
-    city character varying(200) NOT NULL,
-    create_datetime timestamp without time zone NOT NULL,
-    update_datetime timestamp without time zone
+------categories table------------
+CREATE TABLE public."categories"(
+    cateId integer NOT NULL,
+    certName character varying(50) NOT NULL,
+    description character varying(200) NOT NULL
 );
-ALTER TABLE public."userinfo" OWNER TO "user";
+
+
+
+ALTER TABLE public."categories" OWNER TO "user";
 --primary key
-ALTER TABLE ONLY public."userinfo"
-    ADD CONSTRAINT "userinfo_pkey" PRIMARY KEY (user_id);
+ALTER TABLE ONLY public."categories"
+    ADD CONSTRAINT "categories_pkey" PRIMARY KEY (cateId);
 --foreign key
+
+------tags table------------
+CREATE TABLE public."tags"(
+    tagID integer NOT NULL,
+    tagName character varying(50) NOT NULL
+);
+
+ALTER TABLE public."tags" OWNER TO "user";
+--primary key
+ALTER TABLE ONLY public."tags"
+    ADD CONSTRAINT "tags_pkey" PRIMARY KEY (tagID);
+--foreign key
+
+------message table------------
+CREATE TABLE public."message"(
+      msgID  integer NOT NULL,
+      userId  integer NOT NULL,
+      msgContent character varying(200) NOT NULL,
+      msgDate   timestamp without time zone NOT NULL,
+      msgStatus  enum('既読','未読')
+);
+ALTER TABLE public."message" OWNER TO "user";
+--primary key
+ALTER TABLE ONLY public."message"
+ADD PRIMARY KEY(msgID);
+--foreign key
+ALTER TABLE ONLY public."message"
+ADD CONSTRAINT "fk_user_id" FOREIGN KEY(userId)
+REFERENCEs public.user(userId);
 --primary key sequnence
-CREATE SEQUENCE public."User_userinfo_use_id_seq"
+CREATE SEQUENCE public."message_seq"
     AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER SEQUENCE public."User_userinfo_use_id_seq" OWNED BY public."userinfo".user_id;
-ALTER TABLE ONLY public."userinfo" ALTER COLUMN user_id SET DEFAULT nextval('public."User_userinfo_use_id_seq"'::regclass);
+ALTER SEQUENCE public."message_seq" OWNED BY public."message".ID;
+ALTER TABLE ONLY public."message" ALTER COLUMN ID SET DEFAULT nextval('public."message_seq"'::regclass);
 
-
-------login table------------
-CREATE TABLE public."login"(
-    user_id integer NOT NULL,
-    mail character varying(50) NOT NULL,
-    password character varying(50) NOT NULL,
-    create_datetime  timestamp without time zone NOT NULL,
-    update_datetime  timestamp without time zone
+------certs table------------
+CREATE TABLE public."certs"(
+    certId  integer NOT NULL,
+    userId  integer NOT NULL,
+    cateID  integer NOT NULL,
+    file  character varying(50) NOT NULL,
+    getDate  timestamp without time zone NOT NULL,
+    status character varying(20) NOT NULL
 );
-ALTER TABLE public."login" OWNER TO "user";
+ALTER TABLE public."certs" OWNER TO "user";
 --primary key
-ALTER TABLE ONLY public."login"
-    ADD CONSTRAINT "login_pkey" PRIMARY KEY (user_id);
+ALTER TABLE ONLY public."certs"
+    ADD CONSTRAINT "certs_pkey" PRIMARY KEY (certId);
 --foreign key
+ALTER TABLE ONLY public."cert"
+ADD CONSTRAINT "fk_userId" FOREIGN KEY(userId)
+REFERENCEs public.user(userId);
+
+ALTER TABLE ONLY public."cert"
+ADD CONSTRAINT "fk_cateID" FOREIGN KEY(cateID)
+REFERENCEs public.categories(cateID);
 --primary key sequnence
-CREATE SEQUENCE public."User_login_user_id_seq"
+CREATE SEQUENCE public."certs_seq"
     AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER SEQUENCE public."User_login_user_id_seq" OWNED BY public."login".user_id;
-ALTER TABLE ONLY public."login" ALTER COLUMN user_id SET DEFAULT nextval('public."User_login_user_id_seq"'::regclass);
+ALTER SEQUENCE public."certs_seq" OWNED BY public."certs".certId;
+ALTER TABLE ONLY public."certs" ALTER COLUMN certId SET DEFAULT nextval('public."certs_seq"'::regclass);
 
 
-------login_event table------------
-CREATE TABLE public."login_event"(
-    user_id integer NOT NULL,
-    login_datetime  timestamp without time zone NOT NULL,
-    logout_datetime  timestamp without time zone
+------tagRelate table------------
+CREATE TABLE public."tagRelate"(
+    cateID  integer(50) NOT NULL,
+    tagID  integer(50) NOT NULL,
 );
-ALTER TABLE public."login_event" OWNER TO "user";
+ALTER TABLE public."tagRelate" OWNER TO "user";
 --primary key
-ALTER TABLE ONLY public."login_event"
-ADD PRIMARY KEY(user_id, login_datetime);
 --foreign key
---primary key sequnence
+ALTER TABLE ONLY public."tagRelate"
+ADD CONSTRAINT "fk_cateID_tags" FOREIGN KEY(cateID)
+REFERENCEs public.categories(cateID);
 
-
---Product
-------exam table------------
-CREATE TABLE public."exam"(
-    test_id  integer NOT NULL,
-    test_category  character varying(50) NOT NULL,
-    test_name  character varying(50) NOT NULL,
-    description  character varying(500) NOT NULL,
-    create_datetime  timestamp without time zone NOT NULL,
-    update_datetime  timestamp without time zone
-); 
-ALTER TABLE public."exam" OWNER TO "user";
---primary key
-ALTER TABLE ONLY public."exam"
-    ADD CONSTRAINT "exam_pkey" PRIMARY KEY (test_id);
---foreign key
---primary key sequnence
-CREATE SEQUENCE public."Product_Exam_exam_test_id_seq"
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-ALTER SEQUENCE public."Product_Exam_exam_test_id_seq" OWNED BY public."exam".test_id;
-ALTER TABLE ONLY public."exam" ALTER COLUMN test_id SET DEFAULT nextval('public."Product_Exam_exam_test_id_seq"'::regclass);
-
-
-------question table------------
-CREATE TABLE public."question"(
-     question_id  integer NOT NULL,
-     test_id  integer NOT NULL,
-     text  character varying(500) NOT NULL,
-     code  character varying(500),
-     right_select_count  integer NOT NULL,
-     create_datetime  timestamp without time zone NOT NULL,
-     update_datetime  timestamp without time zone
-); 
-ALTER TABLE public."question" OWNER TO "user";
---primary key
-ALTER TABLE ONLY public."question"
-ADD PRIMARY KEY(question_id, test_id);
---foreign key
-
-
-------option table------------
-CREATE TABLE public."option"(
-      option_id  integer NOT NULL,
-      question_id  integer NOT NULL,
-      test_id  integer NOT NULL,
-      text  character varying(500) NOT NULL,
-      right_or_wrong  boolean NOT NULL,
-      create_datetime  timestamp without time zone NOT NULL,
-      update_datetime  timestamp without time zone
-); 
-ALTER TABLE public."option" OWNER TO "user";
---primary key
-ALTER TABLE ONLY public."option"
-ADD PRIMARY KEY(option_id, question_id, test_id);
---foreign key
-
-
---Test系
-------exam_event table------------
-CREATE TABLE public."exam_event"(
-    exam_event_id  integer NOT NULL,
-    user_id  integer NOT NULL,
-    test_id  integer NOT NULL,
-    test_result  integer NOT NULL,
-    create_datetime  timestamp without time zone NOT NULL,
-    update_datetime  timestamp without time zone
-);
-ALTER TABLE public."exam_event" OWNER TO "user";
---primary key
-ALTER TABLE ONLY public."exam_event"
-    ADD CONSTRAINT "exam_event_pkey" PRIMARY KEY (exam_event_id);
---foreign key
-ALTER TABLE ONLY public."exam_event"
-ADD CONSTRAINT "fk_user_id" FOREIGN KEY(user_id)
-REFERENCEs public.userinfo(user_id);
-
-ALTER TABLE ONLY public."exam_event"
-ADD CONSTRAINT "fk_test_id" FOREIGN KEY(test_id)
-REFERENCEs public.exam(test_id);
---primary key sequnence
-CREATE SEQUENCE public."Exam_exam_event_id_seq"
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-ALTER SEQUENCE public."Exam_exam_event_id_seq" OWNED BY public."exam_event".exam_event_id;
-ALTER TABLE ONLY public."exam_event" ALTER COLUMN exam_event_id SET DEFAULT nextval('public."Exam_exam_event_id_seq"'::regclass);
-
-------user_test_answer table------------
-CREATE TABLE public."user_test_answer"(
-    exam_event_id  integer NOT NULL,
-    question_id  integer NOT NULL,
-    user_answer_right_or_wrong  boolean NOT NULL,
-    user_answer_option  character varying(50) NOT NULL,
-    create_datetime  timestamp without time zone NOT NULL,
-    update_datetime  timestamp without time zone
-);
-ALTER TABLE public."user_test_answer" OWNER TO "user";
---primary key
-ALTER TABLE ONLY public."user_test_answer"
-ADD PRIMARY KEY(exam_event_id, question_id);
---foreign key
---primary key sequnence
+ALTER TABLE ONLY public."tagRelate"
+ADD CONSTRAINT "fk_tagID_tags" FOREIGN KEY(tagID)
+REFERENCEs public.tags(tagID);
