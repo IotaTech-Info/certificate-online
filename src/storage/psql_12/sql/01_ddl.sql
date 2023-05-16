@@ -1,7 +1,7 @@
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
+SET IDle_in_transaction_session_timeout = 0;
 SET client_encoding = 'SJIS';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -16,10 +16,10 @@ SET default_table_access_method = heap;
 
 ------userinfo table------------
 CREATE TABLE public."user"(
-    userId integer(20) NOT NULL,
+    userID integer(20) NOT NULL,
     username character varying(20) NOT NULL,
-    password integer(20) NOT NULL,
-    ebworkid integer(50) NOT NULL,
+    password character varying(20) NOT NULL,
+    ebworkID integer NOT NULL,
     email character varying(30),
     userType character varying(20)NOT NULL,
     sessionToken character varying(50),
@@ -28,7 +28,7 @@ CREATE TABLE public."user"(
 ALTER TABLE public."user" OWNER TO "user";
 --primary key
 ALTER TABLE ONLY public."user"
-    ADD CONSTRAINT "user_pkey" PRIMARY KEY (userId);
+    ADD CONSTRAINT "user_pkey" PRIMARY KEY (userID);
 --foreign key
 --primary key sequnence
 CREATE SEQUENCE public."user_seq"
@@ -38,12 +38,12 @@ CREATE SEQUENCE public."user_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER SEQUENCE public."use_seq" OWNED BY public."user".userId;
-ALTER TABLE ONLY public."user" ALTER COLUMN userId SET DEFAULT nextval('public."use_seq"'::regclass);
+ALTER SEQUENCE public."use_seq" OWNED BY public."user".userID;
+ALTER TABLE ONLY public."user" ALTER COLUMN userID SET DEFAULT nextval('public."use_seq"'::regclass);
 
 ------categories table------------
 CREATE TABLE public."categories"(
-    cateId integer NOT NULL,
+    cateID integer NOT NULL,
     certName character varying(50) NOT NULL,
     description character varying(200) NOT NULL
 );
@@ -53,7 +53,7 @@ CREATE TABLE public."categories"(
 ALTER TABLE public."categories" OWNER TO "user";
 --primary key
 ALTER TABLE ONLY public."categories"
-    ADD CONSTRAINT "categories_pkey" PRIMARY KEY (cateId);
+    ADD CONSTRAINT "categories_pkey" PRIMARY KEY (cateID);
 --foreign key
 
 
@@ -73,8 +73,8 @@ ALTER TABLE ONLY public."tags"
 
 ------tagRelate table------------
 CREATE TABLE public."tagRelate"(
-    cateID  integer(50) NOT NULL,
-    tagID  integer(50) NOT NULL,
+    cateID  integer NOT NULL,
+    tagID  integer NOT NULL,
 );
 ALTER TABLE public."tagRelate" OWNER TO "user";
 --primary key
@@ -91,8 +91,8 @@ REFERENCEs public.tags(tagID);
 
 ------certs table------------
 CREATE TABLE public."certs"(
-    certId  integer NOT NULL,
-    userId  integer NOT NULL,
+    certID  integer NOT NULL,
+    userID  integer NOT NULL,
     cateID  integer NOT NULL,
     file  character varying(50) NOT NULL,
     getDate  timestamp without time zone NOT NULL,
@@ -101,11 +101,11 @@ CREATE TABLE public."certs"(
 ALTER TABLE public."certs" OWNER TO "user";
 --primary key
 ALTER TABLE ONLY public."certs"
-    ADD CONSTRAINT "certs_pkey" PRIMARY KEY (certId);
+    ADD CONSTRAINT "certs_pkey" PRIMARY KEY (certID);
 --foreign key
 ALTER TABLE ONLY public."cert"
-ADD CONSTRAINT "fk_userId" FOREIGN KEY(userId)
-REFERENCEs public.user(userId);
+ADD CONSTRAINT "fk_userID" FOREIGN KEY(userID)
+REFERENCEs public.user(userID);
 
 ALTER TABLE ONLY public."cert"
 ADD CONSTRAINT "fk_cateID" FOREIGN KEY(cateID)
@@ -118,15 +118,15 @@ CREATE SEQUENCE public."certs_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER SEQUENCE public."certs_seq" OWNED BY public."certs".certId;
-ALTER TABLE ONLY public."certs" ALTER COLUMN certId SET DEFAULT nextval('public."certs_seq"'::regclass);
+ALTER SEQUENCE public."certs_seq" OWNED BY public."certs".certID;
+ALTER TABLE ONLY public."certs" ALTER COLUMN certID SET DEFAULT nextval('public."certs_seq"'::regclass);
 
 
 
 ------message table------------
 CREATE TABLE public."message"(
       msgID  integer NOT NULL,
-      userId  integer NOT NULL,
+      userID  integer NOT NULL,
       msgContent character varying(200) NOT NULL,
       msgDate   timestamp without time zone NOT NULL,
       msgStatus  enum('既読','未読')
@@ -137,8 +137,8 @@ ALTER TABLE ONLY public."message"
 ADD PRIMARY KEY(msgID);
 --foreign key
 ALTER TABLE ONLY public."message"
-ADD CONSTRAINT "fk_user_id" FOREIGN KEY(userId)
-REFERENCEs public.user(userId);
+ADD CONSTRAINT "fk_user_ID" FOREIGN KEY(userID)
+REFERENCEs public.user(userID);
 --primary key sequnence
 CREATE SEQUENCE public."message_seq"
     AS integer
@@ -147,5 +147,5 @@ CREATE SEQUENCE public."message_seq"
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER SEQUENCE public."message_seq" OWNED BY public."message".ID;
-ALTER TABLE ONLY public."message" ALTER COLUMN ID SET DEFAULT nextval('public."message_seq"'::regclass);
+ALTER SEQUENCE public."message_seq" OWNED BY public."message".msgID;
+ALTER TABLE ONLY public."message" ALTER COLUMN msgID SET DEFAULT nextval('public."message_seq"'::regclass);
