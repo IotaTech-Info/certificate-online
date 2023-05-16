@@ -1,0 +1,47 @@
+--資格登録
+
+------Certification_Registration table------------
+CREATE TABLE public."Certification_Registration"(
+    registration_id integer NOT NULL,
+    employee_code integer NOT NULL,
+    certification_id character varying(50) NOT NULL,
+    certificate_number character varying(50) NOT NULL,
+    pass_date date NOT NULL,
+    create_datetime timestamp without time zone NOT NULL,
+    update_datetime timestamp without time zone,
+    approval_status character varying(10) NOT NULL,
+    approver_code integer NOT NULL,
+    approver_comment character varying(100)
+);
+
+ALTER TABLE public."Certification_Registration" OWNER TO  "registration_id";
+--primary key
+ALTER TABLE public."Certification_Registration"
+    ADD CONSTRAINT "Certification_Registration_pkey" PRIMARY KEY (registration_id);
+
+--foreign key
+ALTER TABLE public."Certification_Registration"
+    ADD CONSTRAINT "Certification_Registration_employee_code_fkey" FOREIGN KEY (employee_code)
+    REFERENCES public."EMPLOYEE_INFO" (employee_code);
+
+ALTER TABLE public."Certification_Registration"
+    ADD CONSTRAINT "Certification_Registration_certification_id_fkey" FOREIGN KEY (certification_id)
+    REFERENCES public."CERTIFICATION_INFO" (certification_id);
+
+ALTER TABLE public."Certification_Registration"
+    ADD CONSTRAINT "Certification_Registration_approver_code_fkey" FOREIGN KEY (approver_code)
+    REFERENCES public."EMPLOYEE_INFO" (employee_code);
+
+--primary key sequnence
+
+CREATE SEQUENCE public."Certification_Registration_registration_id_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE public."Certification_Registration_registration_id_seq" OWNED BY public."Certification_Registration".registration_id;
+
+ALTER TABLE ONLY public."Certification_Registration" ALTER COLUMN registration_id SET DEFAULT nextval('public."Certification_Registration_registration_id_seq"'::regclass);

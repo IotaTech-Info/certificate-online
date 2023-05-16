@@ -195,3 +195,5 @@ ALTER TABLE ONLY public."user_test_answer"
 ADD PRIMARY KEY(exam_event_id, question_id);
 --foreign key
 --primary key sequnence
+
+
