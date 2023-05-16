@@ -4,7 +4,7 @@
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'SJIS';
+SET client_encoding = 'UTF-8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
@@ -28,40 +28,40 @@ VALUES ('2','BruceLee@el.com','Goyhm199306252',now());
 
 --exam
 INSERT INTO public."exam"(test_id,test_category,test_name,description,create_datetime)
- VALUES('1','level_test','Java SE Bronze','uJava SE 11v‚ÍA2017”N9Œ‚É”­•\‚³‚ê‚½V‚µ‚¢ƒŠƒŠ[ƒXEƒ‚ƒfƒ‹‚Ö‚ÌˆÚsŒã‰‚Ì LTS ƒŠƒŠ[ƒX‚Å‚ ‚èAŠé‹ÆƒVƒXƒeƒ€‚âƒNƒ‰ƒEƒhEƒT[ƒrƒXAƒXƒ}[ƒgEƒfƒoƒCƒX‚È‚Ç‚ÅŠˆ—p‚³‚ê‚éƒAƒvƒŠƒP[ƒVƒ‡ƒ“ŠJ”­‚Ì¶Y«Œüã‚Éd“_‚ğ‚¨‚¢‚Ä‚¢‚Ü‚·B‚±‚Ì‘Ši‚ğæ“¾‚·‚é‚±‚Æ‚ÅA‹ÆŠE•W€‚É€‹’‚µ‚½‚“x‚ÈƒXƒLƒ‹‚ğØ–¾‚µ‚Ü‚·B
-Oracle Certified Java Programmer, Bronze SE ”F’è‘Ši‚ÍAŒ¾Œê–¢ŒoŒ±ÒŒü‚¯‚Ì“ü–å‘Ši‚Å Java Œ¾Œê‚ğg—p‚µ‚½ƒIƒuƒWƒFƒNƒgwŒüƒvƒƒOƒ‰ƒ~ƒ“ƒO‚ÌŠî–{“I‚È’m¯‚ğ—L‚·‚é‚±‚Æ ‚ğ•]‰¿‚·‚é‚±‚Æ‚ğ–Ú“I‚Æ‚µ‚Ä‚¢‚Ü‚·BOracle Certified Java Programmer, Bronze SE ”F’è‘Ši‚ğæ“¾‚·‚é‚½‚ß‚É‚ÍAJava SE Bronze (1Z0-818-JPN) Œ± ‚Ì‡Ši‚ª•K—v‚Å‚·B',now());
+ VALUES('1','level_test','Java SE Bronze','ï¿½uJava SE 11ï¿½vï¿½ÍA2017ï¿½N9ï¿½ï¿½ï¿½É”ï¿½ï¿½\ï¿½ï¿½ï¿½ê‚½ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Xï¿½Eï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ö‚ÌˆÚsï¿½ã‰ï¿½ï¿½ LTS ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Xï¿½Å‚ï¿½ï¿½ï¿½Aï¿½ï¿½ÆƒVï¿½Xï¿½eï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Eï¿½hï¿½Eï¿½Tï¿½[ï¿½rï¿½Xï¿½Aï¿½Xï¿½}ï¿½[ï¿½gï¿½Eï¿½fï¿½oï¿½Cï¿½Xï¿½È‚Ç‚ÅŠï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½vï¿½ï¿½ï¿½Pï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½Ìï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Édï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½ï¿½ï¿½Ìï¿½ï¿½iï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ÅAï¿½ÆŠEï¿½Wï¿½ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½ÈƒXï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Ø–ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+Oracle Certified Java Programmer, Bronze SE ï¿½Fï¿½è‘ï¿½iï¿½ÍAï¿½ï¿½ï¿½ê–¢ï¿½oï¿½ï¿½ï¿½ÒŒï¿½ï¿½ï¿½ï¿½Ì“ï¿½ï¿½å‘ï¿½iï¿½ï¿½ Java ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½wï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½Oï¿½ÌŠï¿½{ï¿½Iï¿½È’mï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½é‚±ï¿½ï¿½ ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ï¿½Ú“Iï¿½Æ‚ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½BOracle Certified Java Programmer, Bronze SE ï¿½Fï¿½è‘ï¿½iï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½é‚½ï¿½ß‚É‚ÍAJava SE Bronze (1Z0-818-JPN) ï¿½ï¿½ï¿½ï¿½ ï¿½Ìï¿½ï¿½iï¿½ï¿½ï¿½Kï¿½vï¿½Å‚ï¿½ï¿½B',now());
 
 INSERT INTO public."exam"(test_id,test_category,test_name,description,create_datetime)
-VALUES('2','Java','‘æ‹ãÍ‘dã‚°–â‘è','Java SE Bronze —ûK–â‘è',now());
+VALUES('2','Java','ï¿½ï¿½ï¿½Í‘ï¿½ï¿½dï¿½ã‚°ï¿½ï¿½ï¿½','Java SE Bronze ï¿½ï¿½ï¿½Kï¿½ï¿½ï¿½',now());
 
 INSERT INTO public."exam"(test_id,test_category,test_name,description,create_datetime)
- VALUES('3','î•ñˆ—‹ZpÒŒ±','Šî–{î•ñ‹ZpÒŒ±','Šî–{î•ñ‹ZpÒŒ±‚Ì‘ÎÛÒ‚Í‚“xITlŞ‚Æ‚È‚é‚½‚ß‚É•K—v‚ÈŠî–{“I’m¯E‹Z”\‚ğ‚à‚¿AÀ‘H“I‚ÈŠˆ—p”\—Í‚ğg‚É•t‚¯‚½Ò‚Å‚·B',now());
+ VALUES('3','ï¿½ï¿½ñˆ—ï¿½ï¿½Zï¿½pï¿½Òï¿½ï¿½ï¿½','ï¿½ï¿½{ï¿½ï¿½ï¿½Zï¿½pï¿½Òï¿½ï¿½ï¿½','ï¿½ï¿½{ï¿½ï¿½ï¿½Zï¿½pï¿½Òï¿½ï¿½ï¿½ï¿½Ì‘ÎÛÒ‚Íï¿½ï¿½xITï¿½lï¿½Ş‚Æ‚È‚é‚½ï¿½ß‚É•Kï¿½vï¿½ÈŠï¿½{ï¿½Iï¿½mï¿½ï¿½ï¿½Eï¿½Zï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Hï¿½Iï¿½ÈŠï¿½ï¿½pï¿½\ï¿½Í‚ï¿½gï¿½É•tï¿½ï¿½ï¿½ï¿½ï¿½Ò‚Å‚ï¿½ï¿½B',now());
  
 INSERT INTO public."exam"(test_id,test_category,test_name,description,create_datetime)
-VALUES('4','î•ñˆ—‹ZpÒŒ±','‰—pî•ñ‹ZpÒŒ±','ITƒGƒ“ƒWƒjƒA‚Æ‚µ‚Ä‚ÌƒŒƒxƒ‹ƒAƒbƒv‚ğ}‚é‚É‚ÍA‰—pî•ñ‹ZpÒŒ±‚ª‚¨Š©‚ß‚Å‚·B‹Zp‚©‚çŠÇ—AŒo‰c‚Ü‚ÅA•L‚¢’m¯‚Æ‰—p—Í‚ªg‚É•t‚«AƒVƒXƒeƒ€ŠJ”­AITŠî”Õ\’z‚È‚Ç‚Ì‹Ç–Ê‚ÅA‚‚¢ƒpƒtƒH[ƒ}ƒ“ƒX‚ğ”­Šö‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B',now());
+VALUES('4','ï¿½ï¿½ñˆ—ï¿½ï¿½Zï¿½pï¿½Òï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½Zï¿½pï¿½Òï¿½ï¿½ï¿½','ITï¿½Gï¿½ï¿½ï¿½Wï¿½jï¿½Aï¿½Æ‚ï¿½ï¿½Ä‚Ìƒï¿½ï¿½xï¿½ï¿½ï¿½Aï¿½bï¿½vï¿½ï¿½}ï¿½ï¿½É‚ÍAï¿½ï¿½ï¿½pï¿½ï¿½ï¿½Zï¿½pï¿½Òï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß‚Å‚ï¿½ï¿½Bï¿½Zï¿½pï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½Aï¿½oï¿½cï¿½Ü‚ÅAï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½mï¿½ï¿½ï¿½Æ‰ï¿½ï¿½pï¿½Í‚ï¿½ï¿½gï¿½É•tï¿½ï¿½ï¿½Aï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½AITï¿½ï¿½Õ\ï¿½zï¿½È‚Ç‚Ì‹Ç–Ê‚ÅAï¿½ï¿½ï¿½ï¿½ï¿½pï¿½tï¿½Hï¿½[ï¿½}ï¿½ï¿½ï¿½Xï¿½ğ”­Šï¿½ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ï¿½ï¿½Å‚ï¿½ï¿½Ü‚ï¿½ï¿½B',now());
 
 INSERT INTO public."exam"(test_id,test_category,test_name,description,create_datetime)
-VALUES('5','î•ñˆ—‹ZpÒŒ±','ITƒpƒXƒ|[ƒgŒ±','E‹Æl‚ª‹¤’Ê‚É”õ‚¦‚Ä‚¨‚­‚×‚«î•ñ‹Zp‚ÉŠÖ‚·‚éŠî‘b“I‚È’m¯‚ğ‚à‚¿Aî•ñ‹Zp‚ÉŒg‚í‚é‹Æ–±‚ÉA‚­‚©A’S“–‹Æ–±‚É‘Î‚µ‚Äî•ñ‹Zp‚ğŠˆ—p‚µ‚Ä‚¢‚±‚¤‚Æ‚·‚éÒB',now());
+VALUES('5','ï¿½ï¿½ñˆ—ï¿½ï¿½Zï¿½pï¿½Òï¿½ï¿½ï¿½','ITï¿½pï¿½Xï¿½|ï¿½[ï¿½gï¿½ï¿½ï¿½ï¿½','ï¿½Eï¿½Ælï¿½ï¿½ï¿½ï¿½ï¿½Ê‚É”ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½×‚ï¿½ï¿½ï¿½ï¿½Zï¿½pï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½bï¿½Iï¿½È’mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Zï¿½pï¿½ÉŒgï¿½ï¿½ï¿½Æ–ï¿½ï¿½ÉAï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Sï¿½ï¿½ï¿½Æ–ï¿½ï¿½É‘Î‚ï¿½ï¿½Äï¿½ï¿½Zï¿½pï¿½ï¿½ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ÒB',now());
 
  INSERT INTO public."exam"(test_id,test_category,test_name,description,create_datetime)
-VALUES('6','AWS‘ŠiØ','AWS Certified DevOps Engineer - Professional','‚±‚Ì‘Ši‚ÍA‘gD‚ªƒNƒ‰ƒEƒhƒCƒjƒVƒAƒ`ƒu‚ğÀ‘•‚·‚é‚½‚ß‚Ìd—v‚ÈƒXƒLƒ‹‚ğ‚ÂlŞ‚ğ“Á’è‚µ‚Äˆç¬‚·‚é‚Ì‚É–ğ—§‚¿‚Ü‚·BAWS Certified DevOps Engineer - Professional ‚ğæ“¾‚·‚é‚ÆAAWS ƒCƒ“ƒtƒ‰ƒXƒgƒ‰ƒNƒ`ƒƒ‚ÆƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌƒeƒXƒg‚ÆƒfƒvƒƒC‚ğ©“®‰»‚·‚é”\—Í‚ª”F’è‚³‚ê‚Ü‚·B',now());
+VALUES('6','AWSï¿½ï¿½ï¿½iï¿½ï¿½','AWS Certified DevOps Engineer - Professional','ï¿½ï¿½ï¿½Ìï¿½ï¿½iï¿½ÍAï¿½gï¿½Dï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Eï¿½hï¿½Cï¿½jï¿½Vï¿½Aï¿½`ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ß‚Ìdï¿½vï¿½ÈƒXï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âlï¿½Ş‚ï¿½ï¿½ï¿½è‚µï¿½Äˆç¬ï¿½ï¿½ï¿½ï¿½Ì‚É–ğ—§‚ï¿½ï¿½Ü‚ï¿½ï¿½BAWS Certified DevOps Engineer - Professional ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ÆAAWS ï¿½Cï¿½ï¿½ï¿½tï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½`ï¿½ï¿½ï¿½ÆƒAï¿½vï¿½ï¿½ï¿½Pï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ìƒeï¿½Xï¿½gï¿½Æƒfï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½Í‚ï¿½ï¿½Fï¿½è‚³ï¿½ï¿½Ü‚ï¿½ï¿½B',now());
 
  INSERT INTO public."exam"(test_id,test_category,test_name,description,create_datetime)
-VALUES('7','AWS‘ŠiØ','AWS Certified Solutions Architect ? Associate','‚±‚Ì‘Ši‚ÍA‘gD‚ªƒNƒ‰ƒEƒhƒCƒjƒVƒAƒ`ƒu‚ğÀ‘•‚·‚é‚½‚ß‚Ìd—v‚ÈƒXƒLƒ‹‚ğ‚ÂlŞ‚ğ“Á’è‚µ‚Äˆç¬‚·‚é‚Ì‚É–ğ—§‚¿‚Ü‚·BAWS Certified Solutions Architect ? Associate ‚ğæ“¾‚·‚é‚ÆAAWS ã‚Å•ªUƒVƒXƒeƒ€‚ğİŒvAÀ‘•‚·‚é”\—Í‚ª”F’è‚³‚ê‚Ü‚·B',now());
+VALUES('7','AWSï¿½ï¿½ï¿½iï¿½ï¿½','AWS Certified Solutions Architect ? Associate','ï¿½ï¿½ï¿½Ìï¿½ï¿½iï¿½ÍAï¿½gï¿½Dï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Eï¿½hï¿½Cï¿½jï¿½Vï¿½Aï¿½`ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ß‚Ìdï¿½vï¿½ÈƒXï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âlï¿½Ş‚ï¿½ï¿½ï¿½è‚µï¿½Äˆç¬ï¿½ï¿½ï¿½ï¿½Ì‚É–ğ—§‚ï¿½ï¿½Ü‚ï¿½ï¿½BAWS Certified Solutions Architect ? Associate ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ÆAAWS ï¿½ï¿½Å•ï¿½ï¿½Uï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½ï¿½İŒvï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½Í‚ï¿½ï¿½Fï¿½è‚³ï¿½ï¿½Ü‚ï¿½ï¿½B',now());
 
  INSERT INTO public."exam"(test_id,test_category,test_name,description,create_datetime)
-VALUES('8','AWS‘ŠiØ','AWS Certified Developer-Associate','‚±‚Ì‘Ši‚ÍA‘gD‚ªƒNƒ‰ƒEƒhƒCƒjƒVƒAƒ`ƒu‚ğÀ‘•‚·‚é‚½‚ß‚Ìd—v‚ÈƒXƒLƒ‹‚ğ‚ÂlŞ‚ğ“Á’è‚µ‚Äˆç¬‚·‚é‚Ì‚É–ğ—§‚¿‚Ü‚·BAWS Certified Developer - Associate ‚ğæ“¾‚·‚é‚ÆAƒNƒ‰ƒEƒhƒx[ƒX‚ÌƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Å‘‚«‚İ‚¨‚æ‚ÑƒfƒvƒƒC‚ğs‚¤”\—Í‚ğ”F’è‚µ‚Ü‚·B',now());
+VALUES('8','AWSï¿½ï¿½ï¿½iï¿½ï¿½','AWS Certified Developer-Associate','ï¿½ï¿½ï¿½Ìï¿½ï¿½iï¿½ÍAï¿½gï¿½Dï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Eï¿½hï¿½Cï¿½jï¿½Vï¿½Aï¿½`ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ß‚Ìdï¿½vï¿½ÈƒXï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âlï¿½Ş‚ï¿½ï¿½ï¿½è‚µï¿½Äˆç¬ï¿½ï¿½ï¿½ï¿½Ì‚É–ğ—§‚ï¿½ï¿½Ü‚ï¿½ï¿½BAWS Certified Developer - Associate ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ÆAï¿½Nï¿½ï¿½ï¿½Eï¿½hï¿½xï¿½[ï¿½Xï¿½ÌƒAï¿½vï¿½ï¿½ï¿½Pï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ‚ï¿½ï¿½ï¿½Ñƒfï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½sï¿½ï¿½ï¿½\ï¿½Í‚ï¿½Fï¿½è‚µï¿½Ü‚ï¿½ï¿½B',now());
 
 INSERT INTO public."exam"(test_id,test_category,test_name,description,create_datetime)
- VALUES('9','AWS‘ŠiØ','AWS Certified Cloud Practitioner','AWS Certified Cloud Practitioner ‚ÍAAWS ƒvƒ‰ƒbƒgƒtƒH[ƒ€‚ÌŠî–{“I‚È’m¯‚ğ‚¨‚¿‚Ì•û‚ğ‘ÎÛ‚Æ‚µ‚Ä‚¢‚Ü‚·B‘gD‚ªƒNƒ‰ƒEƒhƒCƒjƒVƒAƒ`ƒu‚ğÀ‘•‚·‚é‚½‚ß‚Ìd—v‚È’m¯‚ğ‚ÂlŞ‚ğ“Á’è‚µ‚Äˆç¬‚·‚é‚Ì‚É–ğ—§‚¿‚Ü‚·BAWS Certified Cloud Practitioner ‚ğæ“¾‚·‚é‚±‚Æ‚ÅAƒNƒ‰ƒEƒh‚Ö‚Ì—‰ğ‚ÆŠî‘b“I‚È AWS ‚Ì’m¯‚ª”F’è‚³‚ê‚Ü‚·B',now());
+ VALUES('9','AWSï¿½ï¿½ï¿½iï¿½ï¿½','AWS Certified Cloud Practitioner','AWS Certified Cloud Practitioner ï¿½ÍAAWS ï¿½vï¿½ï¿½ï¿½bï¿½gï¿½tï¿½Hï¿½[ï¿½ï¿½ï¿½ÌŠï¿½{ï¿½Iï¿½È’mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ÎÛ‚Æ‚ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½Bï¿½gï¿½Dï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Eï¿½hï¿½Cï¿½jï¿½Vï¿½Aï¿½`ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ß‚Ìdï¿½vï¿½È’mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âlï¿½Ş‚ï¿½ï¿½ï¿½è‚µï¿½Äˆç¬ï¿½ï¿½ï¿½ï¿½Ì‚É–ğ—§‚ï¿½ï¿½Ü‚ï¿½ï¿½BAWS Certified Cloud Practitioner ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ÅAï¿½Nï¿½ï¿½ï¿½Eï¿½hï¿½Ö‚Ì—ï¿½ï¿½ï¿½ï¿½ÆŠï¿½bï¿½Iï¿½ï¿½ AWS ï¿½Ì’mï¿½ï¿½ï¿½ï¿½ï¿½Fï¿½è‚³ï¿½ï¿½Ü‚ï¿½ï¿½B',now());
  
  INSERT INTO public."exam"(test_id,test_category,test_name,description,create_datetime)
-VALUES('10','AWS‘ŠiØ','AWS Certified Solutions Architect - Professional','‚±‚Ì‘Ši‚ÍA‘gD‚ªƒNƒ‰ƒEƒhƒCƒjƒVƒAƒ`ƒu‚ğÀ‘•‚·‚é‚½‚ß‚Ìd—v‚ÈƒXƒLƒ‹‚ğ‚ÂlŞ‚ğ“Á’è‚µ‚Äˆç¬‚·‚é‚Ì‚É–ğ—§‚¿‚Ü‚·BAWS Certified Solutions Architect - Professional ‚ğæ“¾‚·‚é‚ÆA‘½—l‚Å•¡G‚È—vŒ‰º‚É‚¨‚¢‚ÄAAWS ‚ÌƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ğİŒvAƒfƒvƒƒCA•]‰¿‚·‚é”\—Í‚ª”F’è‚³‚ê‚Ü‚·B',now());
+VALUES('10','AWSï¿½ï¿½ï¿½iï¿½ï¿½','AWS Certified Solutions Architect - Professional','ï¿½ï¿½ï¿½Ìï¿½ï¿½iï¿½ÍAï¿½gï¿½Dï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Eï¿½hï¿½Cï¿½jï¿½Vï¿½Aï¿½`ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ß‚Ìdï¿½vï¿½ÈƒXï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âlï¿½Ş‚ï¿½ï¿½ï¿½è‚µï¿½Äˆç¬ï¿½ï¿½ï¿½ï¿½Ì‚É–ğ—§‚ï¿½ï¿½Ü‚ï¿½ï¿½BAWS Certified Solutions Architect - Professional ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ÆAï¿½ï¿½ï¿½lï¿½Å•ï¿½ï¿½Gï¿½È—vï¿½ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½ÄAAWS ï¿½ÌƒAï¿½vï¿½ï¿½ï¿½Pï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İŒvï¿½Aï¿½fï¿½vï¿½ï¿½ï¿½Cï¿½Aï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½Í‚ï¿½ï¿½Fï¿½è‚³ï¿½ï¿½Ü‚ï¿½ï¿½B',now());
 
 
 --question
 INSERT INTO public."question"(test_id,question_id,text,code,right_select_count,create_datetime)
-VALUES('1','1','Java‚ÌƒNƒ‰ƒXƒtƒ@ƒCƒ‹‚ÉŠÖ‚·‚éà–¾‚ğ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Biˆê‚Â‘I‘ğj','','1',now());
+VALUES('1','1','Javaï¿½ÌƒNï¿½ï¿½ï¿½Xï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½iï¿½ï¿½Â‘Iï¿½ï¿½ï¿½j','','1',now());
 
 INSERT INTO public."question"(test_id,question_id,text,code,right_select_count,create_datetime)
 VALUES('1','2','DUMMY2','ABCDEFG','2',now());
@@ -76,7 +76,7 @@ VALUES('1','3','DUMMY question 3','XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('1','2','Ÿ‚Ì‚æ‚¤‚ÈAƒNƒ‰ƒX‚ÆBƒNƒ‰ƒX‚ª’è‹`‚³‚ê‚Ä‚¢‚éBMain.javaƒtƒ@ƒCƒ‹‚ÌƒRƒ“ƒpƒCƒ‹Œã‚É¶¬‚³‚ê‚éƒNƒ‰ƒX‚Í‚Ç‚ê‚©B³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class A {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('1','2','ï¿½ï¿½ï¿½Ì‚æ‚¤ï¿½ï¿½Aï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½Bï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½BMain.javaï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ÌƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½Í‚Ç‚ê‚©ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class A {
 	}
 
 	public class B extends A {
@@ -87,7 +87,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			A a = new A();
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('2','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğÀs‚µAuTv‚ªo—Í‚³‚ê‚é‚æ‚¤‚É‚µ‚½‚¢B5s–Ú‚É‘}“ü‚·‚éƒR[ƒh‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢B(1‚Â‘I‘ğ)','	public class Main { 
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('2','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Aï¿½uTï¿½vï¿½ï¿½ï¿½oï¿½Í‚ï¿½ï¿½ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B5ï¿½sï¿½Ú‚É‘}ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½B(1ï¿½Â‘Iï¿½ï¿½)','	public class Main { 
 		public static void main(String[] args) {
 		      Game game = new Game();
 
@@ -102,7 +102,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 class Game {
 	boolean flag;
 }','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('3','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚Ä³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('3','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			int a = 3 * 5;
 			int b = 25 - 10;
@@ -116,14 +116,14 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 				System.out.println("D");
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('4','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚Ì4s–Ú‚É‘}“ü‚·‚éƒR[ƒh‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('4','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½4ï¿½sï¿½Ú‚É‘}ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			String[] sa = { "a", "b", "c" };
 			// insert code here
 			System.out.println(s);
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('5','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚Ä³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('5','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			int a = 0;
 			do {
@@ -132,7 +132,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			} while (a < 4);
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('6','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Super {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('6','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Super {
 		static String name;
 
 		public void print() {
@@ -157,7 +157,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			b.print();
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('7','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Parent {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('7','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Parent {
 		void printInfo() {
 			System.out.println("parent");
 		}
@@ -173,19 +173,19 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			a.printInfo();
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('8','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('8','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			System.out.println(args[1] + "," + args[2]);
 		}
 	}
-yÀs•û–@z
+ï¿½yï¿½ï¿½ï¿½sï¿½ï¿½ï¿½@ï¿½z
 java Main easy normal hard','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('9','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚Ì2s–Ú‚É‘}“ü‚·‚éƒR[ƒh‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi2‚Â‘I‘ğj','	
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('9','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½sï¿½Ú‚É‘}ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i2ï¿½Â‘Iï¿½ï¿½ï¿½j','	
 	public interface Sample {
 	       // insert code here 
 	 }','2',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('10','2','Ÿ‚Ì‚¤‚¿AƒNƒ‰ƒXéŒ¾‚Æ‚µ‚Ä—LŒø‚È‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi3‚Â‘I‘ğj','','3',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('11','2',' Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğÀs‚·‚é‚ÆAuB, Av‚Æ•\¦‚³‚ê‚é‚æ‚¤‚É‚µ‚½‚¢BˆÈ‰º‚Ì‹ó—“‚É‚ ‚Ä‚Í‚Ü‚éƒR[ƒh‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class B extends A {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('10','2','ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Aï¿½Nï¿½ï¿½ï¿½Xï¿½éŒ¾ï¿½Æ‚ï¿½ï¿½Ä—Lï¿½ï¿½ï¿½È‚ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i3ï¿½Â‘Iï¿½ï¿½ï¿½j','','3',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('11','2',' ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ÆAï¿½uB, Aï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½È‰ï¿½ï¿½Ì‹ó—“‚É‚ï¿½ï¿½Ä‚Í‚Ü‚ï¿½Rï¿½[ï¿½hï¿½ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class B extends A {
 		String name = "B";
 
 		public void print() {
@@ -201,7 +201,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 	class A {
 		String name = "A";
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('12','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('12','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			String a1 = "A";
 			String a2 = new String("A");
@@ -219,7 +219,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			}
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('13','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class B extends A {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('13','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class B extends A {
 		void test() {
 			System.out.println("B");
 		}
@@ -236,7 +236,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			System.out.println("A");
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('14','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½Œ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('14','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			int i = 1;
 			double d = 1.0;
@@ -252,8 +252,8 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			}
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('15','2','Webƒx[ƒX‚ÌƒVƒXƒeƒ€‚ğŠJ”­‚·‚é‚É‚ÍA‚Ç‚ÌJavaƒeƒNƒmƒƒW[‚ğg‚¦‚Î‚æ‚¢‚©BÅ“K‚È‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('16','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Sample {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('15','2','Webï¿½xï¿½[ï¿½Xï¿½ÌƒVï¿½Xï¿½eï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‚ÍAï¿½Ç‚ï¿½Javaï¿½eï¿½Nï¿½mï¿½ï¿½ï¿½Wï¿½[ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Î‚æ‚¢ï¿½ï¿½ï¿½Bï¿½Å“Kï¿½È‚ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','','1',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('16','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Sample {
 		String name;
 
 		public void print() {
@@ -269,8 +269,8 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			s2.print();
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('17','2','JVMiJava Virtual Machinej‚ÉŠÖ‚·‚éà–¾‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('18','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('17','2','JVMï¿½iJava Virtual Machineï¿½jï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','','1',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('18','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			int i = 3;
 			while (i >= 0) {
@@ -278,9 +278,9 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			}
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('19','2','Ÿ‚Ì‚¤‚¿AƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚Æ‚È‚é‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('20','2','Ÿ‚Ì‚¤‚¿AprivateƒL[ƒ[ƒh‚ÅCü‚Å‚«‚È‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi3‚Â‘I‘ğj','','3',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('21','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	class B extends A {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('19','2','ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Aï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½Æ‚È‚ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','','1',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('20','2','ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Aprivateï¿½Lï¿½[ï¿½ï¿½ï¿½[ï¿½hï¿½ÅCï¿½ï¿½ï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i3ï¿½Â‘Iï¿½ï¿½ï¿½j','','3',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('21','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	class B extends A {
 		int b, c;
 
 		B(int num) {
@@ -311,16 +311,16 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			System.out.println(b.a + "," + b.b + "," + b.c);
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('22','2','privateƒƒ\ƒbƒh‚Ö‚ÌƒAƒNƒZƒX‚ÉŠÖ‚·‚éà–¾‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('23','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ÌƒRƒ“ƒpƒCƒ‹‚ğ¬Œ÷‚³‚¹‚é‚½‚ß‚É‚ÍA‹ó—“‚É‚Ç‚ÌƒR[ƒh‚ğ’Ç‰Á‚·‚ê‚Î‚æ‚¢‚©B³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('22','2','privateï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Ö‚ÌƒAï¿½Nï¿½Zï¿½Xï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','','1',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('23','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ÌƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½ğ¬Œï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ß‚É‚ÍAï¿½ó—“‚É‚Ç‚ÌƒRï¿½[ï¿½hï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½Î‚æ‚¢ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 	     public static void main(String[] args) {
 	      hello();
 	   }
-	        i‹ó—“j   void hello() {
+	        ï¿½iï¿½ó—“j   void hello() {
 	   System.out.println("hello");
 	      }
 	  }','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('24','2',' Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚Ìà–¾‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	class A {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('24','2',' ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	class A {
 		private int num = 10;
 
 		void print() {
@@ -334,7 +334,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			b.print();
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('25','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ÌƒRƒ“ƒpƒCƒ‹‚ğ¬Œ÷‚³‚¹‚é‚É‚ÍATestƒNƒ‰ƒX‚Ì5s–Ú‚É‚Ç‚ÌƒR[ƒh‚ğ’Ç‰Á‚·‚ê‚Î‚æ‚¢‚©B³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	class Test {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('25','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ÌƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½ğ¬Œï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‚ÍATestï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½5ï¿½sï¿½Ú‚É‚Ç‚ÌƒRï¿½[ï¿½hï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½Î‚æ‚¢ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	class Test {
 		private String a, b;
 		private String c = "C";
 
@@ -350,7 +350,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			System.out.println(a + "," + b);
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('26','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	class Sample {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('26','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	class Sample {
 		public String val;
 	}
 
@@ -363,15 +363,15 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			System.out.println(s.val);
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('27','2','ƒAƒNƒZƒXCüqprivate‚ÅCü‚Å‚«‚é—v‘f‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('28','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('27','2','ï¿½Aï¿½Nï¿½Zï¿½Xï¿½Cï¿½ï¿½ï¿½qprivateï¿½ÅCï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½vï¿½fï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','','1',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('28','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			System.out.println(args[0] + args[1]);
 		}
 	}
-yÀs•û–@z
+ï¿½yï¿½ï¿½ï¿½sï¿½ï¿½ï¿½@ï¿½z
 java Main test','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('29','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public interface A {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('29','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public interface A {
 		int test(int x, int y);
 	}
 
@@ -394,7 +394,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			System.out.println(array[1].test(3, 2));
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('30','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('30','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','
 	public class Shape {
 		public void print() {
 			System.out.println("shape");
@@ -414,16 +414,16 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			t.print();
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('31','2','Ÿ‚Ìƒƒ\ƒbƒh‚ğ³‚µ‚­ƒI[ƒo[ƒ[ƒh‚µ‚Ä‚¢‚éƒƒ\ƒbƒh‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public void test(int a, int b) {}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('32','2','Ÿ‚Ìà–¾‚Ì‚¤‚¿A³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi4‚Â‘I‘ğj','','4',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('33','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğÀs‚µAƒRƒ“ƒ\[ƒ‹‚É1‚©‚ç4‚Ì’l‚ğ‡‚É•\¦‚µ‚½‚¢B‹ó—“‚É‚ ‚Ä‚Í‚Ü‚éƒR[ƒh‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('31','2','ï¿½ï¿½ï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½ğ³‚ï¿½ï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½Ä‚ï¿½ï¿½éƒï¿½\ï¿½bï¿½hï¿½ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public void test(int a, int b) {}','1',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('32','2','ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i4ï¿½Â‘Iï¿½ï¿½ï¿½j','','4',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('33','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Aï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½4ï¿½Ì’lï¿½ï¿½ï¿½ï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ó—“‚É‚ï¿½ï¿½Ä‚Í‚Ü‚ï¿½Rï¿½[ï¿½hï¿½ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
-		  for (int i = 0; ‹ó—“ ) {
+		  for (int i = 0; ï¿½ï¿½ ) {
 		  System.out.println(i);
 		  }
 		  }
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('34','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('34','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			int a = 10;
 			int b = 20;
@@ -435,11 +435,11 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 				System.out.println("C");
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('35','2',' Ÿ‚ÌƒNƒ‰ƒX‚ğŒp³‚µ‚½ƒNƒ‰ƒX‚ª‚Â‚×‚«ƒƒ\ƒbƒh‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('35','2',' ï¿½ï¿½ï¿½ÌƒNï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½Â‚×‚ï¿½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	
 	abstract class Sample {
 	     public abstract void test();
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('36','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Sample {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('36','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Sample {
 		static String val = "sample";
 
 		public Sample(String val) {
@@ -455,8 +455,8 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			System.out.println(s2.val);
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('37','2','ƒtƒB[ƒ‹ƒh‚ğ“KØ‚ÉƒJƒvƒZƒ‹‰»‚µA’l‚ª•s—pˆÓ‚É•ÏX‚³‚ê‚È‚¢‚æ‚¤‚É’è‹`‚µ‚½‚¢B“KØ‚É‹Lq‚³‚ê‚Ä‚¢‚éƒR[ƒh‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('38','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('37','2','ï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½Kï¿½Ø‚ÉƒJï¿½vï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½lï¿½ï¿½ï¿½sï¿½pï¿½Ó‚É•ÏXï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½æ‚¤ï¿½É’ï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½Kï¿½Ø‚É‹Lï¿½qï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','','1',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('38','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			int[] array = { 2, 4, 6, 8 };
 			int[] array2 = { 1, 3, 5, 7, 9 };
@@ -466,7 +466,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			}
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('39','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('39','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			int x = 10;
 			test(x);
@@ -477,22 +477,22 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			x++;
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('40','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğÀs‚µ‚ÄA0‚©‚ç2‚Ü‚Å‚ğ‡‚É•\¦‚µ‚½‚¢B4s–Ú‚É‘}“ü‚·‚éƒR[ƒh‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('40','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ÄA0ï¿½ï¿½ï¿½ï¿½2ï¿½Ü‚Å‚ï¿½ï¿½ï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B4ï¿½sï¿½Ú‚É‘}ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			int x = 0;
 			// insert code here
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('41','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğÀs‚µA1‚©‚ç5‚Ü‚Å‚ğ‡‚É•\¦‚µ‚½‚¢B‹ó—“‡@‚Æ‡A‚É‚ ‚Ä‚Í‚Ü‚éƒR[ƒh‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	 public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('41','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½A1ï¿½ï¿½ï¿½ï¿½5ï¿½Ü‚Å‚ï¿½ï¿½ï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ó—“‡@ï¿½Æ‡Aï¿½É‚ï¿½ï¿½Ä‚Í‚Ü‚ï¿½Rï¿½[ï¿½hï¿½ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	 public class Main {
 		     public static void main(String[] args) {
 		         int[] array = {1, 2, 3, 4, 5};   
-		         for (‡@ ; i < array.length; ‡A ) {
+		         for (ï¿½@ ; i < array.length; ï¿½A ) {
 		              System.out.println(array[i]);
 		             i++;
 		      }
 		      }
 		 }','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('42','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('42','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			String str = null;
 
@@ -505,9 +505,9 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			}
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('43','2','Java‚ÌŒp³‚ÉŠÖ‚·‚éà–¾‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi2‚Â‘I‘ğj','','2',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('44','2','Ÿ‚Ì‚¤‚¿Aabstract‚ÅCü‚Å‚«‚È‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi2‚Â‘I‘ğj','','2',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('45','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('43','2','Javaï¿½ÌŒpï¿½ï¿½ï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i2ï¿½Â‘Iï¿½ï¿½ï¿½j','','2',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('44','2','ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Aabstractï¿½ÅCï¿½ï¿½ï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i2ï¿½Â‘Iï¿½ï¿½ï¿½j','','2',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('45','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			Sample s = new Sample();
 			int result = s.test() + s.getNum();
@@ -526,7 +526,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			return getNum();
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('46','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('46','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			Sample[] samples = { new Test(), new Exam(), new Test() };
 			for (Sample s : samples) {
@@ -550,12 +550,12 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			System.out.println("B");
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('47','2','Ÿ‚Ì‚¤‚¿AƒCƒ“ƒ^ƒtƒF[ƒX‚É’è‹`‚Å‚«‚È‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi2‚Â‘I‘ğj','','2',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('48','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğÀs‚µAutestv‚Æ1‰ñ‚¾‚¯•\¦‚µ‚½‚¢B‹ó—“‚É‚ ‚Ä‚Í‚Ü‚éƒR[ƒh‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('49','2','com.sample.controllerƒpƒbƒP[ƒW‚É‘®‚·‚éƒNƒ‰ƒX‚ğg‚¤Acom.sample.viewƒpƒbƒP[ƒW‚É‘®‚·‚éƒNƒ‰ƒX‚ğ’è‹`‚µ‚½‚¢B’è‹`•û–@‚Æ‚µ‚Ä³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('50','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('51','2','Ÿ‚Ì‚¤‚¿A³‚µ‚¢à–¾‚ğ‘I‚Ñ‚È‚³‚¢Bi2‚Â‘I‘ğj','','2',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('52','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ÉŠÖ‚·‚éà–¾‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Sample {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('47','2','ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Aï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½É’ï¿½`ï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i2ï¿½Â‘Iï¿½ï¿½ï¿½j','','2',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('48','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Aï¿½utestï¿½vï¿½ï¿½1ï¿½ñ‚¾‚ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ó—“‚É‚ï¿½ï¿½Ä‚Í‚Ü‚ï¿½Rï¿½[ï¿½hï¿½ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','','1',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('49','2','com.sample.controllerï¿½pï¿½bï¿½Pï¿½[ï¿½Wï¿½É‘ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Acom.sample.viewï¿½pï¿½bï¿½Pï¿½[ï¿½Wï¿½É‘ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½`ï¿½ï¿½ï¿½@ï¿½Æ‚ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','','1',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('50','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','','1',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('51','2','ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i2ï¿½Â‘Iï¿½ï¿½ï¿½j','','2',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('52','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ÉŠÖ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Sample {
 		private static int num = 10;
 
 		public void Sample() {
@@ -566,7 +566,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 			num = n;
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('53','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚Ì‚¤‚¿AƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚é‚Ì‚Í‰½s–Ú‚©B³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi3‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('53','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Aï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½É‚È‚ï¿½Ì‚Í‰ï¿½ï¿½sï¿½Ú‚ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i3ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 		          int[] array1 = { 1, 2, 3 };
 		          int array2 = array1;
@@ -576,7 +576,7 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 		          int[3] array5;
 		      }
 	}','3',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('54','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ÌÀsŒã‚ÉAƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚Í‚¢‚­‚Â¶¬‚³‚ê‚é‚©B³‚µ‚¢ŒÂ”‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Item {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('54','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½sï¿½ï¿½ÉAï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½Í‚ï¿½ï¿½ï¿½ï¿½Âï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚©ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âï¿½ï¿½ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Item {
 
 	}
 
@@ -590,17 +590,17 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('55','2','ƒX[ƒp[ƒNƒ‰ƒX‚Ì—v‘f‚Æ“¯‚¶–¼‘O‚Å’è‹`‚Å‚«‚éƒTƒuƒNƒ‰ƒX‚Ì—v‘f‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi2‚Â‘I‘ğj','','2',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('56','2','Ÿ‚Ì‚¤‚¿AƒNƒ‰ƒX–¼‚Æ‚µ‚Äg‚¦‚é‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi3‚Â‘I‘ğj','','3',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('57','2','ƒƒ\ƒbƒh‚ÌƒVƒOƒjƒ`ƒƒ‚ğ\¬‚·‚é—v‘f‚Æ‚µ‚ÄAŒë‚Á‚Ä‚¢‚é‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi3‚Â‘I‘ğj','','3',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('58','2','Ÿ‚Ì‚¤‚¿Aƒ|ƒŠƒ‚[ƒtƒBƒYƒ€‚É‚à‚Á‚Æ‚àŠÖŒW‚ª‚ ‚é—pŒê‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('59','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('55','2','ï¿½Xï¿½[ï¿½pï¿½[ï¿½Nï¿½ï¿½ï¿½Xï¿½Ì—vï¿½fï¿½Æ“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Å’ï¿½`ï¿½Å‚ï¿½ï¿½ï¿½Tï¿½uï¿½Nï¿½ï¿½ï¿½Xï¿½Ì—vï¿½fï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i2ï¿½Â‘Iï¿½ï¿½ï¿½j','','2',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('56','2','ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Aï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ägï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i3ï¿½Â‘Iï¿½ï¿½ï¿½j','','3',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('57','2','ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ÌƒVï¿½Oï¿½jï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½fï¿½Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i3ï¿½Â‘Iï¿½ï¿½ï¿½j','','3',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('58','2','ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Aï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½tï¿½Bï¿½Yï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÖŒWï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','','1',now());
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('59','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			int i = 2;
 			System.out.println((i += 2) + (i++));
 		}
 	}','1',now());
-INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('60','2','Ÿ‚ÌƒvƒƒOƒ‰ƒ€‚ğƒRƒ“ƒpƒCƒ‹AÀs‚µ‚½‚Æ‚«‚ÌŒ‹‰Ê‚Æ‚µ‚ÄA³‚µ‚¢‚à‚Ì‚ğ‘I‚Ñ‚È‚³‚¢Bi1‚Â‘I‘ğj','	public class Main {
+INSERT INTO public.question(question_id,test_id,text,code,right_select_count,create_datetime)VALUES('60','2','ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ÌŒï¿½ï¿½Ê‚Æ‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Iï¿½Ñ‚È‚ï¿½ï¿½ï¿½ï¿½Bï¿½i1ï¿½Â‘Iï¿½ï¿½ï¿½j','	public class Main {
 		public static void main(String[] args) {
 			Sample s = new Sample();
 			long data = s.test(10);
@@ -622,16 +622,16 @@ INSERT INTO public.question(question_id,test_id,text,code,right_select_count,cre
 
 --option
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('1','1','1','ƒvƒ‰ƒbƒgƒtƒH[ƒ€‚ÉˆË‘¶‚µ‚½ƒlƒCƒeƒBƒuƒR[ƒh‚ª‹Lq‚³‚ê‚Ä‚¢‚é','0',now());
+VALUES('1','1','1','ï¿½vï¿½ï¿½ï¿½bï¿½gï¿½tï¿½Hï¿½[ï¿½ï¿½ï¿½ÉˆË‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½Cï¿½eï¿½Bï¿½uï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½Lï¿½qï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½','0',now());
 
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('1','1','2','ƒvƒ‰ƒbƒgƒtƒH[ƒ€‚ÉˆË‘¶‚µ‚È‚¢ƒlƒCƒeƒBƒuƒR[ƒh‚ª‹Lq‚³‚ê‚Ä‚¢‚é','0',now());
+VALUES('1','1','2','ï¿½vï¿½ï¿½ï¿½bï¿½gï¿½tï¿½Hï¿½[ï¿½ï¿½ï¿½ÉˆË‘ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½lï¿½Cï¿½eï¿½Bï¿½uï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½Lï¿½qï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½','0',now());
 
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('1','1','3','JVM‚¾‚¯—‰ğ‚Å‚«‚éƒR[ƒh‚ª‹Lq‚³‚ê‚Ä‚¢‚é','1',now());
+VALUES('1','1','3','JVMï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½Lï¿½qï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½','1',now());
 
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('1','1','4','lŠÔ‚ª—‰ğ‚Å‚«‚éƒR[ƒh‚ª‹Lq‚³‚ê‚Ä‚¢‚é','0',now());
+VALUES('1','1','4','ï¿½lï¿½Ô‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½Lï¿½qï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½','0',now());
 
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('1','2','1','DUMMY2-1','0',now());
@@ -667,13 +667,13 @@ INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,cr
 VALUES('1','3','7','DUMMY3-7','1',now());
 
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','1','1','AƒNƒ‰ƒX','FALSE',now());
+VALUES('2','1','1','Aï¿½Nï¿½ï¿½ï¿½X','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','1','2','AƒNƒ‰ƒXAMainƒNƒ‰ƒX','TRUE',now());
+VALUES('2','1','2','Aï¿½Nï¿½ï¿½ï¿½Xï¿½AMainï¿½Nï¿½ï¿½ï¿½X','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','1','3','AƒNƒ‰ƒXABƒNƒ‰ƒXAMainƒNƒ‰ƒX','FALSE',now());
+VALUES('2','1','3','Aï¿½Nï¿½ï¿½ï¿½Xï¿½ABï¿½Nï¿½ï¿½ï¿½Xï¿½AMainï¿½Nï¿½ï¿½ï¿½X','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','1','4','AƒNƒ‰ƒXABƒNƒ‰ƒX','FALSE',now());
+VALUES('2','1','4','Aï¿½Nï¿½ï¿½ï¿½Xï¿½ABï¿½Nï¿½ï¿½ï¿½X','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','2','1','if(game) {','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -685,13 +685,13 @@ VALUES('2','2','4','if(game.flag == "false") {','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','2','5','if(!game.flag) {','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','3','1','uCv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','3','1','ï¿½uCï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','3','2','uDv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','3','2','ï¿½uDï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','3','3','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','TRUE',now());
+VALUES('2','3','3','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','3','4','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','3','4','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','4','1','for (s : sa)','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -705,15 +705,15 @@ VALUES('2','4','5','for (String s : String[] sa)','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','4','6','for (String[] sa : String s)','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','5','1','hi‚ª3‰ñ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','5','1','hiï¿½ï¿½3ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','5','2','hi‚ª4‰ñ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','5','2','hiï¿½ï¿½4ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','5','3','hi‚ª5‰ñ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','5','3','hiï¿½ï¿½5ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','5','4','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','FALSE',now());
+VALUES('2','5','4','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','5','5','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','5','5','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','6','1','Super : B
 Super : B','FALSE',now());
@@ -724,27 +724,27 @@ INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,cr
 VALUES('2','6','3','Super : A
 Sub : B','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','6','4','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','TRUE',now());
+VALUES('2','6','4','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','7','1','uparentv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','7','1','ï¿½uparentï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','7','2','uchildv‚Æ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','7','2','ï¿½uchildï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','7','3','uparentvuchildv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','7','3','ï¿½uparentï¿½vï¿½uchildï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','7','4','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','FALSE',now());
+VALUES('2','7','4','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','7','5','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','7','5','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','8','1','‰½‚à•\¦‚³‚ê‚È‚¢','FALSE',now());
+VALUES('2','8','1','ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','8','2','ueasy,normalv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','8','2','ï¿½ueasy,normalï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','8','3','unormal,hardv‚Æ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','8','3','ï¿½unormal,hardï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','8','4','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','FALSE',now());
+VALUES('2','8','4','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','8','5','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','8','5','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','9','1','String name;','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -776,29 +776,29 @@ VALUES('2','11','4','super().name','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','11','5','A.name','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','12','1','ua1 == a2 a2 == a3v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','12','1','ï¿½ua1 == a2 a2 == a3ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','12','2','ua1 != a2 a2 == a3v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','12','2','ï¿½ua1 != a2 a2 == a3ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','12','3','ua1 == a2 a2 != a3v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','12','3','ï¿½ua1 == a2 a2 != a3ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','12','4','ua1 != a2 a2 != a3v‚Æ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','12','4','ï¿½ua1 != a2 a2 != a3ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','13','1','uAv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','13','1','ï¿½uAï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','13','2','uBv‚Æ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','13','2','ï¿½uBï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','13','3','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','FALSE',now());
+VALUES('2','13','3','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','13','4','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','13','4','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','14','1','u1v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','14','1','ï¿½u1ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','14','2','u1.0v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','14','2','ï¿½u1.0ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','14','3','udefaultv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','14','3','ï¿½udefaultï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','14','4','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','TRUE',now());
+VALUES('2','14','4','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','15','1','Java SE','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -808,33 +808,33 @@ VALUES('2','15','3','Java EE','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','15','4','Java DB','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','16','1','uAvuBv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','16','1','ï¿½uAï¿½vï¿½uBï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','16','2','uBvuBv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','16','2','ï¿½uBï¿½vï¿½uBï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','16','3','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','TRUE',now());
+VALUES('2','16','3','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','16','4','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','16','4','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','17','1','ƒNƒ‰ƒXƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚İA‹@ŠBŒê‚ÉƒRƒ“ƒpƒCƒ‹‚·‚é','TRUE',now());
+VALUES('2','17','1','ï¿½Nï¿½ï¿½ï¿½Xï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½Ç‚İï¿½ï¿½İAï¿½@ï¿½Bï¿½ï¿½ÉƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','17','2','ƒ\[ƒXƒR[ƒh‚ğ–‘O‚ÉƒRƒ“ƒpƒCƒ‹‚µ‚Ä‚©‚çÀs‚·‚é','FALSE',now());
+VALUES('2','17','2','ï¿½\ï¿½[ï¿½Xï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ÉƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','17','3','Às‰Â”\ƒtƒ@ƒCƒ‹‚ğ¶¬‚·‚é','FALSE',now());
+VALUES('2','17','3','ï¿½ï¿½ï¿½sï¿½Â”\ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','17','4','ƒNƒ‰ƒXƒtƒ@ƒCƒ‹‚ğ‹tƒAƒZƒ“ƒuƒ‹‚·‚é','FALSE',now());
+VALUES('2','17','4','ï¿½Nï¿½ï¿½ï¿½Xï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½tï¿½Aï¿½Zï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','18','1','u2vu1vu0v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','18','1','ï¿½u2ï¿½vï¿½u1ï¿½vï¿½u0ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','18','2','u3vu2vu1v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','18','2','ï¿½u3ï¿½vï¿½u2ï¿½vï¿½u1ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','18','3','u3vu2vu1vu0v‚Æ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','18','3','ï¿½u3ï¿½vï¿½u2ï¿½vï¿½u1ï¿½vï¿½u0ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','18','4','u3vu2vu1vu0vu-1v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','18','4','ï¿½u3ï¿½vï¿½u2ï¿½vï¿½u1ï¿½vï¿½u0ï¿½vï¿½u-1ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','18','5','2‚ª–³ŒÀ‚É•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','18','5','2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','18','6','3‚ª–³ŒÀ‚É•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','18','6','3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','19','1','byte a = -100;','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -844,33 +844,33 @@ VALUES('2','19','3','int c = 10000000;','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','19','4','long d = 1234567L;','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','20','1','ƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^','FALSE',now());
+VALUES('2','20','1','ï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒRï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','20','2','ƒCƒ“ƒ^ƒtƒF[ƒX‚Ìƒƒ\ƒbƒh','TRUE',now());
+VALUES('2','20','2','ï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½Ìƒï¿½ï¿½\ï¿½bï¿½h','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','20','3','ƒNƒ‰ƒX‚Ì’ŠÛƒƒ\ƒbƒh','TRUE',now());
+VALUES('2','20','3','ï¿½Nï¿½ï¿½ï¿½Xï¿½Ì’ï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','20','4','ƒNƒ‰ƒX‚Ì‹ïÛƒƒ\ƒbƒh','FALSE',now());
+VALUES('2','20','4','ï¿½Nï¿½ï¿½ï¿½Xï¿½Ì‹ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','20','5','ƒCƒ“ƒ^ƒtƒF[ƒX‚Ì’è”','TRUE',now());
+VALUES('2','20','5','ï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½Ì’è”','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','20','6','ƒNƒ‰ƒX‚Ì•Ï”','FALSE',now());
+VALUES('2','20','6','ï¿½Nï¿½ï¿½ï¿½Xï¿½Ì•Ïï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','21','1','u0,2,3v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','21','1','ï¿½u0,2,3ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','21','2','u1,2,3v‚Æ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','21','2','ï¿½u1,2,3ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','21','3','u2,0,3v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','21','3','ï¿½u2,0,3ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','21','4','u2,2,3v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','21','4','ï¿½u2,2,3ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','22','1','“¯‚¶ƒNƒ‰ƒX‚Ìƒƒ\ƒbƒh‚©‚çƒAƒNƒZƒX‚Å‚«‚é','TRUE',now());
+VALUES('2','22','1','ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½Aï¿½Nï¿½Zï¿½Xï¿½Å‚ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','22','2','ƒTƒuƒNƒ‰ƒX‚Ìƒƒ\ƒbƒh‚©‚çƒAƒNƒZƒX‚Å‚«‚é','FALSE',now());
+VALUES('2','22','2','ï¿½Tï¿½uï¿½Nï¿½ï¿½ï¿½Xï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½Aï¿½Nï¿½Zï¿½Xï¿½Å‚ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','22','3','“¯‚¶ƒpƒbƒP[ƒW‚É‘®‚·‚é‚·‚×‚Ä‚ÌƒNƒ‰ƒX‚©‚çƒAƒNƒZƒX‚Å‚«‚é','FALSE',now());
+VALUES('2','22','3','ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½Pï¿½[ï¿½Wï¿½É‘ï¿½ï¿½ï¿½ï¿½é‚·ï¿½×‚Ä‚ÌƒNï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½Aï¿½Nï¿½Zï¿½Xï¿½Å‚ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','22','4','ƒX[ƒp[ƒNƒ‰ƒX‚Ìƒƒ\ƒbƒh‚©‚çƒAƒNƒZƒX‚Å‚«‚é','FALSE',now());
+VALUES('2','22','4','ï¿½Xï¿½[ï¿½pï¿½[ï¿½Nï¿½ï¿½ï¿½Xï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½Aï¿½Nï¿½Zï¿½Xï¿½Å‚ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','23','1','public','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -878,15 +878,15 @@ VALUES('2','23','2','static','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','23','3','final','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','23','4','‰½‚à•K—v‚È‚¢','FALSE',now());
+VALUES('2','23','4','ï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½vï¿½È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','24','1','num‚ªprivate‚ÅCü‚³‚ê‚Ä‚¢‚é‚½‚ßƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚é','FALSE',now());
+VALUES('2','24','1','numï¿½ï¿½privateï¿½ÅCï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚½ï¿½ßƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½É‚È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','24','2','printƒƒ\ƒbƒh‚ªBƒNƒ‰ƒX‚É’è‹`‚³‚ê‚Ä‚¢‚È‚¢‚½‚ßƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚é','FALSE',now());
+VALUES('2','24','2','printï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½Bï¿½Nï¿½ï¿½ï¿½Xï¿½É’ï¿½`ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ßƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½É‚È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','24','3','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','24','3','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','24','4','10‚ª•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','24','4','10ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','25','1','a = "A";
 this("B");','FALSE',now());
@@ -903,49 +903,49 @@ INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,cr
 VALUES('2','25','5','Test("B");
 a = "A";','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','26','1','unullv‚Æ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','26','1','ï¿½unullï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','26','2','utestv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','26','2','ï¿½utestï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','26','3','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','FALSE',now());
+VALUES('2','26','3','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','26','4','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','26','4','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','27','1','ƒNƒ‰ƒXAƒtƒB[ƒ‹ƒhAƒRƒ“ƒXƒgƒ‰ƒNƒ^A‹ïÛƒƒ\ƒbƒh','TRUE',now());
+VALUES('2','27','1','ï¿½Nï¿½ï¿½ï¿½Xï¿½Aï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½Aï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½Aï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','27','2','ƒNƒ‰ƒXAƒtƒB[ƒ‹ƒhA’ŠÛƒƒ\ƒbƒh','FALSE',now());
+VALUES('2','27','2','ï¿½Nï¿½ï¿½ï¿½Xï¿½Aï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½Aï¿½ï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','27','3','’ŠÛƒNƒ‰ƒXAƒtƒB[ƒ‹ƒhA‹ïÛƒƒ\ƒbƒh','FALSE',now());
+VALUES('2','27','3','ï¿½ï¿½ï¿½ÛƒNï¿½ï¿½ï¿½Xï¿½Aï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½Aï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','27','4','ƒCƒ“ƒ^ƒtƒF[ƒXA‹ïÛƒƒ\ƒbƒh','FALSE',now());
+VALUES('2','27','4','ï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½Aï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','27','5','ƒtƒB[ƒ‹ƒhA’ŠÛƒƒ\ƒbƒh','FALSE',now());
+VALUES('2','27','5','ï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½Aï¿½ï¿½ï¿½Ûƒï¿½ï¿½\ï¿½bï¿½h','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','28','1','utestv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','28','1','ï¿½utestï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','28','2','uMain testv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','28','2','ï¿½uMain testï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','28','3','utest nullv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','28','3','ï¿½utest nullï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','28','4','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','TRUE',now());
+VALUES('2','28','4','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','29','1','CƒNƒ‰ƒX‚ÌƒRƒ“ƒpƒCƒ‹‚É¸”s‚·‚é','FALSE',now());
+VALUES('2','29','1','Cï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Éï¿½ï¿½sï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','29','2','u3 19v‚ª•\¦‚³‚êA—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','29','2','ï¿½u3 19ï¿½vï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','29','3','MainƒNƒ‰ƒX‚Ì4s–Ú‚ÅƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚é','FALSE',now());
+VALUES('2','29','3','Mainï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½4ï¿½sï¿½Ú‚ÅƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½É‚È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','29','4','u3 19v‚ª•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','29','4','ï¿½u3 19ï¿½vï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','29','5','BƒNƒ‰ƒX‚Ì3s–Ú‚ÅƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚é','FALSE',now());
+VALUES('2','29','5','Bï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½3ï¿½sï¿½Ú‚ÅƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½É‚È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','30','1','ushapev‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','30','1','ï¿½ushapeï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','30','2','utrianglev‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','30','2','ï¿½utriangleï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','30','3','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','FALSE',now());
+VALUES('2','30','3','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','30','4','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','TRUE',now());
+VALUES('2','30','4','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','31','1','public void test(int a) {}','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -955,19 +955,19 @@ VALUES('2','31','3','public void sample() {}','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','31','4','public test(int a, int b) {}','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','32','1','ƒpƒbƒP[ƒWéŒ¾‚Í•K{‚Å‚Í‚È‚¢','TRUE',now());
+VALUES('2','32','1','ï¿½pï¿½bï¿½Pï¿½[ï¿½Wï¿½éŒ¾ï¿½Í•Kï¿½{ï¿½Å‚Í‚È‚ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','32','2','ƒpƒbƒP[ƒWéŒ¾‚ÍAƒ\[ƒXƒtƒ@ƒCƒ‹‚Ìæ“ªs‚É‹Lq‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢','TRUE',now());
+VALUES('2','32','2','ï¿½pï¿½bï¿½Pï¿½[ï¿½Wï¿½éŒ¾ï¿½ÍAï¿½\ï¿½[ï¿½Xï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ìæ“ªï¿½sï¿½É‹Lï¿½qï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','32','3','1‚Â‚Ìƒ\[ƒXƒtƒ@ƒCƒ‹“à‚ÉAƒCƒ“ƒ^ƒtƒF[ƒX‚ÆƒNƒ‰ƒX‚Ì—¼•û‚ğ’è‹`‚Å‚«‚é','TRUE',now());
+VALUES('2','32','3','1ï¿½Â‚Ìƒ\ï¿½[ï¿½Xï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ÉAï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½ÆƒNï¿½ï¿½ï¿½Xï¿½Ì—ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Å‚ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','32','4','ƒCƒ“ƒ|[ƒgéŒ¾‚Í1‚Â‚¾‚¯‹Lq‚Å‚«‚é','FALSE',now());
+VALUES('2','32','4','ï¿½Cï¿½ï¿½ï¿½|ï¿½[ï¿½gï¿½éŒ¾ï¿½ï¿½1ï¿½Â‚ï¿½ï¿½ï¿½ï¿½Lï¿½qï¿½Å‚ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','32','5','ƒCƒ“ƒ|[ƒgéŒ¾‚Íƒ\[ƒXƒtƒ@ƒCƒ‹‚Ì‚Ç‚±‚É‹Lq‚µ‚Ä‚à‚æ‚¢','FALSE',now());
+VALUES('2','32','5','ï¿½Cï¿½ï¿½ï¿½|ï¿½[ï¿½gï¿½éŒ¾ï¿½Íƒ\ï¿½[ï¿½Xï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì‚Ç‚ï¿½ï¿½É‹Lï¿½qï¿½ï¿½ï¿½Ä‚ï¿½ï¿½æ‚¢','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','32','6','1‚Â‚Ìƒ\[ƒXƒtƒ@ƒCƒ‹“à‚ÉAfinalƒNƒ‰ƒX‚Í1‚Â‚¾‚¯’è‹`‚Å‚«‚é','FALSE',now());
+VALUES('2','32','6','1ï¿½Â‚Ìƒ\ï¿½[ï¿½Xï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ÉAfinalï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½1ï¿½Â‚ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Å‚ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','32','7','ƒ\[ƒXƒtƒ@ƒCƒ‹‚Ì–¼‘O‚ÍApublicéŒ¾‚³‚ê‚½ƒNƒ‰ƒX‚Ì–¼‘O‚Æˆê’v‚³‚¹‚È‚¯‚ê‚Î‚È‚ç‚È‚¢','TRUE',now());
+VALUES('2','32','7','ï¿½\ï¿½[ï¿½Xï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì–ï¿½ï¿½Oï¿½ÍApublicï¿½éŒ¾ï¿½ï¿½ï¿½ê‚½ï¿½Nï¿½ï¿½ï¿½Xï¿½Ì–ï¿½ï¿½Oï¿½Æˆï¿½vï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚È‚ï¿½È‚ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','33','1','++i < 5;','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -977,15 +977,15 @@ VALUES('2','33','3','i < 5; i++','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','33','4','i < 5; ++i','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','34','1','uAv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','34','1','ï¿½uAï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','34','2','uBv‚Æ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','34','2','ï¿½uBï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','34','3','uCv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','34','3','ï¿½uCï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','34','4','uBvuCv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','34','4','ï¿½uBï¿½vï¿½uCï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','34','5','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','FALSE',now());
+VALUES('2','34','5','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','35','1','public void test() {}','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -995,13 +995,13 @@ VALUES('2','35','3','public abstract void test() {}','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','35','4','public void test(String val) {}','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','36','1','unullvutestv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','36','1','ï¿½unullï¿½vï¿½utestï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','36','2','usamplevutestv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','36','2','ï¿½usampleï¿½vï¿½utestï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','36','3','utestvutestv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','36','3','ï¿½utestï¿½vï¿½utestï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','36','4','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','TRUE',now());
+VALUES('2','36','4','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','37','1','public abstract int a;','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -1013,25 +1013,25 @@ VALUES('2','37','4','private final int d;','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','37','5','private abstract int e;','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','38','1','u2vu4vu6vu8vu1v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','38','1','ï¿½u2ï¿½vï¿½u4ï¿½vï¿½u6ï¿½vï¿½u8ï¿½vï¿½u1ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','38','2','u2vu4vu6vu8vu9v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','38','2','ï¿½u2ï¿½vï¿½u4ï¿½vï¿½u6ï¿½vï¿½u8ï¿½vï¿½u9ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','38','3','u1vu3vu5vu7v‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','38','3','ï¿½u1ï¿½vï¿½u3ï¿½vï¿½u5ï¿½vï¿½u7ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','38','4','u1vu3vu5vu7vu9v‚Æ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','38','4','ï¿½u1ï¿½vï¿½u3ï¿½vï¿½u5ï¿½vï¿½u7ï¿½vï¿½u9ï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','38','5','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','FALSE',now());
+VALUES('2','38','5','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','38','6','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','38','6','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','39','1','10‚ª•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','39','1','10ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','39','2','11‚ª•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','39','2','11ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','39','3','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','TRUE',now());
+VALUES('2','39','3','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','39','4','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','39','4','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','40','1','while(++x < 3) 
 { System.out.println(x); };','FALSE',now());
@@ -1045,57 +1045,57 @@ INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,cr
 VALUES('2','40','4','do { System.out.println(x); }
 while( ++x < 3);','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','41','1','‡@ int i = 0 ‡A i++','FALSE',now());
+VALUES('2','41','1','ï¿½@ int i = 0 ï¿½A i++','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','41','2','‡@ int i = 1 ‡A i++','FALSE',now());
+VALUES('2','41','2','ï¿½@ int i = 1 ï¿½A i++','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','41','3','‡@ int i = 0 ‡A ‚È‚µ','TRUE',now());
+VALUES('2','41','3','ï¿½@ int i = 0 ï¿½A ï¿½È‚ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','41','4','‡@ int i = 1 ‡A ‚È‚µ','FALSE',now());
+VALUES('2','41','4','ï¿½@ int i = 1 ï¿½A ï¿½È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','42','1','uifv‚Æ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','42','1','ï¿½uifï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','42','2','uelse ifv‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','42','2','ï¿½uelse ifï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','42','3','uelsev‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','42','3','ï¿½uelseï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','42','4','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','FALSE',now());
+VALUES('2','42','4','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','42','5','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','42','5','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','43','1','‘½dŒp³‚ª‚Å‚«‚é','FALSE',now());
+VALUES('2','43','1','ï¿½ï¿½ï¿½dï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','43','2','1‚Â‚ÌƒNƒ‰ƒX‚ÍA•¡”‚ÌƒTƒuƒNƒ‰ƒX‚©‚çŒp³‚³‚ê‚é‚±‚Æ‚ª‚Å‚«‚é','TRUE',now());
+VALUES('2','43','2','1ï¿½Â‚ÌƒNï¿½ï¿½ï¿½Xï¿½ÍAï¿½ï¿½ï¿½ï¿½ï¿½ÌƒTï¿½uï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','43','3','Œp³‚µ‚½ƒNƒ‰ƒX‚ÍAŒp³Œ³‚Ì‚·‚×‚Ä‚ğˆø‚«Œp‚®','FALSE',now());
+VALUES('2','43','3','ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ÍAï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½×‚Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','43','4','ƒTƒuƒNƒ‰ƒX‚©‚ç‚³‚ç‚ÉƒTƒuƒNƒ‰ƒX‚ğì‚é‚±‚Æ‚ª‚Å‚«‚é','TRUE',now());
+VALUES('2','43','4','ï¿½Tï¿½uï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ç‚³ï¿½ï¿½ÉƒTï¿½uï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','44','1','ƒNƒ‰ƒX','FALSE',now());
+VALUES('2','44','1','ï¿½Nï¿½ï¿½ï¿½X','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','44','2','•Ï”','TRUE',now());
+VALUES('2','44','2','ï¿½Ïï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','44','3','ƒƒ\ƒbƒh','FALSE',now());
+VALUES('2','44','3','ï¿½ï¿½ï¿½\ï¿½bï¿½h','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','44','4','ƒpƒbƒP[ƒW','TRUE',now());
+VALUES('2','44','4','ï¿½pï¿½bï¿½Pï¿½[ï¿½W','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','45','1','3‚ª•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','45','1','3ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','45','2','—áŠO‚ªƒXƒ[‚³‚êA‰½‚à•\¦‚³‚ê‚È‚¢','FALSE',now());
+VALUES('2','45','2','ï¿½ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','45','3','SampleƒNƒ‰ƒX‚Ìtestƒƒ\ƒbƒh‚ÅƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚é','FALSE',now());
+VALUES('2','45','3','Sampleï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½testï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ÅƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½É‚È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','45','4','MainƒNƒ‰ƒX‚Ìmainƒƒ\ƒbƒh‚ÅƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚é','FALSE',now());
+VALUES('2','45','4','Mainï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½mainï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ÅƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½É‚È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','46','1','uAvu Bvu Av‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','46','1','ï¿½uAï¿½vï¿½u Bï¿½vï¿½u Aï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','46','2','SampleƒCƒ“ƒ^ƒtƒF[ƒX‚ÌƒRƒ“ƒpƒCƒ‹‚É¸”s‚·‚é','FALSE',now());
+VALUES('2','46','2','Sampleï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½ÌƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Éï¿½ï¿½sï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','46','3','ExamƒNƒ‰ƒX‚ÌƒRƒ“ƒpƒCƒ‹‚É¸”s‚·‚é','FALSE',now());
+VALUES('2','46','3','Examï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Éï¿½ï¿½sï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','46','4','MainƒNƒ‰ƒX‚ÌƒRƒ“ƒpƒCƒ‹‚É¸”s‚·‚é','TRUE',now());
+VALUES('2','46','4','Mainï¿½Nï¿½ï¿½ï¿½Xï¿½ÌƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Éï¿½ï¿½sï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','46','5','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','46','5','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','47','1','public String a = "A";','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -1129,61 +1129,61 @@ INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,cr
 VALUES('2','49','4','import com.sample.controller.*;
 package com.sample.view;','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','50','1','ueeeev‚Æ•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','50','1','ï¿½ueeeeï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','50','2','ueeeeev‚Æ•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','50','2','ï¿½ueeeeeï¿½vï¿½Æ•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','50','3','‰½‚à•\¦‚³‚ê‚È‚¢','FALSE',now());
+VALUES('2','50','3','ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','50','4','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','FALSE',now());
+VALUES('2','50','4','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','50','5','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','50','5','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','51','1','ƒTƒuƒNƒ‰ƒX‚ÉAƒX[ƒp[ƒNƒ‰ƒX‚Ìƒƒ\ƒbƒh‚Æ–¼‘O‚ª“¯‚¶‚Åˆø”‚ªˆÙ‚È‚éƒƒ\ƒbƒh‚ğ’è‹`‚·‚é‚±‚Æ‚ğuƒI[ƒo[ƒ[ƒhv‚ÆŒÄ‚Ô','FALSE',now());
+VALUES('2','51','1','ï¿½Tï¿½uï¿½Nï¿½ï¿½ï¿½Xï¿½ÉAï¿½Xï¿½[ï¿½pï¿½[ï¿½Nï¿½ï¿½ï¿½Xï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½Æ–ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åˆï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù‚È‚éƒï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ï¿½ï¿½uï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½[ï¿½hï¿½vï¿½ÆŒÄ‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','51','2','ƒTƒuƒNƒ‰ƒX‚ÉAƒX[ƒp[ƒNƒ‰ƒX‚Ìƒƒ\ƒbƒh‚Æ–¼‘O‚ª“¯‚¶‚Åˆø”‚ªˆÙ‚È‚éƒƒ\ƒbƒh‚ğ’è‹`‚·‚é‚±‚Æ‚ğuƒI[ƒo[ƒ‰ƒCƒhv‚ÆŒÄ‚Ô','TRUE',now());
+VALUES('2','51','2','ï¿½Tï¿½uï¿½Nï¿½ï¿½ï¿½Xï¿½ÉAï¿½Xï¿½[ï¿½pï¿½[ï¿½Nï¿½ï¿½ï¿½Xï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½Æ–ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åˆï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù‚È‚éƒï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ï¿½ï¿½uï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Cï¿½hï¿½vï¿½ÆŒÄ‚ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','51','3','ƒTƒuƒNƒ‰ƒX‚ÉAƒX[ƒp[ƒNƒ‰ƒX‚Ìƒƒ\ƒbƒh‚ÆƒVƒOƒjƒ`ƒƒ‚ª“¯‚¶ƒƒ\ƒbƒh‚ğ’è‹`‚·‚é‚±‚Æ‚ğuƒI[ƒo[ƒ[ƒhv‚ÆŒÄ‚Ô','FALSE',now());
+VALUES('2','51','3','ï¿½Tï¿½uï¿½Nï¿½ï¿½ï¿½Xï¿½ÉAï¿½Xï¿½[ï¿½pï¿½[ï¿½Nï¿½ï¿½ï¿½Xï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½ÆƒVï¿½Oï¿½jï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ï¿½ï¿½uï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½[ï¿½hï¿½vï¿½ÆŒÄ‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','51','4','ƒTƒuƒNƒ‰ƒX‚ÉAƒX[ƒp[ƒNƒ‰ƒX‚Ìƒƒ\ƒbƒh‚ÆƒVƒOƒjƒ`ƒƒ‚ª“¯‚¶ƒƒ\ƒbƒh‚ğ’è‹`‚·‚é‚±‚Æ‚ğuƒI[ƒo[ƒ‰ƒCƒhv‚ÆŒÄ‚Ô','TRUE',now());
+VALUES('2','51','4','ï¿½Tï¿½uï¿½Nï¿½ï¿½ï¿½Xï¿½ÉAï¿½Xï¿½[ï¿½pï¿½[ï¿½Nï¿½ï¿½ï¿½Xï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½ÆƒVï¿½Oï¿½jï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½é‚±ï¿½Æ‚ï¿½ï¿½uï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Cï¿½hï¿½vï¿½ÆŒÄ‚ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','52','1','ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚©‚çstaticƒtƒB[ƒ‹ƒh‚ÉƒAƒNƒZƒX‚µ‚Ä‚¢‚é‚½‚ß‚ÉƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚é','FALSE',now());
+VALUES('2','52','1','ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½ï¿½ï¿½staticï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½hï¿½ÉƒAï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚½ï¿½ß‚ÉƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½É‚È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','52','2','ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Ì–ß‚è’lŒ^‚ğvoid‚É‚µ‚Ä‚¢‚é‚½‚ßƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚é','FALSE',now());
+VALUES('2','52','2','ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½Ì–ß‚ï¿½lï¿½^ï¿½ï¿½voidï¿½É‚ï¿½ï¿½Ä‚ï¿½ï¿½é‚½ï¿½ßƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½É‚È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','52','3','ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ğprivate‚ÅCü‚µ‚Ä‚¢‚é‚½‚ßƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚é','FALSE',now());
+VALUES('2','52','3','ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½privateï¿½ÅCï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚½ï¿½ßƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½É‚È‚ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','52','4','ƒƒ\ƒbƒh‚©‚çƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ğŒÄ‚Ño‚µ‚Ä‚¢‚é‚½‚ßƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚É‚È‚é','TRUE',now());
+VALUES('2','52','4','ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½ï¿½Ä‚Ñoï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚½ï¿½ßƒRï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½É‚È‚ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','53','1','3s–Ú','FALSE',now());
+VALUES('2','53','1','3ï¿½sï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','53','2','4s–Ú','TRUE',now());
+VALUES('2','53','2','4ï¿½sï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','53','3','5s–Ú','FALSE',now());
+VALUES('2','53','3','5ï¿½sï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','53','4','6s–Ú','FALSE',now());
+VALUES('2','53','4','6ï¿½sï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','53','5','7s–Ú','TRUE',now());
+VALUES('2','53','5','7ï¿½sï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','53','6','8s–Ú','TRUE',now());
+VALUES('2','53','6','8ï¿½sï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','54','1','0ŒÂ','FALSE',now());
+VALUES('2','54','1','0ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','54','2','1ŒÂ','FALSE',now());
+VALUES('2','54','2','1ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','54','3','2ŒÂ','TRUE',now());
+VALUES('2','54','3','2ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','54','4','3ŒÂ','FALSE',now());
+VALUES('2','54','4','3ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','55','1','ƒtƒB[ƒ‹ƒh','TRUE',now());
+VALUES('2','55','1','ï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½h','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','55','2','private‚ÅCü‚³‚ê‚Ä‚¢‚È‚¢ƒRƒ“ƒXƒgƒ‰ƒNƒ^','FALSE',now());
+VALUES('2','55','2','privateï¿½ÅCï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','55','3','private‚ÅCü‚³‚ê‚½ƒRƒ“ƒXƒgƒ‰ƒNƒ^','FALSE',now());
+VALUES('2','55','3','privateï¿½ÅCï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','55','4','final‚ÅCü‚³‚ê‚Ä‚¢‚È‚¢ƒƒ\ƒbƒh','TRUE',now());
+VALUES('2','55','4','finalï¿½ÅCï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½\ï¿½bï¿½h','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','55','5','final‚ÅCü‚³‚ê‚½ƒƒ\ƒbƒh','FALSE',now());
+VALUES('2','55','5','finalï¿½ÅCï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½\ï¿½bï¿½h','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','56','1','A#','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
@@ -1197,43 +1197,43 @@ VALUES('2','56','5','E-','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
 VALUES('2','56','6','F_','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','57','1','Cüq','TRUE',now());
+VALUES('2','57','1','ï¿½Cï¿½ï¿½ï¿½q','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','57','2','ƒƒ\ƒbƒh–¼','FALSE',now());
+VALUES('2','57','2','ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','57','3','ˆø”‚Ì”','FALSE',now());
+VALUES('2','57','3','ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','57','4','ˆø”‚ÌŒ^','FALSE',now());
+VALUES('2','57','4','ï¿½ï¿½ï¿½ï¿½ï¿½ÌŒ^','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','57','5','ˆø”‚Ì‡˜','FALSE',now());
+VALUES('2','57','5','ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','57','6','ˆø”‚Ì–¼‘O','TRUE',now());
+VALUES('2','57','6','ï¿½ï¿½ï¿½ï¿½ï¿½Ì–ï¿½ï¿½O','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','57','7','–ß‚è’lŒ^','TRUE',now());
+VALUES('2','57','7','ï¿½ß‚ï¿½lï¿½^','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','58','1','Œp³','FALSE',now());
+VALUES('2','58','1','ï¿½pï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','58','2','ƒI[ƒo[ƒ‰ƒCƒh','TRUE',now());
+VALUES('2','58','2','ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Cï¿½h','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','58','3','ƒI[ƒo[ƒ[ƒh','FALSE',now());
+VALUES('2','58','3','ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½[ï¿½h','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','58','4','ƒCƒ“ƒ^ƒtƒF[ƒX‚ÌŒp³','FALSE',now());
+VALUES('2','58','4','ï¿½Cï¿½ï¿½ï¿½^ï¿½tï¿½Fï¿½[ï¿½Xï¿½ÌŒpï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','59','1','4‚ª•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','59','1','4ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','59','2','6‚ª•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','59','2','6ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','59','3','8‚ª•\¦‚³‚ê‚é','TRUE',now());
+VALUES('2','59','3','8ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','59','4','9‚ª•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','59','4','9ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','60','1','20‚ª•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','60','1','20ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','60','2','30‚ª•\¦‚³‚ê‚é','FALSE',now());
+VALUES('2','60','2','30ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','60','3','ƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‚ª”­¶‚·‚é','TRUE',now());
+VALUES('2','60','3','ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','TRUE',now());
 INSERT INTO public."option"(test_id,question_id,option_id,text,right_or_wrong,create_datetime)
-VALUES('2','60','4','Às‚É—áŠO‚ªƒXƒ[‚³‚ê‚é','FALSE',now());
+VALUES('2','60','4','ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½É—ï¿½Oï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½','FALSE',now());
 
 
 
