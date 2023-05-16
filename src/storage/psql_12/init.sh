@@ -1,7 +1,7 @@
 set -e
 
 VAL=`psql -d colpro -U user -t <<_EOF
-SELECT 1 FROM information_schema.tables WHERE table_name = 'userinfo';
+SELECT 1 FROM information_schema.tables WHERE table_name = 'certification_info';
 _EOF`
 
 if [ $VAL = 1 ]; then
