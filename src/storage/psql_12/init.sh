@@ -8,8 +8,8 @@ if [ $VAL = 1 ]; then
   echo "skip init db"
 else
   echo "start db init"
-  psql -d colpro -U user -f /docker-entrypoint-initdb.d/sql/01_ddl.sql
-  psql -d colpro -U user -f /docker-entrypoint-initdb.d/sql/02_dml.sql
+  psql -d colpro -U user -f /docker-entrypoint-initdb.d/sql/certification_info_ddl.sql
+  psql -d colpro -U user -f /docker-entrypoint-initdb.d/sql/certification_info_dml.sql
 fi
 
 echo "end db colpro init"
