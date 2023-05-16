@@ -12,4 +12,4 @@ else
   psql -d colpro -U user -f /docker-entrypoint-initdb.d/sql/02_dml.sql
 fi
 
-echo "end db elpro init"
+echo "end db colpro init"

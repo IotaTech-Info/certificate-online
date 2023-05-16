@@ -1,3 +1,18 @@
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'SJIS';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
 ------certification_info table------------
 CREATE TABLE public."certification_info"(
     certification_id  integer NOT NULL,
@@ -7,7 +22,7 @@ CREATE TABLE public."certification_info"(
     certification_level  character varying(1) NOT NULL,
     certification_tag  character varying(10)
 );
-ALTER TABLE public."certification_info" OWNER TO "certification_id";
+ALTER TABLE public."certification_info" OWNER TO "user";
 --primary key
 ALTER TABLE ONLY public."certification_info"
     ADD CONSTRAINT "certification_info_pkey" PRIMARY KEY (certification_id);
