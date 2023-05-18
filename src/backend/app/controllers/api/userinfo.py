@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 
 from flask_restful import Resource
 from flask import request
@@ -6,7 +6,7 @@ from flask import request
 from ..dto import ResultSchema, Result
 from ..dto.userinfo import PostUserinfoSchema, GetUserinfoResSchema, PutUserinfoSchema
 from ...usecases.userinfo import UserinfoService
-from ...across.exception import ELPROException
+from ...across.exception import COLPROException
 
 
 class EditUserinfoAPI(Resource):
@@ -24,7 +24,7 @@ class EditUserinfoAPI(Resource):
         try:
             self.service.add(req)
             return ResultSchema().dump(Result(code='USERINFOPOST200', message='success')), 200
-        except ELPROException as e:
+        except COLPROException as e:
             return ResultSchema().dump(e.to_result()), e.status_code
         except Exception as e:
             return ResultSchema().dump(Result(code='USERINFOPOST500_002', message='unexpected error: {}'.format(e))), 500
@@ -39,7 +39,7 @@ class EditUserinfoAPI(Resource):
         try:
             self.service.put(req)
             return ResultSchema().dump(Result(code='USERINFOPUT200', message='success')), 200
-        except ELPROException as e:
+        except COLPROException as e:
             return ResultSchema().dump(e.to_result()), e.status_code
         except Exception as e:
             return ResultSchema().dump(Result(code='USERINFOPUT500_002', message='unexpected error: {}'.format(e))), 500
@@ -55,7 +55,7 @@ class GetUserinfoAPI(Resource):
         try:
             res = self.service.get(int(user_id))
             return GetUserinfoResSchema().dump(res), 200 
-        except ELPROException as e:
+        except COLPROException as e:
             return ResultSchema().dump(e.to_result()), e.status_code
         except Exception as e:
             return ResultSchema().dump(Result(code='USERINFOGET500_002', message='unexpected error: {}'.format(e))), 500

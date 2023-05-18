@@ -1,11 +1,11 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 
 import datetime
 
 
 SQLALCHEMY = {
     # 'SQLALCHEMY_DATABASE_URI': "sqlite:///:memory:",
-    'SQLALCHEMY_DATABASE_URI': "postgresql://user:pass@psql:5432/elpro",
+    'SQLALCHEMY_DATABASE_URI': "postgresql://user:pass@psql:5432/colpro",
     'SQLALCHEMY_BINDS': {},
     'SQLALCHEMY_TRACK_MODIFICATIONS': False,
     'SQLALCHEMY_ECHO': True
@@ -44,5 +44,5 @@ PASSLIB = {
 }
 
 db_common = {
-    'backend_entry_point': 'http://127.0.0.1:8888/el-pro/api/0.0.1',
+    'backend_entry_point': 'http://127.0.0.1:8888/col-pro/api/0.0.1',
 }

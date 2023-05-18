@@ -3,7 +3,7 @@
         <!--ヘッダータイトル-->
         <header id="head">
             <div id="title">
-                <h1 class="head_title">EL-PRO</h1>
+                <h1 class="head_title">col-pro</h1>
             </div>
         </header>
         <!-- サブメニュー（左カラム） -->
@@ -147,7 +147,7 @@
                 </div>
                 <!-- フッタ -->
                 <div id="footer">
-                    <address>Copyright © EL-PRO</address>
+                    <address>Copyright © col-pro</address>
                 </div>
             </div>
         </div>

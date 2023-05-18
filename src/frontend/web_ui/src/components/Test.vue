@@ -104,7 +104,7 @@
         </div>
         <!-- フッタ -->
         <div id="footer">
-            <address>Copyright © EL-PRO</address>
+            <address>Copyright © col-pro</address>
         </div>
 
     </div>

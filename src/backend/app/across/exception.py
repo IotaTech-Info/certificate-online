@@ -1,9 +1,9 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 
 from ..controllers.dto import Result
 
 
-class ELPROException(Exception):
+class COLPROException(Exception):
     status_code: int = 999
 
     def __init__(self, result_code: str, result_msg: str):
@@ -14,37 +14,37 @@ class ELPROException(Exception):
         return Result(code=self.result_code, message=self.result_msg)
 
 
-class ELPROBadRequestException(ELPROException):
+class COLPROBadRequestException(COLPROException):
     status_code: int = 400  # Jsonのパースエラー等、データ形式が間違っている
 
 
-class ELPROUnauthoredException(ELPROException):
+class COLPROUnauthoredException(COLPROException):
     status_code: int = 401  # 認証エラー
 
 
-class ELPRONotFoundException(ELPROException):
+class COLPRONotFoundException(COLPROException):
     status_code: int = 404  # 存在しない、または削除されている
 
 
-class ELPROMethodNotAllowedException(ELPROException):
+class COLPROMethodNotAllowedException(COLPROException):
     status_code: int = 405  # 無効、または使用できないメソッド
 
 
-class ELPROMethodNotAcceptableException(ELPROException):
+class COLPROMethodNotAcceptableException(COLPROException):
     status_code: int = 406  # Acceptヘッダに受理できない内容が含まれている
 
 
-class ELPROConflictException(ELPROException):
+class COLPROConflictException(COLPROException):
     status_code: int = 409  # コンフリクトしている
 
 
-class ELPROUnsupportedMediaTypeException(ELPROException):
+class COLPROUnsupportedMediaTypeException(COLPROException):
     status_code: int = 415  # リクエストされたデータのメディア形式をサーバーが対応していない
 
 
-class ELPROInvalidRequestException(ELPROException):
+class COLPROInvalidRequestException(COLPROException):
     status_code: int = 422  # 不正なリクエスト
 
 
-class ELPROInternalServerException(ELPROException):
+class COLPROInternalServerException(COLPROException):
     status_code: int = 500  # その他のサーバに起因するエラー

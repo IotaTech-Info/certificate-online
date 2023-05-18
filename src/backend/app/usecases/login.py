@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 from sqlalchemy.exc import SQLAlchemyError
 from ..gateways.extensions import sql_db
 
@@ -6,7 +6,7 @@ from ..controllers.dto import Result
 from ..controllers.dto.login import PostLoginRes, LoginSchema, Userinfo, PutLoginSchema,PutLoginRes
 from ..entities.login import LoginMapper
 from ..entities.userinfo import UserinfoMapper
-from ..across.exception import ELPROInvalidRequestException, ELPROInternalServerException, ELPRONotFoundException
+from ..across.exception import COLPROInvalidRequestException, COLPROInternalServerException, COLPRONotFoundException
 
 class LoginService:
 
@@ -16,7 +16,7 @@ class LoginService:
                       filter(LoginMapper.password == req.password).first()
 
           if login is None :
-            raise ELPRONotFoundException('LOGINPOST400', 'User does not exist. Or the password is wrong.')
+            raise COLPRONotFoundException('LOGINPOST400', 'User does not exist. Or the password is wrong.')
 
           login_userinfo = UserinfoMapper.query. \
                     filter(UserinfoMapper.user_id == login.user_id).first()
@@ -36,7 +36,7 @@ class LoginService:
                       filter(LoginMapper.password == req.oldpassword).first()
 
           if login is None :
-            raise ELPRONotFoundException(result_code='LOGINPUT500_999', result_msg='internal server error: {}'.format(e))
+            raise COLPRONotFoundException(result_code='LOGINPUT500_999', result_msg='internal server error: {}'.format(e))
       
           login.password = req.newpassword
 
@@ -44,6 +44,6 @@ class LoginService:
           sql_db.session.commit()
 
         except SQLAlchemyError as e:
-            raise ELPROInvalidRequestException('LOGINPUT500_000', 'database error: {}'.format(e))
+            raise COLPROInvalidRequestException('LOGINPUT500_000', 'database error: {}'.format(e))
         except Exception as e:
-            raise ELPROInternalServerException('LOGINPUT400', 'Password is wrong.')
+            raise COLPROInternalServerException('LOGINPUT400', 'Password is wrong.')

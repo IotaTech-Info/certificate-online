@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 import datetime
 import sqlalchemy as sa
 from sqlalchemy.orm import relationship

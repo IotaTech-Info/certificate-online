@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 from sqlalchemy.exc import SQLAlchemyError
 
 
@@ -8,7 +8,7 @@ from ..controllers.dto.exam import GetExamDetailRes, GetExamListRes ,ExamDetail,
 from ..entities.exam import ExamMapper
 from ..entities.question import QuestionMapper
 from ..entities.option import OptionMapper
-from ..across.exception import ELPROInvalidRequestException, ELPROInternalServerException ,ELPRONotFoundException
+from ..across.exception import COLPROInvalidRequestException, COLPROInternalServerException ,COLPRONotFoundException
 
 class ExamService:
 
@@ -22,9 +22,9 @@ class ExamService:
           )
 
         except SQLAlchemyError as e:
-            raise ELPROInvalidRequestException('EXAMLISTGET500_000', 'database error: {}'.format(e))
+            raise COLPROInvalidRequestException('EXAMLISTGET500_000', 'database error: {}'.format(e))
         except Exception as e:
-            raise ELPROInternalServerException(result_code='EXAMLISTGET500_999', result_msg='internal server error: {}'.format(e))
+            raise COLPROInternalServerException(result_code='EXAMLISTGET500_999', result_msg='internal server error: {}'.format(e))
 
 
     def get_detail(self, test_id: str):
@@ -33,7 +33,7 @@ class ExamService:
                       filter(ExamMapper.test_id == int(test_id)).first()
 
           if exam is None :
-            raise ELPRONotFoundException('EXAMDETAILGET400', 'No exam.')
+            raise COLPRONotFoundException('EXAMDETAILGET400', 'No exam.')
 
           question_mapper_list = QuestionMapper.query \
                       .filter(QuestionMapper.test_id==int(test_id)) \
@@ -41,7 +41,7 @@ class ExamService:
                       .all()
           
           if question_mapper_list is None :
-            raise ELPRONotFoundException('EXAMDETAILGET400', 'No question.')
+            raise COLPRONotFoundException('EXAMDETAILGET400', 'No question.')
 
 
           question_list = []
@@ -64,7 +64,7 @@ class ExamService:
                     .all()
               
           if option_mapper_list is None :
-              raise ELPRONotFoundException('EXAMDETAILGET400', 'No option.')
+              raise COLPRONotFoundException('EXAMDETAILGET400', 'No option.')
               
           for o in option_mapper_list :
               option =  Option(
@@ -87,7 +87,7 @@ class ExamService:
           )
 
         except SQLAlchemyError as e:
-            raise ELPROInvalidRequestException('EXAMDETAILGET500_000', 'database error: {}'.format(e))
+            raise COLPROInvalidRequestException('EXAMDETAILGET500_000', 'database error: {}'.format(e))
         except Exception as e:
-            raise ELPROInternalServerException(result_code='EXAMDETAILGET500_999', result_msg='internal server error: {}'.format(e))
+            raise COLPROInternalServerException(result_code='EXAMDETAILGET500_999', result_msg='internal server error: {}'.format(e))
 

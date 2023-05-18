@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 # !/usr/bin/env python3.6
 # coding=utf-8
 import bson
@@ -15,16 +15,6 @@ def is_a_valid_object_id(object_id):
     return bson.objectid.ObjectId.is_valid(object_id)
 
 
-def get_last_url_element(url_str: str) -> str:
-    """ URLの最終要素を取得する
-    url_str：
-    https://airc.aist.go.jp/aiqm/quality/internal/学習モデルの正確性
-    ↓
-    戻り値
-    学習モデルの正確性
-    """
-    url = urlparse(url_str)
-    return url.path.split('/')[-1]
 
 def is_num(input_str: str):
     """入力文字列が数値ならTrue、非数値ならfalseを返す.

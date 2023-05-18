@@ -3,18 +3,12 @@
 # https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
 @hostUrl = http://127.0.0.1:8888
-@baseUrl = {{hostUrl}}/el-pro/api/0.0.1
+@baseUrl = {{hostUrl}}/col-pro/api/0.0.1
 
 ###
 # API:health-check
 
 GET {{baseUrl}}/health-check
-
-### API: GET /examlist
-GET {{baseUrl}}/examlist
-
-### API: GET /examdetail/{test_id}
-GET {{baseUrl}}/examdetail/1
 
 
 ###
@@ -72,7 +66,3 @@ content-type: application/json
 ### API: GET /userinfo/{user_id}
 GET {{baseUrl}}/userinfo/1
 
-
-
-### API: GET /answer/{user_id}/{test_id}
-GET {{baseUrl}}/answer/1/1

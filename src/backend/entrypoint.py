@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 
 import os
 from flask_script import Manager, Shell, Server
@@ -18,7 +18,7 @@ if 'CONTAINER_DEBUG_FLAG' in os.environ:
 
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default',
-                 is_init_db=bool(strtobool(os.getenv('ELPRO_TB_INIT_DB', default='True'))))
+                 is_init_db=bool(strtobool(os.getenv('COLPRO_TB_INIT_DB', default='True'))))
 
 manager = Manager(app)
 

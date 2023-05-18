@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 
 from logging import exception
 from flask_restful import Resource
@@ -7,7 +7,7 @@ from flask import request
 from ..dto import ResultSchema, Result
 from ..dto.login import PostLoginResSchema, LoginSchema, PutLoginSchema,PutLoginResSchema
 from ...usecases.login import LoginService
-from ...across.exception import ELPROException
+from ...across.exception import COLPROException
 
 
 class EditLoginAPI(Resource):
@@ -32,7 +32,7 @@ class EditLoginAPI(Resource):
 
             res = self.service.post(req)
             return PostLoginResSchema().dump(res), 200
-        except ELPROException as e:
+        except COLPROException as e:
             return ResultSchema().dump(e.to_result()), e.status_code
         except Exception as e:
             return ResultSchema().dump(Result(code='LOGINPOST500_002', message='unexpected error: {}'.format(e))), 500
@@ -49,7 +49,7 @@ class EditLoginAPI(Resource):
 
             self.service.put(req)
             return ResultSchema().dump(Result(code='LOGINPUT200', message='Success')), 200
-        except ELPROException as e:
+        except COLPROException as e:
             return ResultSchema().dump(e.to_result()), e.status_code
         except Exception as e:
             return ResultSchema().dump(Result(code='LOGINPUT500_002', message='unexpected error: {}'.format(e))), 500

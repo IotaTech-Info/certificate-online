@@ -1,8 +1,8 @@
-FROM python:3.6.8
+FROM python:3.9.3
 
 # To SET DB initialize disable
 # True/False
-ENV ELPRO_TB_INIT_DB False
+ENV COLPRO_TB_INIT_DB False
 
 # backendセットアップ
 ENV DEBIAN_FRONTEND noninteractive

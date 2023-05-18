@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 
 from flask_mongoengine import MongoEngine
 from flask_jwt import JWT

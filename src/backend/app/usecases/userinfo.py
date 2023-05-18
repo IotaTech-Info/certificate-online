@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 from sqlalchemy.exc import SQLAlchemyError
 from ..gateways.extensions import sql_db
 
@@ -6,7 +6,7 @@ from ..controllers.dto import Result
 from ..controllers.dto.userinfo import PostUserinfoSchema, GetUserinfoRes, GetUserinfo, PutUserinfoSchema
 from ..entities.userinfo import UserinfoMapper
 from ..entities.login import LoginMapper
-from ..across.exception import ELPROInvalidRequestException, ELPROInternalServerException, ELPRONotFoundException
+from ..across.exception import COLPROInvalidRequestException, COLPROInternalServerException, COLPRONotFoundException
 
 class UserinfoService:
 
@@ -16,7 +16,7 @@ class UserinfoService:
           mail_check = LoginMapper.query.filter(LoginMapper.mail == req.mail).first()  
           
           if mail_check is not None :
-            raise ELPRONotFoundException('USERINFOPOST400', 'User already exists.')
+            raise COLPRONotFoundException('USERINFOPOST400', 'User already exists.')
 
           # userinfo table
           userinfo = UserinfoMapper()
@@ -38,7 +38,7 @@ class UserinfoService:
 
           sql_db.session.commit()
         except SQLAlchemyError as e:
-            raise ELPROInvalidRequestException('USERINFOPOST500_000', 'database error: {}'.format(e))
+            raise COLPROInvalidRequestException('USERINFOPOST500_000', 'database error: {}'.format(e))
 
     def get(self, user_id: int):
         try:
@@ -46,12 +46,12 @@ class UserinfoService:
                       filter(UserinfoMapper.user_id == user_id).first()
 
           if userinfo is None :
-            raise ELPRONotFoundException('USERINFOGET404', 'USER Not Found.')
+            raise COLPRONotFoundException('USERINFOGET404', 'USER Not Found.')
           
           login = LoginMapper.query. \
                       filter(LoginMapper.user_id == user_id).first()
           if login is None :
-                raise ELPRONotFoundException('USERINFOGET404', 'USER Not Found.')
+                raise COLPRONotFoundException('USERINFOGET404', 'USER Not Found.')
 
 
           return GetUserinfoRes(
@@ -66,9 +66,9 @@ class UserinfoService:
           )
         
         except SQLAlchemyError as e:
-            raise ELPROInvalidRequestException('USERINFOGET500_000', 'database error: {}'.format(e))
+            raise COLPROInvalidRequestException('USERINFOGET500_000', 'database error: {}'.format(e))
         except Exception as e:
-            raise ELPROInternalServerException(result_code='USERINFOGET500_999', result_msg='internal server error: {}'.format(e))
+            raise COLPROInternalServerException(result_code='USERINFOGET500_999', result_msg='internal server error: {}'.format(e))
 
 
     def put(self, req: PutUserinfoSchema):
@@ -77,7 +77,7 @@ class UserinfoService:
                       filter(UserinfoMapper.user_id == req.user_id).first()
 
           if userinfo is None :
-            raise ELPRONotFoundException('USERINFOPUT404', 'USER Not Found.')
+            raise COLPRONotFoundException('USERINFOPUT404', 'USER Not Found.')
 
           # userinfo table
           userinfo.lastname = req.lastname if req.lastname is not None else userinfo.lastname
@@ -90,6 +90,6 @@ class UserinfoService:
 
           sql_db.session.commit()
         except SQLAlchemyError as e:
-            raise ELPROInvalidRequestException('USERINFOPUT500_000', 'database error: {}'.format(e))
+            raise COLPROInvalidRequestException('USERINFOPUT500_000', 'database error: {}'.format(e))
         except Exception as e:
-            raise ELPROInternalServerException(result_code='USERINFOPUT500_999', result_msg='internal server error: {}'.format(e))
+            raise COLPROInternalServerException(result_code='USERINFOPUT500_999', result_msg='internal server error: {}'.format(e))

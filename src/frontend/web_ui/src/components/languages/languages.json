@@ -1,7 +1,7 @@
 {
     "ja": {
         "common": {
-            "title": "EL-PRO一覧",
+            "title": "col-pro一覧",
             "organizationName": "組織名:",
             "userName": "ユーザ名:",
             "lanJa": "日本語",
@@ -78,7 +78,7 @@
     },
     "en": {
         "common": {
-            "title": "EL-PRO",
+            "title": "col-pro",
             "organizationName": "Organization Name:",
             "userName": "User Name:",
             "lanJa": "日本語",

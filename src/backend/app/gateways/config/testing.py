@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 
 import datetime
 
@@ -43,5 +43,5 @@ PASSLIB = {
 }
 
 db_common = {
-    'backend_entry_point': 'http://127.0.0.1:5000/el-pro/api/0.0.1',
+    'backend_entry_point': 'http://127.0.0.1:5000/-pro/api/0.0.1',
 }

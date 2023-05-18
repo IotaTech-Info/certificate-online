@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 
 from flask import Blueprint
 from ...across import helpers
@@ -9,8 +9,8 @@ from . import login
 from . import answer
 
 
-blueprint = Blueprint('el-pro', __name__)
-api = helpers.MyApi(blueprint, prefix='/el-pro/api/0.0.1')
+blueprint = Blueprint('col-pro', __name__)
+api = helpers.MyApi(blueprint, prefix='/col-pro/api/0.0.1')
 
 api.add_resource(healthcheck.HealthCheckAPI,
                  '/health-check')

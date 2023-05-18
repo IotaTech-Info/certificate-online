@@ -1,4 +1,4 @@
-# Copyright © 2022 EL-PRO
+# Copyright © 2023 COL-PRO
 from sqlalchemy.exc import SQLAlchemyError
 from ..gateways.extensions import sql_db
 
@@ -8,9 +8,8 @@ from ..entities.exam_event import Exam_EventMapper
 from ..entities.user_test_answer import User_Test_AnswerMapper
 from ..entities.exam import ExamMapper
 from ..entities.userinfo import UserinfoMapper
-from ..entities.option import OptionMapper, Option
-from ..across.exception import ELPROInvalidRequestException, ELPROInternalServerException, ELPRONotFoundException
-from backend.app.controllers.dto import answer
+from ..entities.option import OptionMapper
+from ..across.exception import COLPROInvalidRequestException, COLPROInternalServerException, COLPRONotFoundException
 
 class AnswerService:
 
@@ -21,7 +20,7 @@ class AnswerService:
                       filter(Exam_EventMapper.test_id == test_id).first()
 
           if answer is None :
-            raise ELPRONotFoundException('ANSWERGET400', 'No exam.')
+            raise COLPRONotFoundException('ANSWERGET400', 'No exam.')
 
           test = ExamMapper.query. \
                       filter(ExamMapper.test_id == answer.test_id).first()
@@ -40,9 +39,9 @@ class AnswerService:
           )
         
         except SQLAlchemyError as e:
-            raise ELPROInvalidRequestException('ANSWERGET500_000', 'database error: {}'.format(e))
+            raise COLPROInvalidRequestException('ANSWERGET500_000', 'database error: {}'.format(e))
         except Exception as e:
-            raise ELPROInternalServerException(result_code='ANSWERGET500_999', result_msg='internal server error: {}'.format(e))
+            raise COLPROInternalServerException(result_code='ANSWERGET500_999', result_msg='internal server error: {}'.format(e))
 
 
     def add(self, req: PostAnswerDetailSchema):
@@ -52,7 +51,7 @@ class AnswerService:
           test_check = ExamMapper.query.filter(ExamMapper.test_id == int(req.test_id)).first()
           
           if user_check or test_check is None :
-            raise ELPRONotFoundException('ANSWERPOST404', 'USER OR TEST_EVENT Not Found.')
+            raise COLPRONotFoundException('ANSWERPOST404', 'USER OR TEST_EVENT Not Found.')
 
           #抽取选项的数据
           option_mapper_list = OptionMapper.query \
@@ -61,7 +60,7 @@ class AnswerService:
                       .all()
           
           if option_mapper_list is None :
-            raise ELPRONotFoundException('ANSWERPOST400', 'No answer.')
+            raise COLPRONotFoundException('ANSWERPOST400', 'No answer.')
             
           #计算考试结果和user_test_answer table
           test_result = 0
@@ -96,7 +95,7 @@ class AnswerService:
  
           #检查传过来的答案数量
           if user_answers_count < len(option_mapper_list):
-            raise ELPRONotFoundException('ANSWERPOST400', 'Wrong number of answers.') #TODO需要修改API仕样书,增加400
+            raise COLPRONotFoundException('ANSWERPOST400', 'Wrong number of answers.') #TODO需要修改API仕样书,增加400
 
           # test_event table
           test_event = Exam_EventMapper()
@@ -109,4 +108,4 @@ class AnswerService:
           
           sql_db.session.commit()
         except SQLAlchemyError as e:
-            raise ELPROInvalidRequestException('ANSWERPOST500_000', 'database error: {}'.format(e))
+            raise COLPROInvalidRequestException('ANSWERPOST500_000', 'database error: {}'.format(e))
