@@ -26,7 +26,7 @@ CREATE TABLE public."employee_info" (
     update_datetime timestamp without time zone,
     department character varying(50),
     position character varying(50),
-    superior_employee_code integer REFERENCES EMPLOYEE_INFO (employee_code)
+    superior_employee_code integer
 );
 --primary key
 ALTER TABLE ONLY public."employee_info"
