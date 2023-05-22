@@ -87,111 +87,63 @@ ADD PRIMARY KEY(user_id, login_datetime);
 
 
 --Product
-------exam table------------
-CREATE TABLE public."exam"(
-    test_id  integer NOT NULL,
-    test_category  character varying(50) NOT NULL,
-    test_name  character varying(50) NOT NULL,
-    description  character varying(500) NOT NULL,
+------certificate table------------
+CREATE TABLE public."certificate"(
+    certificate_id  integer NOT NULL,
+    certificate_category  character varying(50) NOT NULL,
+    certificate_name  character varying(50) NOT NULL,
+    certificate_description  character varying(500) NOT NULL,
     create_datetime  timestamp without time zone NOT NULL,
     update_datetime  timestamp without time zone
 ); 
-ALTER TABLE public."exam" OWNER TO "user";
+ALTER TABLE public."certificate" OWNER TO "user";
 --primary key
-ALTER TABLE ONLY public."exam"
-    ADD CONSTRAINT "exam_pkey" PRIMARY KEY (test_id);
+ALTER TABLE ONLY public."certificate"
+    ADD CONSTRAINT "certificate_pkey" PRIMARY KEY (test_id);
 --foreign key
 --primary key sequnence
-CREATE SEQUENCE public."Product_Exam_exam_test_id_seq"
+CREATE SEQUENCE public."Product_certificate_certificate_id_seq"
     AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER SEQUENCE public."Product_Exam_exam_test_id_seq" OWNED BY public."exam".test_id;
-ALTER TABLE ONLY public."exam" ALTER COLUMN test_id SET DEFAULT nextval('public."Product_Exam_exam_test_id_seq"'::regclass);
+ALTER SEQUENCE public."Product_certificate_certificate_id_seq" OWNED BY public."certificate".test_id;
+ALTER TABLE ONLY public."certificate" ALTER COLUMN test_id SET DEFAULT nextval('public."Product_certificate_certificate_id_seq"'::regclass);
 
 
-------question table------------
-CREATE TABLE public."question"(
-     question_id  integer NOT NULL,
-     test_id  integer NOT NULL,
-     text  character varying(500) NOT NULL,
-     code  character varying(500),
-     right_select_count  integer NOT NULL,
-     create_datetime  timestamp without time zone NOT NULL,
-     update_datetime  timestamp without time zone
-); 
-ALTER TABLE public."question" OWNER TO "user";
---primary key
-ALTER TABLE ONLY public."question"
-ADD PRIMARY KEY(question_id, test_id);
---foreign key
-
-
-------option table------------
-CREATE TABLE public."option"(
-      option_id  integer NOT NULL,
-      question_id  integer NOT NULL,
-      test_id  integer NOT NULL,
-      text  character varying(500) NOT NULL,
-      right_or_wrong  boolean NOT NULL,
-      create_datetime  timestamp without time zone NOT NULL,
-      update_datetime  timestamp without time zone
-); 
-ALTER TABLE public."option" OWNER TO "user";
---primary key
-ALTER TABLE ONLY public."option"
-ADD PRIMARY KEY(option_id, question_id, test_id);
---foreign key
-
-
---Test系
-------exam_event table------------
-CREATE TABLE public."exam_event"(
-    exam_event_id  integer NOT NULL,
+--certificate系
+------certificate_event table------------
+CREATE TABLE public."certificate_event"(
+    certificate_event_id  integer NOT NULL,
     user_id  integer NOT NULL,
-    test_id  integer NOT NULL,
-    test_result  integer NOT NULL,
+    certificate_id  integer NOT NULL,
+    certificate_status  integer NOT NULL,
+    expected_date timestamp without time zone NOT NULL,
+    acquisition_date timestamp without time zone,
     create_datetime  timestamp without time zone NOT NULL,
     update_datetime  timestamp without time zone
 );
-ALTER TABLE public."exam_event" OWNER TO "user";
+ALTER TABLE public."certificate_event" OWNER TO "user";
 --primary key
-ALTER TABLE ONLY public."exam_event"
-    ADD CONSTRAINT "exam_event_pkey" PRIMARY KEY (exam_event_id);
+ALTER TABLE ONLY public."certificate_event"
+    ADD CONSTRAINT "certificate_event_pkey" PRIMARY KEY (certificate_event_id);
 --foreign key
-ALTER TABLE ONLY public."exam_event"
+ALTER TABLE ONLY public."certificate_event"
 ADD CONSTRAINT "fk_user_id" FOREIGN KEY(user_id)
 REFERENCEs public.userinfo(user_id);
 
-ALTER TABLE ONLY public."exam_event"
-ADD CONSTRAINT "fk_test_id" FOREIGN KEY(test_id)
-REFERENCEs public.exam(test_id);
+ALTER TABLE ONLY public."certificate_event"
+ADD CONSTRAINT "fk_certificate_id" FOREIGN KEY(certificate_id)
+REFERENCEs public.certificate(certificate_id);
 --primary key sequnence
-CREATE SEQUENCE public."Exam_exam_event_id_seq"
+CREATE SEQUENCE public."Certificate_certificate_event_id_seq"
     AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
-ALTER SEQUENCE public."Exam_exam_event_id_seq" OWNED BY public."exam_event".exam_event_id;
-ALTER TABLE ONLY public."exam_event" ALTER COLUMN exam_event_id SET DEFAULT nextval('public."Exam_exam_event_id_seq"'::regclass);
-
-------user_test_answer table------------
-CREATE TABLE public."user_test_answer"(
-    exam_event_id  integer NOT NULL,
-    question_id  integer NOT NULL,
-    user_answer_right_or_wrong  boolean NOT NULL,
-    user_answer_option  character varying(50) NOT NULL,
-    create_datetime  timestamp without time zone NOT NULL,
-    update_datetime  timestamp without time zone
-);
-ALTER TABLE public."user_test_answer" OWNER TO "user";
---primary key
-ALTER TABLE ONLY public."user_test_answer"
-ADD PRIMARY KEY(exam_event_id, question_id);
---foreign key
---primary key sequnence
+ALTER SEQUENCE public."Certificate_certificate_event_id_seq" OWNED BY public."exam_event".exam_event_id;
+ALTER TABLE ONLY public."certificate_event" ALTER COLUMN exam_event_id SET DEFAULT nextval('public."Certificate_certificate_event_id_seq"'::regclass);

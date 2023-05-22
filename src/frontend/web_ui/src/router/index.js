@@ -3,9 +3,7 @@ import Router from 'vue-router'
 import SignIn from '@/components/SignIn'
 import Information from '@/components/Information'
 import Register from '@/components/Register'
-import Top from '@/components/Top'
-import Score from '@/components/Score'
-import Test from '@/components/Test'
+import Certificate from '@/components/Certificate'
 
 
 Vue.use(Router)
@@ -31,19 +29,9 @@ export default new Router({
       component: Register
     },
     {
-      path: '/top',
-      name: 'Top',
-      component: Top
-    },
-    {
-      path: '/test',
-      name: 'Test',
-      component: Test
-    },
-    {
-      path: '/score',
-      name: 'Score',
-      component: Score
-    },
+      path: '/certificate',
+      name: 'Certificate',
+      component: Certificate
+    }
    ]
 })

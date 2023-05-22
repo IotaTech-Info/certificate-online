@@ -22,8 +22,6 @@
                 <button class="btn_login" @click="login()">Sign in</button>
                 &nbsp;
                 <button class="btn_login" @click="register()">Register</button>
-                <!-- &nbsp;
-                <button class="btn_login" @click="score()">score</button>  -->
             </div>
         </div>
     </div>
@@ -59,7 +57,7 @@
                             sessionStorage.setItem('user_id', this.userinfo.user_id);
                             sessionStorage.setItem('user_name', this.userinfo.lastname + '　' + this.userinfo.firstname);
                             this.$router.push({
-                                name: 'Top',
+                                name: 'Certificate',
                             })
                         })
                         .catch((error) => {
@@ -77,14 +75,6 @@
             register(){
 				this.$router.push({
 					name: 'Register'
-				})
-            },
-            score(){
-				// DUMMY
-				sessionStorage.setItem('user_name', 'テスト' + '　' + '太郎');
-				sessionStorage.setItem('bef_srceen_id', 'test');
-				this.$router.push({
-					name: 'Score'
 				})
             }
         }

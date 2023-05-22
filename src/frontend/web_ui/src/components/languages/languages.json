@@ -10,26 +10,14 @@
             "require": "必須",
             "defaultPulldown": "--選択してください--"
         },
-        "top": {
-            "title": "試験一覧",
-            "test-category":"カテゴリー",
-            "test-name":"テスト名称",
-            "test-status":"ステータス",
-            "status-waiting": "未受験",
-            "status-failure": "再受験",
-            "status-success": "結果表示",
+        "certificate": {
+            "title": "資格一覧",
+            "certificate_category":"カテゴリー",
+            "certificate_name":"資格名称",
+            "certificate_description":"資格詳細",
             "page-per": "行数",
             "page-pre": "前へ",
             "page-next": "次へ"
-        },
-        "test": {
-            "answer_amout": "回答数",
-            "time_title": "残り時間",
-            "back": "一覧画面へ戻る",
-            "question_title": "問題",
-            "submit": "提出",
-            "showinfo1": "一覧画面へ戻りますか?",
-            "showinfo2": "すべての答えを提出でしたか?"
         },
         "confirm": {
             "loseInformation": "入力した内容が失われますがよろしいですか？",
@@ -57,17 +45,6 @@
             "register": "提出",
             "login": "ログイン"
         },
-        "score": {
-            "title": "得点画面",
-            "message_passed": "おめでとうございます",
-            "message_failed": "残念でした",
-            "message_space": "　",
-            "honorific": "様",
-            "test_status_passed":"合格しました",
-            "test_status_failed":"不合格でした",
-            "point_title":"　得点：",
-            "submit":"確認"
-        },
         "infomation": {
             "title": "エラーが発生しました。",
             "errorCode": "エラーコードsignout",
@@ -87,26 +64,14 @@
             "require": "require",
             "defaultPulldown": "--Please Select--"
         },
-        "top": {
-            "title": "Exam Hub",
-            "test-category":"Category",
-            "test-name":"Name",
-            "test-status":"Status",
-            "status-waiting": "Challenge",
-            "status-failure": "Revenge",
-            "status-success": "Score",
+        "certificate": {
+            "title": "Certificate Hub",
+            "certificate_category":"Category",
+            "certificate_name":"Name",
+            "certificate_description":"Description",
             "page-per": "Rows per page",
             "page-pre": "Pre",
             "page-next": "Next"
-        },
-        "test": {
-            "answer_amout": "Number of answer",
-            "time_title": "Remaining Time",
-            "back": "Return",
-            "question_title": "Question",
-            "submit": "submit",
-            "showinfo1": "Do you want to return to the Exam Hub?",
-            "showinfo2": "Do you want to submit all the answers?"
         },
         "confirm": {
             "loseInformation": "Would you like to lose the information you entered?",
@@ -133,17 +98,6 @@
             "address": "Toranomon Business Tower 5F",
             "register": "Submit",
             "login": "login"
-        },
-        "score": {
-            "title": "SCORE PAGE",
-            "message_passed": "Congratulations!",
-            "message_failed": "What a pity!",
-            "message_space": "　",
-            "honorific": "　",
-            "test_status_passed":"PASSED",
-            "test_status_failed":"NOT PASSED",
-            "point_title":"SCORE:",
-            "submit":"Confirm"
         },
         "infomation": {
             "title": "Error Information",
