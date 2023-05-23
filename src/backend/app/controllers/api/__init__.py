@@ -4,6 +4,7 @@ from flask import Blueprint
 from ...across import helpers
 from . import healthcheck
 from . import certificate
+from . import certificate_event
 from . import userinfo
 from . import login
 
@@ -17,6 +18,8 @@ api.add_resource(login.EditLoginAPI,
                  '/login')
 api.add_resource(certificate.GetCertificateListAPI,
                  '/certificates')
+api.add_resource(certificate_event.GetCertificateEventListAPI,
+                 '/certificate_events')
 api.add_resource(userinfo.EditUserinfoAPI,
                  '/userinfo')
 api.add_resource(userinfo.GetUserinfoAPI,

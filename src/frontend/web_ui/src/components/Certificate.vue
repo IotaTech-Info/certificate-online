@@ -45,6 +45,12 @@
         <div id="main">
             <div id="main_body">
                 <div class="layout">
+                    <div class="button_br">
+                        <button class="submitBtn" @click="certificate_event()">
+                        {{ $t("certificate.certificate_event") }}
+                        </button>
+                    </div>
+
                     <h1 class="page-title">{{ $t("certificate.title") }}</h1>
                     <VueGoodTable ref="CertificateListTable" styleClass="vgt-table" 
                         :columns="columns" 
@@ -144,6 +150,11 @@ export default {
                     })
                 })
 
+        },
+        certificate_event() {
+            this.$router.push({
+                name: 'CertificateEvent'
+            })
         }
     }
 }
