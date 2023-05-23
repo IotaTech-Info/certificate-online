@@ -16,8 +16,9 @@ SET row_security = off;
 -- Data for Name: M_DataType; Type: TABLE DATA; Schema: public; Owner: user
 --userinfo
 INSERT INTO public."userinfo" (user_id,lastname, firstname, birthday, sex, city,create_datetime) 
-VALUES ('1','data', 'test','19980304','1','Tokyo',now());
-INSERT INTO public."userinfo" (user_id,lastname, firstname, birthday, sex, city,create_datetime) VALUES ('2','Bruce', 'Lee','19930625','2','Gothm',now());
+VALUES ('1','試験', '太郎','19980304','1','Tokyo',now());
+INSERT INTO public."userinfo" (user_id,lastname, firstname, birthday, sex, city,create_datetime) 
+VALUES ('2','Bruce', 'Lee','19930625','2','Gothm',now());
 
 --login
 INSERT INTO public."login" (user_id,mail, password,create_datetime) 
@@ -62,7 +63,20 @@ INSERT INTO public."certificate"(certificate_id,certificate_category,certificate
 VALUES('10','AWS資格証','AWS Certified Solutions Architect - Professional','この資格は、組織がクラウドイニシアチブを実装するための重要なスキルを持つ人材を特定して育成するのに役立ちます。AWS Certified Solutions Architect - Professional を取得すると、多様で複雑な要件下において、AWS のアプリケーションを設計、デプロイ、評価する能力が認定されます。',now());
 
 
+--certificate_event
 
+INSERT INTO public."certificate_event"(certificate_event_id,user_id,certificate_id,certificate_status,expected_date,acquisition_date,create_datetime,update_datetime)
+VALUES('1','1','3','1','2023-05-01','2023-04-01',now(),null);
+INSERT INTO public."certificate_event"(certificate_event_id,user_id,certificate_id,certificate_status,expected_date,acquisition_date,create_datetime,update_datetime)
+VALUES('2','1','4','0','2023-05-01',null,now(),null);
+INSERT INTO public."certificate_event"(certificate_event_id,user_id,certificate_id,certificate_status,expected_date,acquisition_date,create_datetime,update_datetime)
+VALUES('3','1','5','0','2023-05-01',null,now(),null);
+INSERT INTO public."certificate_event"(certificate_event_id,user_id,certificate_id,certificate_status,expected_date,acquisition_date,create_datetime,update_datetime)
+VALUES('4','1','6','1','2023-05-01','2023-05-08',now(),null);
+INSERT INTO public."certificate_event"(certificate_event_id,user_id,certificate_id,certificate_status,expected_date,acquisition_date,create_datetime,update_datetime)
+VALUES('5','2','3','1','2023-05-01','2023-05-29',now(),null);
+INSERT INTO public."certificate_event"(certificate_event_id,user_id,certificate_id,certificate_status,expected_date,acquisition_date,create_datetime,update_datetime)
+VALUES('6','2','4','0','2023-05-01',null,now(),null);
 
 -- SEQUENCE
 SELECT pg_catalog.setval('public."User_userinfo_use_id_seq"', 2, true);
@@ -71,4 +85,4 @@ SELECT pg_catalog.setval('public."User_login_user_id_seq"', 2, true);
 
 SELECT pg_catalog.setval('public."Product_certificate_certificate_id_seq"', 10, true);
 
-SELECT pg_catalog.setval('public."Certificate_certificate_event_id_seq"', 5, true);
+SELECT pg_catalog.setval('public."Certificate_certificate_event_id_seq"', 7, true);
