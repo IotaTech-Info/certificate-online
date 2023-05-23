@@ -4,7 +4,7 @@ import SignIn from '@/components/SignIn'
 import Information from '@/components/Information'
 import Register from '@/components/Register'
 import Certificate from '@/components/Certificate'
-
+import CertificateEvent from '@/components/CertificateEvent'
 
 Vue.use(Router)
 Vue.prototype.$backendURL = process.env.VUE_APP_BACKENDURL
@@ -32,6 +32,11 @@ export default new Router({
       path: '/certificate',
       name: 'Certificate',
       component: Certificate
+    },
+    {
+      path: '/certificateEvent',
+      name: 'CertificateEvent',
+      component: CertificateEvent
     }
    ]
 })

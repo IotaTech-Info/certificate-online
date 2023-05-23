@@ -45,22 +45,16 @@
         <div id="main">
             <div id="main_body">
                 <div class="layout">
-                    <div class="button_br">
-                        <button class="submitBtn" @click="certificate_event()">
-                        {{ $t("certificate.certificate_event") }}
-                        </button>
-                    </div>
-
-                    <h1 class="page-title">{{ $t("certificate.title") }}</h1>
-                    <VueGoodTable ref="CertificateListTable" styleClass="vgt-table" 
+                    <h1 class="page-title">{{ $t("certificate_event.title") }}</h1>
+                    <VueGoodTable ref="certificateEventListTable" styleClass="vgt-table" 
                         :columns="columns" 
-                        :rows="certificateList"                     
+                        :rows="certificateEventList"                     
                         :pagination-options="{
                             enabled: true,
                             perPage:5,
-                            prevLabel: $t('certificate.page-pre'),
-                            nextLabel: $t('certificate.page-next'),
-                            rowsPerPageLabel: $t('certificate.page-per'),
+                            prevLabel: $t('certificate_event.page-pre'),
+                            nextLabel: $t('certificate_event.page-next'),
+                            rowsPerPageLabel: $t('certificate_event.page-per'),
                         }
                         ">
                     </VueGoodTable>
@@ -84,26 +78,41 @@ export default {
     data() {
         return {
             user_id: "1",
-            certificateList: [],
+            certificateEventList: [],
         }
     },
     computed: {
         columns() {
             return [
                 {
-                    label: this.$t("certificate.certificate_category"),
-                    field: "certificate_category",
+                    label: this.$t("certificate_event.user_name"),
+                    field: "user_name",
                     width: "20%",
                 },
                 {
-                    label: this.$t("certificate.certificate_name"),
-                    field: "certificate_name",
-                    width: "30%",
+                    label: this.$t("certificate_event.certificate_category"),
+                    field: "certificate_category",
+                    width: "10%",
                 },
                 {
-                    label: this.$t("certificate.certificate_description"),
-                    field: "certificate_description",
-                    width: "50%",
+                    label: this.$t("certificate_event.certificate_name"),
+                    field: "certificate_name",
+                    width: "25%",
+                },
+                {
+                    label: this.$t("certificate_event.certificate_status"),
+                    field: "certificate_status",
+                    width: "15%",
+                },
+                {
+                    label: this.$t("certificate_event.expected_date"),
+                    field: "expected_date",
+                    width: "15%",
+                },
+                {
+                    label: this.$t("certificate_event.acquisition_date"),
+                    field: "acquisition_date",
+                    width: "15%",
                 },
             ]
         }
@@ -113,7 +122,7 @@ export default {
     },
     mounted: function () {
         this.setLanguageData();
-        this.getCertificateList();
+        this.getcertificateEventList();
     },
     methods: {
         signOut() {
@@ -136,12 +145,12 @@ export default {
             sessionStorage.setItem('language', lang);
             this.$i18n.locale = lang;
         },
-        getCertificateList() {
+        getcertificateEventList() {
 
-            const url = this.$backendURL + '/certificates';
+            const url = this.$backendURL + '/certificate_events';
             this.$axios.get(url)
                 .then((response) => {
-                    this.certificateList = response.data.certificates;
+                    this.certificateEventList = response.data.certificate_events;
                 })
                 .catch((error) => {
                     this.$router.push({
@@ -150,11 +159,6 @@ export default {
                     })
                 })
 
-        },
-        certificate_event() {
-            this.$router.push({
-                name: 'CertificateEvent'
-            })
         }
     }
 }
