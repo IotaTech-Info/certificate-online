@@ -26,7 +26,7 @@ docker-compose build --no-cache
 ```
 ```sh
 
-docker-compose up
+docker-compose up -d
 
 ```
 
