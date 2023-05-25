@@ -104,11 +104,6 @@
                                         $t("register.female_title")
                                 }}</label>
                             </span>
-                            <span class="gender_space">
-                                <input type="radio" id=gender2 v-model="sex" value="2" /><label for="gender2">{{
-                                        $t("register.secret_title")
-                                }}</label>
-                            </span>
                         </div>
                         <div class="input_br">
                             <span class="starMark">*</span>{{ $t("register.address_title") }}
