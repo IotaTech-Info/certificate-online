@@ -104,11 +104,14 @@
                                         $t("register.female_title")
                                 }}</label>
                             </span>
+<<<<<<< HEAD
                             <!-- <span class="gender_space">
                                 <input type="radio" id=gender2 v-model="sex" value="2" /><label for="gender2">{{
                                         $t("register.secret_title")
                                 }}</label>
                             </span> -->
+=======
+>>>>>>> 013fca0d9dd2cf263fad4922c1c22e48dc4ae691
                         </div>
                         <div class="input_br">
                             <span class="starMark">*</span>{{ $t("register.address_title") }}
