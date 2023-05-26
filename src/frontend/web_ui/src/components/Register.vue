@@ -1,4 +1,4 @@
-<template>
+............................<template>
     <div>
         <!--ヘッダータイトル-->
         <header id="head">
@@ -102,11 +102,6 @@
                             <span class="gender_space">
                                 <input type="radio" id=gender1 v-model="sex" value="1" /><label for="gender1">{{
                                         $t("register.female_title")
-                                }}</label>
-                            </span>
-                            <span class="gender_space">
-                                <input type="radio" id=gender2 v-model="sex" value="2" /><label for="gender2">{{
-                                        $t("register.secret_title")
                                 }}</label>
                             </span>
                         </div>
