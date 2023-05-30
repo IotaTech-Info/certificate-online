@@ -57,6 +57,18 @@
                             rowsPerPageLabel: $t('certificate_event.page-per'),
                         }
                         ">
+
+                        <template slot="table-row" slot-scope="props">
+                            <template v-if="props.column.field == 'certificate_status'">
+                                <template v-if="props.row.certificate_status == '1'">
+                                    {{ $t('certificate_event.certificate_status_ok') }}
+                                </template>
+                                <template v-else>
+                                    {{ $t('certificate_event.certificate_status_ng') }}
+                                </template>
+                            </template>
+                        </template>
+
                     </VueGoodTable>
                 </div>
                 
@@ -151,6 +163,16 @@ export default {
             this.$axios.get(url)
                 .then((response) => {
                     this.certificateEventList = response.data.certificate_events;
+
+                    for (var i in this.certificateEventList) {
+                        var certificate_status = this.certificateEventList[i].certificate_status;
+                        if (certificate_status == '1') {
+                            // this.certificateEventList[i].certificate_status = '取得済み';
+                        } else {
+                            // this.certificateEventList[i].certificate_status = '未取得';
+                            this.certificateEventList[i].acquisition_date = '';
+                        }
+                    }
                 })
                 .catch((error) => {
                     this.$router.push({
