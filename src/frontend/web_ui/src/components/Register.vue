@@ -1,4 +1,4 @@
-<template>
+............................<template>
     <div>
         <!--ヘッダータイトル-->
         <header id="head">
